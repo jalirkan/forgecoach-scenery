@@ -1,0 +1,12 @@
+{
+ "id": "embers",
+ "kind": "video",
+ "src": "mountain/s4-embers.webm",
+ "fallback": "mountain/s4-embers.mp4",
+ "poster": "mountain/s4-embers-poster.webp",
+ "blend": "screen",
+ "depth": 0.4,
+ "z": 40,
+ "fit": "cover",
+ "idle": false
+}

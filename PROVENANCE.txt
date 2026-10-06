@@ -1,0 +1,420 @@
+Island "levels up with mana" style frames — provenance
+Made 2026-10-03 on Justin's PC (GTX 1080 8 GB, run as capped systemd user units).
+
+MODELS
+- stabilityai/stable-diffusion-xl-base-1.0, snapshot 462165984030d82259a11f4367a4eed129e94a7b
+  Licence: CreativeML Open RAIL++-M (dated 2023-07-26). Outputs may be used and shared,
+  subject to the licence's use restrictions.
+  Downloaded: fp16 weights only (unet, text_encoder, text_encoder_2, configs, tokenizers,
+  scheduler) = 6.77 GB.
+- madebyollin/sdxl-vae-fp16-fix (MIT), 0.33 GB.
+  Total download: 7.10 GB, in ~/scenery-packs/hf-cache (HF_HOME). No token was used.
+- Depth Anything V2 Small (depth-anything/Depth-Anything-V2-Small-hf), used read-only from
+  a local model cache for the bonus stageN-depth.png maps
+  (Apache-2.0 for the Small model).
+- Software: torch 2.14.0+cu126, diffusers 0.35.2, transformers 4.57.6, accelerate 1.15.0
+  (reused from a local Python environment through a .pth file in ~/scenery-packs/.venv-gen; nothing
+  installed anywhere).
+
+INPUTS
+- Text prompts written for this job (tools/sg_prompts.py). No image from the web, no card
+  art, no file from any private folder was used as an input.
+- Stages 2-4 are img2img from guides painted in code (tools/sg_guide.py) over the previous
+  stage's own output: colour grades, glow strokes, flora bulbs, islet polygons, spires and
+  aurora strokes, drawn with PIL/numpy.
+
+PIPELINE (all at 1536x640, DPM++ 2M Karras, fp16, classic attention processor)
+- stage1.png  text-to-image, seed 1234, 28 steps, cfg 6.5            (work/r1/s1-t2i-1234)
+- stage2.png  guide g2c (from stage 1) -> img2img 0.50, seed 72, init grain 0.04
+              -> clean pass img2img 0.25, seed 321, 40 steps, cfg 7   (work/r9/s2-clean-321)
+- stage3.png  guide g3 (islets/spires on stage 1) -> img2img 0.70 seed 32
+              -> detail 0.50 seed 52 cfg 7.5 -> drama regrade + god rays -> img2img 0.42
+              seed 82 -> clean pass 0.25 seed 312, 40 steps              (work/r9/s3-clean-312)
+- stage4.png  guide g4i (stage 3's parent work/r5/s3-dr-82 regraded to twilight, aurora, its islets kept, spires and
+              falls of light) -> img2img 0.45 seed 99 grain 0.03 cfg 7.5
+              -> 0.28 seed 199 40 steps -> 0.40 seed 502 grain 0.03 cfg 8, 40 steps
+                                                                         (work/r11/s4-k-502)
+Job files with every prompt, seed and strength: styleframes/work/r1.json ... r11.json.
+
+==== ROUND 2 (2026-10-03 21:07-23:16): island-r2/ — three ladders and a six-step ladder ====
+Same models, same software, no new download. Frame 1728x576 (an SDXL 3:1 bucket), horizon
+y=248 (57% up); floating things kept between y~205 and the land-card third (y>384).
+Inputs: text prompts (tools/sg_prompts2.py) and guides painted in code (tools/sg_guide2.py)
+over this project's own earlier outputs. No external image, no card art, nothing from
+any private folder.
+- Root (stage 1 of every ladder): round 1's stage1.png, rows 128-640 cropped to 1536x512,
+  resized to 1728x576, re-rendered img2img 0.22, seed 601, 40 steps (work/q1/root-601).
+- Every final is a guided pass (init grain 0.02-0.025) followed by a clean pass (img2img 0.30,
+  40 steps, no grain), so no guide grain survives.
+- Ladder C stages 2-4 also get a tiled detail pass: 2x Lanczos upscale, img2img in 1024x1024
+  tiles (160 px feathered overlap) at strength 0.42, 30 steps, cfg 6, then a downscale to
+  1728x576 with a light unsharp mask (radius 1.2, 55%). It removes grain; it adds little detail.
+Picks (seeds and strengths are in work/q2.json ... q5.json):
+  A2 work/q2/A2-702-c   A3 work/q5/A3x-1122-c (guide 0.62)   A4 work/q4/A4-912-c (guide from A3r-901)
+  B2 work/q2/B2-712-c   B3 work/q2/B3-722-c   B4 work/q2/B4-731-c
+  C2 work/q4/C2-tile2   C3 work/q4/C3-tile    C4 work/q4/C4-tile
+  six-step = B: root, B2-712, B25-1101 (golden afternoon), B3-722, B35-1112 (blue hour), B4-731
+
+==== ROUND 3 (2026-10-03 23:41 - 2026-10-04 00:39): island-r3/ — one combined ladder ====
+Same models and software; no download. Depth Anything V2 Small (Apache-2.0, read-only from the
+a local model cache) sliced the layers. No ffmpeg on this PC, so the loop is a sprite sheet.
+Inputs: text prompts (tools/sg_prompts2.py, ladder "R") and guides painted in code
+(tools/sg_guide2.py, round3()) over this project's own outputs. No external image.
+Method per stage: guided img2img (grain 0.02) -> "anchor": the root's headland pixels (and for
+stage 4 also 30% of the guide's sky and 70% of the held islets) pasted back with a feathered
+mask -> clean pass img2img 0.28-0.30, 40 steps, no grain. Stages 3 and 4 then get the tiled
+sharpening pass (2x, 1024 tiles, strength 0.40, 30 steps, cfg 6, unsharp 1.2/55%).
+Picks:
+  stage1  island-r2 root (round 1's stage 1 at 3:1), unchanged
+  stage2  work/q7/R2-1303-a   (guide R2 from root, 0.46, seed 1303, cfg 7; anchor+clean 0.28, seed 2303)
+  stage3  work/q10/R3-tile    (guide R3 from stage2, 0.56, seed 1502; anchor+clean 0.30, seed 2502; tile seed 1601)
+  stage4  work/q12/R4-tile    (guide R4 from stage3, 0.55, seed 1633; anchor(sky 0.3, islets 0.7)+clean 0.30, seed 3633; tile seed 1701)
+Layers: layers/stageN/{sky,far,mid,near}.png (sky opaque, the rest RGBA), depth.png, layers.json
+  (tools/sg_layers.py: depth quantiles 40%/72% of the non-sky pixels; holes filled by OpenCV
+  Telea inpaint in a 48 px band behind each nearer layer; the sky continued downward and blurred).
+Loop: loop/s4-motes-sheet.{png,webp} 4080x1360, 48 frames of 680x170 (6 cols x 8 rows), 12 fps,
+  seamless (every term periodic in the 4 s cycle), for blend: screen; poster and layer.json beside it
+  (tools/sg_motion.py loop). Previews: previews/stageN.{gif,webp}, 4 s at 15 fps, 640 wide.
+
+==== ROUND 4 (2026-10-04 01:33 - ): island-r4/, mountain-r1/, swamp-r1/ ====
+ADDED TOOL: ffmpeg 7.0.2 static (John Van Sickle's build, bundled in the PyPI package
+  imageio-ffmpeg 0.6.0, BSD-2-Clause wrapper; the ffmpeg binary itself is GPL-3 as configured
+  --enable-gpl --enable-version3). Installed with pip into ~/scenery-packs/.venv-gen only;
+  symlinked at ~/scenery-packs/tools/bin/ffmpeg. Encoders used: libvpx-vp9 (WebM, yuva420p alpha),
+  libx264 (MP4). Licence covers using the tool; it places no terms on the videos made with it.
+  Nothing else was downloaded: islet cut-outs use OpenCV GrabCut (already installed) seeded by the
+  painted islet masks, which was clean enough that a matting model would not earn its keep.
+Island:
+  stage1, stage2  unchanged from island-r3
+  stage3  guide G3 = island-r3 stage3 dehazed + painted waterfalls/mist + 9 god rays (tools/sg_guide4.py
+          stage3); img2img 0.42 seed 2102 grain 0.015 cfg 7; anchor + clean 0.26 seed 3102; tiled
+          sharpening 0.38 seed 2201 (work/p1, work/p2/S3-tile)
+  stage4  guide G4 = the new stage 3 with its islets lifted 34 px (GrabCut cut-out + Telea inpaint),
+          night grade, aurora/river of stars low in the strip band and mirrored in the bay, moonlit
+          rim on the headland ridge, moonlit sand kept as sand; img2img 0.5 seed 2213; anchor4
+          (headland 0.8, sand 0.5, sky 0.35, islets 0.7) + clean 0.28 seed 3213; tiled sharpening
+          0.38 seed 2301 (work/p2, work/p3/S4-tile)
+  layers  layers/stageN: sky, far, mid, near (depth) + islets.png on stages 3-4 (GrabCut from the
+          painted mask, its hole inpainted in the layers beneath); layers.json gives depth factors.
+  loop    loop/s4-motes.webm (VP9 + alpha, 1280x320, 24 fps, 4 s, crf 40, 947 KB), s4-motes.mp4
+          (H.264 on black for blend: screen, 102 KB), poster, layer.json (kind video, blend screen).
+  previews  previews/stageN.mp4, H.264 High, 640x220, 24 fps, 5 s, 34-123 KB; parallax drift by
+          layer depth, islets bob, stage 4 has the loop screened in.
+Part 2 — mountain-r1/ and swamp-r1/ (style ladders only; same models, same rules):
+  stage 1  a flat composition painted in code (tools/sg_guide5.py comp) -> img2img 0.80 seed 3101
+           (grain 0.05) -> clean 0.25 seed 4101; root masks then measured from the painted root
+           with Depth Anything V2 Small (tools/sg_masks5.py), so later guides follow the real ridge/shore.
+  stages 2-4  guide painted over the previous pick (tools/sg_guide5.py stage) -> img2img 0.48-0.55
+           (grain 0.02, cfg 7-7.5) -> anchor (stage-1 skyline band pasted back, 75%; stage 4 also 25%
+           of the guide's sky) -> clean 0.26-0.28, 40 steps. Stage 4's guide also carries the previous
+           frame's glowing parts and some of its shapes forward.
+  stage 3 and 4 then get the tiled sharpening pass (strength 0.36).
+  prompts: tools/sg_prompts5.py (negatives add gore, blood, flesh, corpse, wound for the swamp).
+  mountain picks: m2/mountain-2-4101-a, m3/mountain-3-4201-a -> m5/mountain-3-tile,
+                  m4/mountain-4-4302-a -> m5/mountain-4-tile
+  swamp picks:    m2/swamp-2-4102-a, m3/swamp-3-4203-a -> m5/swamp-3-tile,
+                  stage 4: guide G4 (colossal ribs, skull boulder) -> m5/swamp-4-4402-a (0.48, seed 4402)
+                  -> m6/swamp-4-r4502 (img2img 0.42, a bone-focused prompt) -> m7/swamp-4-tile
+  (job files and all run outputs moved to mountain-r1/work/runs/: roots.json, m2.json ... m7.json)
+
+==== ROUND 5 (2026-10-04 08:01 - ): mountain-r2/, swamp-r2/, forest-r1/, plains-r1/, island flora ====
+Same models and tools; nothing new downloaded (skimage's skeletonize, already installed, finds the
+roots' crests). Stages 1-3 of mountain and swamp are carried over unchanged from *-r1.
+swamp-r2 stage4: guide = stage 3 regraded to black night + sick moon + green-violet pools, its roots kept
+  (growth mask: dark shapes between y 160-385, minus the far shoreline) with soft pale bones along their
+  crests, wisp eyes (tools/sg_guide6.py swamp4) -> img2img 0.48 seed 6201 cfg 7, 34 steps -> anchor6
+  (skyline 0.7, sky 0.55, growth 0.25) + clean 0.28 seed 7201 -> tiled sharpening 0.26 seed 6601
+  (work/q2/swamp-4-6201-a, work/q4/swamp-4-6201-tile). A second "bones and eyes" pass (G4b, q3) was tried
+  and rejected: it washed out the ribcage cocoons (candidates/stage4-alt-bones-pass.png).
+mountain-r2 stage4: guide = stage 3 under a near-black starry sky, land at half light with stage 3's lava
+  carried, a fire rim on the stage-1 ridge, a fire-aurora behind the three peaks, spires on the shoulders,
+  lightning (sg_guide6.py mountain4) -> img2img 0.56 seed 6303 -> anchor6 (skyline 0.85, sky 0.55) + clean
+  0.28 -> floating molten rocks painted back (mountain4b) -> img2img 0.36 seed 6501 -> tiled sharpening
+  0.34 seed 6551 (work/q2, work/q3/mountain-4b-6501-tile).
+Prompts: tools/sg_prompts5.py keys ("mountain", 44) and ("swamp", 44).
+Island (island-r4, otherwise unchanged): layers/stage3 and stage4 gain flora.png, the crystal flora cut
+  out by colour + GrabCut (tools/sg_flora.py) and painted out of the layers beneath (Telea inpaint); it
+  sways in the previews. previews/stage3.mp4 and stage4.mp4 re-rendered; the layers before this change
+  are kept in island-r4/work/layers-before-flora/.
+Part 2 — the island treatment for mountain-r2 and swamp-r2 (tools/sg_motion3.py, CPU only, 2 GB cap):
+  layers/stageN: sky, far, mid, near from Depth Anything (sky seeded by the biome's own stage-1 mask);
+    cut-out layers from painted masks + GrabCut, limited to the mask's 9 px neighbourhood:
+    swamp stages 3-4 "growth" (the arching roots and their bones, sways/bobs as one), mountain stage 4
+    "rocks" (the four floating molten rocks, bob).
+  loops: mountain loop/s4-embers.webm (VP9 + alpha, 1280x320, 4 s, 24 fps, 635 KB) + .mp4 (83 KB): embers
+    rising from stage 4's lava and a slow heat shimmer travelling across it. swamp loop/s4-wisps.webm
+    (6 s, 353 KB) + .mp4 (79 KB): drifting will-o-wisps, some as blinking eye pairs, and two layers of
+    mist drifting over the water (frequency-domain noise, so it wraps exactly). Both for blend: screen;
+    posters and layer.json beside them.
+  previews: previews/stage1-4.mp4 for each biome, H.264, 640 wide, 5 s, 24 fps, 39-117 KB.
+Part 3 — forest-r1/ and plains-r1/ (style ladders only; same models, same method as mountain/swamp):
+  stage 1  a flat composition painted in code (tools/sg_guide7.py comp) -> img2img 0.80 seed 7102 (grain 0.05)
+           -> clean 0.25 seed 8102; masks from the painted root (tools/sg_masks5.py).
+  stages 2-4  guide over the previous pick (sg_guide7.forest/plains via sg_guide5.stage) -> img2img 0.44-0.56
+           (grain 0.02, cfg 7) -> anchor (stage-1 skyline band; stage 4 + 30% of the guide's sky) -> clean 0.26-0.28.
+           Stages 3 and 4 then the tiled sharpening pass (0.34).
+  forest picks: p3/forest-2-7201-a, p3/forest-3-7312-a (guide 0.44; the 0.55 tries lost the stage-2 giants),
+                p3/forest-4-7502-a -> p3/tiles/forest-3-tile, forest-4-tile
+  plains picks: p3/plains-2-7201-a, p3/plains-3-7301-a, p3/plains-4-7502-a (guide G4b: night land, stage 3's
+                arches kept, a small far city) -> p3/tiles/plains-3-tile, plains-4-tile
+  Prompts: tools/sg_prompts5.py keys ("forest", n), ("plains", n). Job files and run outputs: styleframes/p3*.
+  Rejected: forest-4-7503 painted a cloaked figure in the foreground; not kept.
+Swamp stage 4, the titan (Justin's addition; swamp-r2/stage4.png replaced, the earlier one kept as stage4-prev.png):
+  guide = stage4-prev with a drowned titan's skeleton painted BEHIND the roots (tools/sg_titan.py: a long low
+  spine arching across the horizon, crest y~118, ragged dorsal spines, uneven and broken ribs, a half-sunk skull
+  with two dim eyes; near-black silhouette with a green moonlit rim; it sinks into the mist on the water; the
+  roots' growth mask put back in front) -> img2img 0.46 seed 6801, cfg 7, 36 steps (negatives add dinosaur,
+  crocodile, cartoon, toy) -> anchor6 (growth = roots + titan at 0.25) + clean 0.26 seed 7801 -> tiled
+  sharpening 0.26 seed 6801 (work/q6/swamp-4u-6701-a, work/q7/swamp-4u-6701-tile).
+  layers/stage4 gains titan.png (painted mask + GrabCut, never over root pixels; depth 0.3) beside growth.png
+  (depth 0.6); its hole painted out of sky and far. loop and previews/stage4.mp4 re-rendered over the new frame.
+
+==== ROUND 6 (2026-10-04 10:50 - ) ====
+swamp-r3/ — stage 4 as three directions, "less character, more carcass" (Justin's reaction to the round-5 titan):
+  guide = swamp-r2/stage4-prev.png soured (mint/lavender drained to murky yellow-green and bruise purple),
+  its stage-3 cocoons sagged, veined, split and dripping, and a carcass painted behind the roots in rough
+  jittered strokes (tools/sg_titan2.py): a lopsided broken back arching out of the water off the left edge,
+  irregular snapped and missing ribs, ragged vertebral spines, roots through the bones, rot strands and torn
+  membranes, a few small sick lights, moon-side highlights and shadow instead of an outline; mist and darkness
+  swallow parts. No face, no eye dots. Variant A hides most of it, B is the full carcass with a half-sunk
+  skull fragment, C mixes dead branches and root tangles into the bones.
+  -> img2img 0.48 (A) / 0.56 (B, C), cfg 7.5, 40 steps; negatives add cartoon, cute, simple, flat, clean
+  lines, smooth, face, eyes, symmetrical, neon, glowing outline, toy, dinosaur, crocodile, gore, blood ->
+  anchor (roots 30%, skyline 60% and sky 20% never over the carcass) + clean 0.3 -> "reroot": stage 3's
+  roots and the cocoons (their own shapes) pasted back at 75% -> img2img 0.32 -> tiled sharpening 0.30.
+  Picks: stage4-A.png (seed 9202), stage4-B.png (9102), stage4-C.png (9102); job files work/q1-q3.json.
+  Prompts lead with "dark fantasy matte painting, a black fen at night under a sickly moon, ..." (q1.json).
+  The wisps loop now draws plain drifting lights, no eye pairs (tools/sg_motion3.py), for whichever is picked.
+swamp-r3 final (Justin: "go with B and add back some of A's glow"):
+  stage4.png = stage4-B with patchy green/violet mist wisps low in the frame (stretched noise, shielded off the
+    carcass and skull), a faint up-light on the carcass's lower edges, rot-phosphor flecks, four of stage 3's
+    cocoons pasted back drained and broken (tools/sg_swampfinal.py guide) -> img2img 0.22 seed 9311 ->
+    cocoons + skull put back at 55% -> img2img 0.16 -> tiled sharpening 0.24 (work/q5/F2-9311-tile).
+  stage3.png = swamp-r2 stage 3 (kept as stage3-prev.png) with its cocoons broken, palette soured a little,
+    darker, a fine texture -> img2img 0.50 seed 9501 with a gritty dark-fantasy prompt -> tiled sharpening 0.30
+    (work/q6/S3x-9501-tile). Same composition; grittier bark and water, less neat cocoons.
+  stages 1-2 carried over from swamp-r2.
+  layers: stages 1-2 as swamp-r2; stage 3 with growth.png; stage 4 with carcass.png (painted B mask + the
+    frame's own bone pixels + the jaw region, GrabCut; depth 0.3, roots stay in mid/near in front of it)
+    (tools/sg_carcass.py).
+  loop/s4-wisps.webm (363 KB) + .mp4 (79 KB): plain drifting sickly lights (no eye pairs), slow mist, three
+    slow drips falling from the carcass with a ripple. previews/stage1-4.mp4.
+plains-r2: stage1 and stage3 as plains-r1; stage2 = r1-style guide (gold, wind-waves, flower drifts, seed motes)
+  -> img2img 0.48 seed 8102 + anchor/clean -> second pass plains2b (brighter wind-waves with shadowed trailing
+  edges, broken flower drifts, seed fluff) -> img2img 0.32 seed 8201 (work/q2/plains-2b-8201).
+  stage4 = plains-r1 stage 3 under night: moonlit grass, the path pale, arches kept, far city, pillars, halos
+  -> img2img 0.48 seed 8103 + anchor/clean -> plains4b (silver grass blades, path narrowed and earthen, a light
+  pool at the city's feet spilling down the slope) -> img2img 0.36 seed 8202 -> tiled sharpening 0.30.
+forest-r2 (round 6 + Justin's lushness note): stage 1 as forest-r1.
+  stage2: guide = giants with moss grown over bark and roots as a mottled coat (noise inside the trunk shapes,
+    denser low and on the lit side, glowing where thickest) + set dressing (tools/sg_guide8.py dress: vines
+    wrapping the trunks, hanging moss and creepers from the canopy edge, dense fern clumps at the trunks' feet)
+    -> img2img 0.45 seed 8301 + anchor/clean 0.22 (work/q3/forest-2c-8301-a).
+  stage3: sinuous tapering world-trees with spiral bark, living bridges draped in moss, firmer darks + dressing
+    x1.8 -> img2img 0.5 seed 8401 + anchor/clean 0.24 -> tiled sharpening 0.30 (work/q4/forest-3c-8401-tile).
+  stage4: calm night from the stage-3 chain of seed 8402: three tree-cities as bold rings, twelve large
+    seed-lanterns, a few long canopy veins, sparse fireflies, dressing x2.4 darkened with lanterns hanging among
+    the vines -> 0.5 + anchor/clean -> sharpening (work/q4/forest-4c-8402-tile). Stage 3 and 4 come from sibling
+    seeds of the same guide (8401 has the better twisting trunks, 8402 the calmer night).
+  frame test: layers/stage2-4/frame.png, painted in code (tools/sg_guide8.py frame): dark soft-focus vines and
+    leaves from the top edge and upper corners only, never below y 130 in the centre 64% or y 330 at the edges;
+    stage 4 adds glowing buds. Still image; layers.json describes a CSS sway (x, 6 px, 7 s). frame-test.png
+    shows it full-frame, in the board strip and at 130 px. previews include it; stage3-noframe.mp4 is without.
+  loop/s4-fireflies.webm (381 KB) + .mp4 (58 KB); previews/stage1-4.mp4.
+plains-r2 treatment: layers (stage 3-4 "crown": the white arches, city, pillars and halos as one unit, from a
+  bright-and-unsaturated mask + GrabCut), loop/s4-motes.webm (781 KB) + .mp4 (74 KB: drifting light motes
+  and a slow bright shimmer crossing the grass), previews/stage1-4.mp4.
+
+mockups/board-r1/ (composed with PIL from existing frames; no new art; tools/sg_board.py): desktop-A/B, phone-A/B,
+  twocolour.png, readability.png, orientation.png. Layout from ForgeCoach origin/main (read only). Blank card shapes,
+  flat UI placeholders; no card art, names or logos. Forest is not used (under rework). The one outpaint test
+  (island stage 3 extended 256 px upward, SDXL inpaint) is queued behind the memory gate.
+forest-r3 / plains-r3 (queued, tools/sg_guide9.py guides, tools/sg_chain_r6.sh): run when the gate opens;
+  forest-r3-takes.png and plains-r3's ladder/strips/stage 3-4 motion are assembled automatically.
+
+==== QUALITY BAKE-OFF (2026-10-04) quality-r1/ ====
+Downloads (approved by Justin; user-space under ~/scenery-packs/hf-cache; no token):
+- xinsir/controlnet-tile-sdxl-1.0, snapshot 1ae8d9529efe58f7362a987363ff86a7904dc84f, licence Apache-2.0,
+  diffusion_pytorch_model.safetensors 2.50 GB. Used as an SDXL tile ControlNet to hold composition in the 2x
+  tiled detail pass (arm B and C).
+- Lykon/dreamshaper-xl-1-0, snapshot 41e6644752a8c9aa63930e6043c4fd83c7708420, licence CreativeML Open
+  RAIL++-M (openrail++, same family as SDXL base: outputs may be used and shared), fp16 UNet + text encoders +
+  tokenizers + scheduler = 6.77 GB. The richer painterly SDXL fine-tune for arm C. Its own VAE was not
+  downloaded; the fp16-fix SDXL VAE is used.
+- Not downloaded: FLUX.1-schnell (arm D): its base repo is gated behind an account and the quantised
+  transformer alone (Q3_K_S 5.2 GB) does not fit the 5.6 GB VRAM cap; recorded as "does not fit".
+Test images: island-r4/stage3.png, mountain-r2/stage3.png, island-r4/stage1.png. Arms: A = resized 2x;
+B = SDXL base, 2x Lanczos + grain 0.02, then 768-px tiles (160 overlap, feathered) img2img strength 0.55
+(island stage 1: 0.5), 30 steps, cfg 6, tile ControlNet scale 0.3 with the tile as its own control image
+(chosen from a one-tile sweep of strength 0.4-0.7 x ControlNet 0.3-0.6: higher ControlNet with higher strength
+etched a swirly hatching into flat areas; work/*-sweep-sheet.png); C = DreamShaper XL img2img of the native
+frame at 0.5 (stage 1: 0.45), cfg 7, 34 steps, then the same tiled pass on DreamShaper. An earlier arm-B run at
+0.4 / ControlNet 0.6 changed almost nothing (work/island-B-s40c60.png). Prompts and seeds:
+quality-r1/work/*.json (seed 4711). Run with tools/sg_bake.py, tools/sg_run2.sh, tools/sg_chain_q2.sh.
+
+==== QUALITY ROUND 2 (2026-10-04 17:25-19:16) quality-r2/ ====
+All on DreamShaper XL 1.0 (arm C pipeline): native img2img (34 steps, cfg 7) then 2x tiled pass (768 tiles,
+strength 0.5-0.55, ControlNet tile 0.3, grain 0.02, 30 steps, cfg 6). Job files and prompts: quality-r2/work/*.json.
+  i1-a / i1-b / i1-c: island stage 1 from scratch, pre-strength 0.65 / 0.70 / 0.68 (seeds 5101-5103), "beautiful
+    finished landscape painting ... calm clear water with gentle ripples ... wind-swept grass tufts ... strata";
+    negative adds buildings, floating islands, crystals, glowing, magic, extra islands, rocks in the water, birds,
+    trees, sun.
+  m3: mountain stage 3, pre 0.5, seed 5201, must-keep elements named (crowned volcano, glowing crater, rivers of
+    lava, storm-red sunset); negative adds lightning, floating rocks/islands, night, stars, moon, second sun, aurora.
+  i3: island stage 3, pre 0.45, seed 5301, "strong god rays fanning from the low setting sun" named; negative adds
+    new rocks, boulders, rocks in the water, stones, extra islands, stars, night, extra sun, moon.
+Each image ~670-690 s; peak VRAM 6.30 GB allocated / 6.50 GB reserved; RSS 4.1 GB steady (peak counter 5.9 GB);
+lowest MemAvailable during a run 13-15 GB; J050 ran throughout, undisturbed.
+
+==== QUALITY ROUND 3 (2026-10-04 19:20-20:31) quality-r3/ ====
+DreamShaper XL arm-C pipeline with structure held during the native re-render (pre-strength 0.5):
+  m3-anc / i3-anc: re-render, then the original's skyline band (mountain 0.9, island 0.8) and part of its sky
+    (0.75 / 0.5) pasted back (tools/sg_bake.py anchor_back), a knit img2img (0.3 / 0.25), then the 2x tiled pass.
+  m3-cn / i3-cn: the native re-render itself held by the tile ControlNet at 0.6, then the 2x tiled pass.
+  i1-rip: quality-r2 i1-b at native size with soft wave shading painted onto the open water (crests and troughs,
+    wider toward the viewer), then the 2x tiled pass (0.5).
+Prompts and seeds: quality-r3/work/*.json (ladder-safe negatives as in round 2). 580-730 s per frame; peak VRAM
+6.30-6.35 GB allocated / 6.48-6.65 GB reserved; RSS 4.1 GB steady; lowest MemAvailable 14-15 GB; J050 undisturbed.
+board-stage1.png, board-stage3.png: tools/sg_board2.py (desktop + phone mock-ups, scrim, blank cards, 100% crop).
+
+==== QUALITY ROUND 4 (2026-10-04 20:35-21:18) quality-r4/ ====
+Island stage 3 water test, both from round 3's i3-cn (downscaled to native), DreamShaper XL, then the 2x tiled pass:
+  i3-wa (a): native re-render 0.65 held by the tile ControlNet 0.3, kept only inside a painted water mask (water 1.0,
+    islets and falls 0.7, flora 0) built from the frame (tools/sg_i3paint.py); seed 7301.
+  i3-pb (b): surf painted into the source first (wave shading on the water, four broken surf lines, white splash
+    at each waterfall's foot, streaks in the falls, strata lines under the islets; tools/sg_i3paint.py), then a
+    native re-render 0.4 held by the ControlNet 0.6; seed 7302. Prompt names surf, foam, spray, stony undersides.
+Mountain: m3-anc2 = m3-anc with the sky anchor raised from 0.75 to 0.9 (same seed 6201).
+690-755 s per frame; peak VRAM 6.35 GB allocated / 6.57 GB reserved; RSS 4.1 GB; lowest MemAvailable 14 GB.
+board-stage3.png (i3-pb, m3-anc2), island3-boardsize.png (the island half at 1x desktop size: current / i3-cn / i3-pb).
+
+==== QUALITY ROUND 5 (2026-10-04 21:24-21:56) quality-r5/ ====
+  i3-pb2: painted source v2 (tools/sg_i3paint2.py): ~3400 short broken wavelets, perspective-compressed toward the
+    horizon and thinned under the islets (no continuous bands), surf lines, splash and streaks as before, strata /
+    cracks / lit facets on the dark islet rock; then native re-render 0.4 held by ControlNet 0.6, seed 7302; tiled 0.55.
+  m3-sky: from m3-anc2's anchored frame; knit re-render 0.3 (seed 6203); tiled pass 0.55 with a separate tiled-pass
+    prompt ("soft layered sunset clouds" instead of "dramatic sculpted storm clouds lit red and orange"), plus a second
+    tiled pass at 0.3 blended in by the stage-1 sky mask (feathered 12 px at 2x) (tools/sg_bake.py region_tile, tile_prompt).
+  699 s (island) and 1016 s (mountain, 24 tiles); peak VRAM 6.35 GB; RSS 4.2 GB; lowest MemAvailable 14 GB.
+  island3-boardsize.png, mountain3-boardsize.png, quality-r5-summary.jpg (1840x3076): tools/sg_q5sheets.py.
+
+==== FINAL REPAINT r1 (2026-10-04 23:12 - 2026-10-05 07:10) final-r1/ ====
+Overnight, unattended. All frames original text prompts (tools/sg_final.py, P and LATER tables); no image inputs
+from outside ~/scenery-packs; no game, studio, franchise or artist names. Model: DreamShaper XL 1.0 fp16 (Lykon,
+OpenRAIL++) with the sdxl-vae-fp16-fix VAE; tile ControlNet xinsir/controlnet-tile-sdxl-1.0 (Apache-2.0).
+Runner: tools/sg_chain_final.sh reading logs/final-queue.txt, each image through tools/sg_run3.sh (one systemd user
+unit at a time, MemoryMax=6500M, MemorySwapMax=0, Nice=15, VRAM fraction 0.85; the start gate and watchdogs as in the
+script header). Prompts, seeds, sources and every setting per frame: final-r1/work/<biome>-s<N>-t<try>.json; the
+native passes' sources/guides beside them (-src.png, -guide.png). Seeds 8000 + biome*100 + stage*10 + try.
+Common recipe (tools/sg_bake.py): native 1728x576 img2img re-render (34 steps, cfg 7, optionally held by the tile
+ControlNet), optional anchor-back / hot-carry / knit passes, 2x Lanczos + grain 0.02, then 768-px tiles (overlap 160,
+feathered), img2img + tile ControlNet 0.3, 30 steps, cfg 6, a "crisp detailed painterly textures" tile prompt.
+Each biome: stage1..4.png (3456x1152) + stage1..4-1728.png; <biome>-ladder.jpg; <biome>-board.jpg (tools/sg_final.py
+ladder/board: desktop + phone mock-ups, stage 1 and stage 4, old vs new; opponent island<->mountain, swamp<->plains,
+forest->island). final-r1/overview.jpg and final-r1/twocolour.jpg (tools/sg_final.py overview / twocolour).
+Per frame (time is the generator's own total; ~12 tiles = 700 s, 24 tiles = 1100 s):
+  island 1: copy of quality-r3 i1-rip (the approved repaint), no new pass.
+  island 2 (t1, 664 s): island-r4 stage 2 with ~3000 broken wavelets painted on the water, native 0.45 + CN 0.6.
+  island 3 (t1, 748 s): quality-r5 i3-pb2 plus more broken wavelets; native 0.6 + CN 0.35 kept inside a mask
+    (islets 1.0, water 0.75, glowing flora 0) so surf, spray and islet rock are pushed and the flora is untouched.
+  island 4 (t1, 798 s): island-r4 stage 4 + wavelets, native 0.45 + CN 0.6, detail 0.6.
+  mountain 1 (t2, 738 s): mountain-r2 stage 1, native 0.52 + CN 0.45, skyline band anchored back 0.95, sky 0.35,
+    knit 0.25. t1 (native 0.68, no CN) lost the three-peak silhouette.
+  mountain 2 (t2, 1067 s): t1 lost the ember veins; tools/sg_embers.py painted veins, vents and plumes onto t1, then
+    native 0.33 + CN 0.5, detail 0.48, sky region pass 0.38, ember prompt.
+  mountain 3 (t1, 1110 s): mountain-r2 stage 3, native 0.5, skyline anchor 0.9 / sky 0.9, hot-pixel carry 1.0,
+    knit 0.28, sky region pass 0.3 with a "soft layered red sunset clouds" tile prompt.
+  mountain 4 (t1, 1252 s): mountain-r2 stage 4, native 0.5, anchor 0.9 / sky 0.6, hot carry 0.9, knit 0.28.
+  swamp 1 (t2 settings, 742 s): swamp-r3 stage 1, native 0.52 + CN 0.45, anchor 0.95 / sky 0.35, knit 0.25.
+  swamp 2 (t1, 718 s), 3 (t1, 735 s), 4 (t1, 684 s): swamp-r3 stages, native 0.45 / 0.35 / 0.3 + CN 0.6, hot carry,
+    knit 0.2; stage 4 detail 0.5. Two hand fixes on CPU (tools/sg_swampfix.py; raw frames kept as
+    work/swamp-stage3-raw.png and work/swamp-stage4-raw.png): stage 3 carried a faint pseudo-signature (illegible
+    script) in the bottom-right dark band, replaced by the mirrored band above it; stage 4's carcass knot had three
+    dark sockets that read as a skull face, inpainted (OpenCV Telea) with bark grain restored from beside it.
+  plains 1 (t2 settings, 737 s): plains-r2 stage 1, native 0.52 + CN 0.45, anchor 0.95 / sky 0.35, knit 0.25. Soft at
+    100% (smooth grass); a texture-pushing try 3 (detail 0.6, grass-blade tile prompt) was written but dropped for time.
+  plains 2 (t1, 679 s): plains-r2 stage 2, native 0.45 + CN 0.5.
+  plains 3 (t1, 742 s): tools/sg_guide9.py plains stage-3 guide (rose-gold regrade, halo ring + outer ring, two
+    sun-dogs, 14 rays, light on the wind-waves, 260 rising seeds) painted over the final stage 2, native 0.55 + CN 0.35.
+  plains 4 (t2, 815 s): guide over the final stage 3, native 0.6 + CN 0.35. t1 (0.55) kept the guide's hairline
+    pillars and ring outlines, which read as drawn graphics; t2's guide (sg_guide9 SOFT, set by sg_final for try >= 2)
+    paints wide soft beams, blurred halos, a band of stars, a moon and a sky haze instead. The detail pass dissolved
+    most of the halos and the beams merged into the three gates of light.
+  forest 1 (t1, 699 s): forest-r1 stage 1, native 0.68, skyline anchor 0.85, knit 0.28.
+  forest 2 (t2, ~710 s): t1 (sg_guide9 take C over the final stage 1, native 0.6 + CN 0.35) kept the guide's flat
+    cut-out treeline and grove shapes and was rejected; the chain was stopped by hand at 05:31 and its tail rewritten.
+    t2: the guide's additions blurred (sigma 3.5) with broken noise, then native 0.7 with no ControlNet and the
+    prompt suffix "every tree painted with leafy detail, no flat shapes"; detail 0.55.
+  forest 3 (t2, ~710 s): take-C guide (canopy bands, mist, four giants, vines, birds, rays) over the final stage 2,
+    softened as above, native 0.74, no ControlNet.
+  forest 4 (t3, 698 s): take-C night guide over the final stage 3, softened; t2 native 0.7 lost stage 3's giants (kept as
+    work/forest-s4-t2.png; it carried a pseudo-signature, covered by tools/sg_textfix.py); t3 native 0.6 with the
+    giants named in the prompt (crowns lit like cities, rings of light, lanterns on vines).
+  Bottom edges of every frame were scanned at high contrast for model-made lettering after the run: swamp 3 and
+    forest 4 t2 had it (fixed as above); no other frame does.
+Totals: 23:12 - 07:09 (7 h 57 min) for 24 generated images (19 kept + 5 rejected tries; island stage 1 is a copy); ~1 h 35 min of that was the
+start gate waiting on lab jobs younger than 30 min (J061, J062/J063, J064). Peak VRAM 6.35 GB allocated / 6.65 GB
+reserved; unit RSS peak 5.9 GB; lowest MemAvailable during any run 12 GB; no lab job memory-stopped or OOM-killed,
+no watchdog stop. Raw frames of rejected tries stay in final-r1/work/ (<biome>-s<N>-t<try>.png).
+
+==== FINAL REPAINT r2, THE FIX ROUND (2026-10-05 08:45-10:08 and 18:42-21:55) final-r2/ ====
+final-r1's 20 frames copied in; only the frames below were replaced, each r1 kept beside it as stageN-r1.png. Same
+models and rules as r1 (DreamShaper XL 1.0 fp16 + sdxl-vae-fp16-fix, tile ControlNet xinsir; original prompts; nothing
+from outside ~/scenery-packs). Painted sources and jobs: tools/sg_final2.py (prep KEY TRY / finish / cpu / sheets /
+overview / changes / unface); runner tools/sg_chain_r2.sh + tools/sg_run3.sh (same gates; GPU mode from logs/gpu-mode:
+resident 0.85 in the morning and from 18:55, stream 0.70 from 18:42 while Justin was at the desk); every json, source
+and try in final-r2/work/ (KEY-tTRY.*). sg_bake.py gained "big" (polish a finished 2x frame in place, no upscale) and
+"post_screen" (screen a painted soft-light layer over the detailed frame). Decisions as made: logs/r2-decisions.log.
+Stopped 10:08 for the reboot into Windows (RESUME.txt), resumed 18:42.
+  mountain 2 (t2, 1059 s): sg_final2 embers2 painted on r1's native frame: 27 veins down the flanks from below the three
+    peaks + 8 foothill cracks, each a dark cracked rim (0.42), a red-orange molten core and a wide glow; five small
+    vents with pale plumes. Native 0.30 + CN 0.6, hot carry 1.0, detail 0.48, sky region pass 0.38, glow layer screened
+    back at 0.25. t1 (0.25, detail 0.42, glow 0.45) made wide pale-gold streaks: rejected.
+  island 4 (t2, 738 s): island4 painted on r1: aurora striated into curtains (vertically stretched noise in the aurora
+    mask), a diagonal river of 1,100 fine stars, glints on the top edges of the crystal clusters and 90 warm lanterns
+    among them, 900 glitter dashes on the water weighted by its light. Native 0.37 + CN 0.6, hot carry 0.9, detail 0.56,
+    post layer at 0.4. t1 drew a hard glowing line along the far shore (the shore glow read as one crystal band):
+    t2 drops components wider than 260 px from the crystal mask.
+  swamp 2 (t1, 839 s; first run killed by the reboot): swamp2 painted on r1: water recoloured sour green (0.55, its own
+    reflections kept) with oily noise, 26 drowned snags with reflections, 34 clusters of glowing fungus caps, a
+    yellow-green haze band. Native 0.42 + CN 0.5, hot carry 0.8, detail 0.52, glow at 0.3. t2 (detail 0.60) turned the
+    caps into white flowers: rejected. Two CPU fixes on the kept frame: a glyph-like mark in the bottom-right corner
+    (inpainted) and a faint script-like squiggle at the bottom edge (covered with the mirrored band above).
+  swamp 4 (t1, 620 s): rimlight on r1: carcass midtones lifted, rim light on edges facing the moon (pale green) and the
+    low glow (violet), a soft halo. Native 0.30 + CN 0.6, detail 0.48; "skull, face, eyes, eye sockets, teeth, mouth"
+    added to the negative. Three dark sockets in the knot and rib mass still read as eyes: filled on CPU (sg_final2
+    unface; work/s4-t1-raw.png kept).
+  plains 1 and 2 (t2, 571 s each): grass_paint on the r1 3456 frames: ~70,000 wind-combed strokes coloured from the
+    frame (longer and thicker toward the viewer), seed heads, none crossing the pink path; faint stratus modulation
+    and thin cirrus in the sky. Then a 0.48 tiled pass (CN 0.45) in place. t1 (a 0.40 pass with no painting) changed
+    almost nothing.
+  plains 4 (t1, 365 s): halos on r1's 3456 frame: five soft rings (three blurs of a ring, never a drawn line) with
+    sparkle beads, beams above the three gates, screened at 0.6, a 0.30 tiled pass in place, the ring layer screened
+    back at 0.35.
+  forest 1 (t2, 823 s): forest1 from the final stage 2 (the elevated view): pale-dawn sky, the land desaturated, some
+    of the groves thinned to meadow, a mist band; native 0.63 + CN 0.35, detail 0.58, prompt names young groves on open
+    land, dewy grass, crisp crowns. t1 (mist 0.55, detail 0.50) read as fog at 100%.
+  forest 2 (CPU): a half-strength blend of a grade over r1 (warm light from the horizon behind the far groves, a mist
+    band at the horizon for depth); the full-strength grade went milky.
+  Bottom edges of every changed frame scanned at high contrast for lettering after the round (swamp 2's two marks fixed).
+Sheets: <biome>/<biome>-ladder.jpg and -board.jpg (board: r1 vs r2, stage 1 and 4), overview.jpg, changes.jpg (each
+changed frame, r1 vs r2, as the seat's battlefield of the desktop mock-up at 1:1 with cards on top).
+Generator time ~2 h 41 min over 14 finished runs (one more killed by the reboot); the rest was the start gate waiting on new lab jobs (30-minute rule) and the
+reboot. Peak VRAM 6.35 GB resident / 3.7 GB stream; lowest MemAvailable during a run 9 GB; no watchdog stop, no lab
+job disturbed.
+final-r2 PART 2, MOTION (2026-10-05 22:01-22:58): tools/sg_motion_final.py BIOME all, one gated unit per biome
+(tools/sg_motion_chain.sh -> tools/sg_run4.sh: sg_run3's gate, limits and watchdog around any command), CPU only
+(DEVICE=cpu: Depth Anything V2 Small, read-only from the a local model cache), ffmpeg from imageio-ffmpeg.
+  final-r2/<biome>/layers/stage1..4/: sky (opaque, filled) / far / mid / near RGBA from the depth map, each filled
+    48 px behind the nearer layers; layers.json gives each layer's parallax depth, and "css" holds the still-layer
+    sway metadata (parallaxPx 22, swayPeriodS 2.5, bobPx 3; sway and bob flags per layer). Cut-outs that move as one
+    unit (GrabCut from a painted or colour mask): island 3-4 islets (bob) and island 2-4 crystal flora (sway; lit
+    water excluded, shapes must stand up); plains 3 the sun, halo and sun-dogs, plains 4 the gates, beams and halos
+    ("crown"). Mountain and swamp have none: the r2-era masks no longer fit the final art (rocks grabbed patches of
+    flank, growth grabbed pieces of root arches and fog), so both were re-run without them.
+  final-r2/<biome>/loop/: the stage-4 loop over the playable band, VP9 WebM with alpha + H.264 MP4 fallback + poster
+    + layer.json (screen blend): island motes and aurora shimmer (4 s), mountain rising embers and lava shimmer (4 s),
+    forest fireflies (5 s), plains rising motes and grass shimmer (5 s), swamp drifting wisps and slow mist (6 s,
+    plain lights, no eye pairs). WebM 0.37-0.91 MB, MP4 60-111 KB.
+  final-r2/<biome>/previews/stage1..4.mp4: 640x220, 5 s, parallax + sway + bob, the loop screened in on stage 4;
+    38-152 KB each (all 20 well under 3 MB).

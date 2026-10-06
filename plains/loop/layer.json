@@ -1,0 +1,12 @@
+{
+ "id": "motes",
+ "kind": "video",
+ "src": "plains/s4-motes.webm",
+ "fallback": "plains/s4-motes.mp4",
+ "poster": "plains/s4-motes-poster.webp",
+ "blend": "screen",
+ "depth": 0.4,
+ "z": 40,
+ "fit": "cover",
+ "idle": false
+}

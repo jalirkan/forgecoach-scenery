@@ -1,0 +1,12 @@
+{
+ "id": "wisps",
+ "kind": "video",
+ "src": "swamp/s4-wisps.webm",
+ "fallback": "swamp/s4-wisps.mp4",
+ "poster": "swamp/s4-wisps-poster.webp",
+ "blend": "screen",
+ "depth": 0.4,
+ "z": 40,
+ "fit": "cover",
+ "idle": false
+}

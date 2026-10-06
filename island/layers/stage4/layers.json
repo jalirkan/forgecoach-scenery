@@ -1,0 +1,46 @@
+{
+ "layers": [
+  {
+   "id": "sky",
+   "src": "sky.png",
+   "depth": 0.0
+  },
+  {
+   "id": "far",
+   "src": "far.png",
+   "depth": 0.25
+  },
+  {
+   "id": "mid",
+   "src": "mid.png",
+   "depth": 0.55
+  },
+  {
+   "id": "islets",
+   "src": "islets.png",
+   "depth": 0.6,
+   "bob": true
+  },
+  {
+   "id": "flora",
+   "src": "flora.png",
+   "depth": 0.6,
+   "bob": false,
+   "sway": true,
+   "swayPx": 3
+  },
+  {
+   "id": "near",
+   "src": "near.png",
+   "depth": 0.9
+  }
+ ],
+ "note": "depth is the spec's parallax factor; sky is the opaque backdrop; cut-outs move as one unit (GrabCut from a painted or colour mask): islets, flora",
+ "css": {
+  "parallaxPx": 22,
+  "swayPeriodS": 2.5,
+  "bobPx": 3,
+  "bobPeriodS": 2.5,
+  "note": "still layers: translateX(depth * parallaxPx * sin); sway layers add swayPx at twice the rate; bob layers translateY"
+ }
+}

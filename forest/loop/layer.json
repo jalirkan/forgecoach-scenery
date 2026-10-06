@@ -1,0 +1,12 @@
+{
+ "id": "fireflies",
+ "kind": "video",
+ "src": "forest/s4-fireflies.webm",
+ "fallback": "forest/s4-fireflies.mp4",
+ "poster": "forest/s4-fireflies-poster.webp",
+ "blend": "screen",
+ "depth": 0.4,
+ "z": 40,
+ "fit": "cover",
+ "idle": false
+}
