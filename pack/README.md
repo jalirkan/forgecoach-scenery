@@ -10,7 +10,15 @@ the rest of this repository has the full-size frames and their provenance. Licen
 jalirkan").
 
 To use it, open ForgeCoach's `#ambience` page and load
-`https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pack-v1/pack/` as the pack URL (or add
-`?scenery=https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pack-v1/pack/` to any ForgeCoach URL), then press
+`https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pack-v2/pack/` as the pack URL (or add
+`?scenery=https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pack-v2/pack/` to any ForgeCoach URL), then press
 **Use on the board**; Settings → Board scenery holds the choice. To try changes locally, serve this folder with CORS
 (for example `npx http-server . --cors -p 8650 -c-1`) and load `http://127.0.0.1:8650/` instead.
+
+## v2 (2026-10-06)
+
+Adds **board accents** (spec 1.3) for every land type — pieces that grow from the scenery onto the
+player's area from stage 2 (vines, surf and crystal shards, cracked rock and embers, grass and
+petals, moss and reeds), at the bolder "B" scale — and **effects** (spec 1.2): a bespoke stage-up,
+landfall and creature-enter animation per land type, with the game's built-in presets in each
+land's colour for attacks and damage. 23 MB in all.
