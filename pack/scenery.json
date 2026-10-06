@@ -1,0 +1,433 @@
+{
+ "schema": 1,
+ "spec": "1.3",
+ "name": "ForgeCoach scenery, pack v1",
+ "author": "jalirkan",
+ "license": "CC BY 4.0",
+ "strip": {
+  "heightRatio": 0.46,
+  "minHeightPx": 64,
+  "maxHeightPx": 280,
+  "seamPx": 120,
+  "fadeRatio": 0.38,
+  "order": "arrival"
+ },
+ "stageThresholds": [
+  1,
+  2,
+  4,
+  6
+ ],
+ "biomes": {
+  "island": {
+   "label": "Moonlit cove",
+   "slot": {
+    "prefer": "left",
+    "weight": 1
+   },
+   "bloom": {
+    "kind": "fade",
+    "durationMs": 1400,
+    "staggerMs": 120
+   },
+   "idle": {
+    "kind": "drift",
+    "periodMs": 9000,
+    "amplitude": 0.3
+   },
+   "stages": [
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "island/s1-sky.webp",
+       "src2x": "island/s1-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "island/s2-sky.webp",
+       "src2x": "island/s2-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "island/s3-sky.webp",
+       "src2x": "island/s3-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "island/s4-sky.webp",
+       "src2x": "island/s4-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      },
+      {
+       "id": "motes",
+       "kind": "video",
+       "src": "island/s4-motes.webm",
+       "fallback": "island/s4-motes.mp4",
+       "poster": "island/s4-motes-poster.webp",
+       "blend": "screen",
+       "depth": 0.4,
+       "z": 10,
+       "idle": false
+      }
+     ]
+    }
+   ]
+  },
+  "forest": {
+   "label": "Living wood",
+   "slot": {
+    "prefer": "any",
+    "weight": 1
+   },
+   "bloom": {
+    "kind": "fade",
+    "durationMs": 1400,
+    "staggerMs": 120
+   },
+   "idle": {
+    "kind": "drift",
+    "periodMs": 9000,
+    "amplitude": 0.3
+   },
+   "stages": [
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "forest/s1-sky.webp",
+       "src2x": "forest/s1-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "forest/s2-sky.webp",
+       "src2x": "forest/s2-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "forest/s3-sky.webp",
+       "src2x": "forest/s3-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "forest/s4-sky.webp",
+       "src2x": "forest/s4-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      },
+      {
+       "id": "fireflies",
+       "kind": "video",
+       "src": "forest/s4-fireflies.webm",
+       "fallback": "forest/s4-fireflies.mp4",
+       "poster": "forest/s4-fireflies-poster.webp",
+       "blend": "screen",
+       "depth": 0.4,
+       "z": 10,
+       "idle": false
+      }
+     ]
+    }
+   ]
+  },
+  "mountain": {
+   "label": "Three peaks",
+   "slot": {
+    "prefer": "right",
+    "weight": 1
+   },
+   "bloom": {
+    "kind": "fade",
+    "durationMs": 1400,
+    "staggerMs": 120
+   },
+   "idle": {
+    "kind": "drift",
+    "periodMs": 9000,
+    "amplitude": 0.3
+   },
+   "stages": [
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "mountain/s1-sky.webp",
+       "src2x": "mountain/s1-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "mountain/s2-sky.webp",
+       "src2x": "mountain/s2-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "mountain/s3-sky.webp",
+       "src2x": "mountain/s3-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "mountain/s4-sky.webp",
+       "src2x": "mountain/s4-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      },
+      {
+       "id": "embers",
+       "kind": "video",
+       "src": "mountain/s4-embers.webm",
+       "fallback": "mountain/s4-embers.mp4",
+       "poster": "mountain/s4-embers-poster.webp",
+       "blend": "screen",
+       "depth": 0.4,
+       "z": 10,
+       "idle": false
+      }
+     ]
+    }
+   ]
+  },
+  "plains": {
+   "label": "Plain of light",
+   "slot": {
+    "prefer": "any",
+    "weight": 1
+   },
+   "bloom": {
+    "kind": "fade",
+    "durationMs": 1400,
+    "staggerMs": 120
+   },
+   "idle": {
+    "kind": "drift",
+    "periodMs": 9000,
+    "amplitude": 0.3
+   },
+   "stages": [
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "plains/s1-sky.webp",
+       "src2x": "plains/s1-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "plains/s2-sky.webp",
+       "src2x": "plains/s2-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "plains/s3-sky.webp",
+       "src2x": "plains/s3-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "plains/s4-sky.webp",
+       "src2x": "plains/s4-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      },
+      {
+       "id": "motes",
+       "kind": "video",
+       "src": "plains/s4-motes.webm",
+       "fallback": "plains/s4-motes.mp4",
+       "poster": "plains/s4-motes-poster.webp",
+       "blend": "screen",
+       "depth": 0.4,
+       "z": 10,
+       "idle": false
+      }
+     ]
+    }
+   ]
+  },
+  "swamp": {
+   "label": "Drowned fen",
+   "slot": {
+    "prefer": "any",
+    "weight": 1
+   },
+   "bloom": {
+    "kind": "fade",
+    "durationMs": 1400,
+    "staggerMs": 120
+   },
+   "idle": {
+    "kind": "drift",
+    "periodMs": 9000,
+    "amplitude": 0.3
+   },
+   "stages": [
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "swamp/s1-sky.webp",
+       "src2x": "swamp/s1-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "swamp/s2-sky.webp",
+       "src2x": "swamp/s2-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "swamp/s3-sky.webp",
+       "src2x": "swamp/s3-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      }
+     ]
+    },
+    {
+     "layers": [
+      {
+       "id": "sky",
+       "kind": "image",
+       "src": "swamp/s4-sky.webp",
+       "src2x": "swamp/s4-sky@2x.webp",
+       "depth": 0,
+       "z": 0,
+       "idle": false
+      },
+      {
+       "id": "wisps",
+       "kind": "video",
+       "src": "swamp/s4-wisps.webm",
+       "fallback": "swamp/s4-wisps.mp4",
+       "poster": "swamp/s4-wisps-poster.webp",
+       "blend": "screen",
+       "depth": 0.4,
+       "z": 10,
+       "idle": false
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
