@@ -62,3 +62,19 @@ which today's client ignores; the spec owner may adopt or rename them:
 | `subjectBand` | The vertical band (fractions from the top) where each picture's subject sits; the client keeps the card rows' scrim off it where it can. |
 | `video` | Stage 4 only: the loop, sized to the desktop half, screen-blended over it. |
 | `bytes` | All of that stage's half files, for the budget. |
+
+## v4 (2026-10-07): the front layer, written to spec 1.5
+
+- **Front layer** (spec 1.4 full-area accents): for stages 2-4 of every land type, one transparent
+  picture over the whole player area, id `front`, `fit: "cover"`, `minWidthPx: 300`, no motion
+  (`<biome>/front-sN.webp`, 2048x640, and `@2x` 4096x1280). Each is composed from photographic
+  and painted specimens (shells, sand, driftwood; feathers, dawn rays, a carved marble lip,
+  sunstones; obsidian, cooling lava rock, a scorched edge, ash; hanging moss, a swollen root,
+  bracket fungus, a half-sunk ribcage; mossy vines), each relit to its stage's backdrop, cut to
+  its own outline and rooted at the rim or lying on the mat, clear of the card rows.
+- **Forest backdrops with vines painted in** at stages 2-4 (`sN-sky-vined`, `sN-half-vined`,
+  `sN-phone-vined`, each with `@2x`), used by the manifest; the plain versions stay in the folder.
+- **Manifest:** spec "1.5". The `half` block from v3 now follows the spec's own fields
+  (`src`, `src2x`, `phone` with its own `subjectBand` [0.45, 0.56], `subjectBand`, `bytes`) and a
+  top-level `half` layout block. The 16:5 loop cuts from v3 (`s4-*-half.*`) stay in the folder but
+  are not referenced: spec 1.5 plays each stage's strip loop over the desktop half.
