@@ -1,7 +1,7 @@
 {
  "schema": 1,
- "spec": "1.3",
- "name": "ForgeCoach scenery, pack v2",
+ "spec": "1.4",
+ "name": "ForgeCoach scenery, pack v3",
  "author": "jalirkan",
  "license": "CC BY 4.0",
  "strip": {
@@ -48,7 +48,22 @@
        "idle": false
       }
      ],
-     "overlay": []
+     "overlay": [],
+     "half": {
+      "src": "island/s1-half.webp",
+      "src2x": "island/s1-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "island/s1-phone.webp",
+       "src2x": "island/s1-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 265046
+     }
     },
     {
      "layers": [
@@ -96,7 +111,22 @@
        "blend": "normal",
        "bytes": 151770
       }
-     ]
+     ],
+     "half": {
+      "src": "island/s2-half.webp",
+      "src2x": "island/s2-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "island/s2-phone.webp",
+       "src2x": "island/s2-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 415586
+     }
     },
     {
      "layers": [
@@ -145,7 +175,22 @@
        "bytes": 163732
       }
      ],
-     "overlayMode": "add"
+     "overlayMode": "add",
+     "half": {
+      "src": "island/s3-half.webp",
+      "src2x": "island/s3-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "island/s3-phone.webp",
+       "src2x": "island/s3-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 404338
+     }
     },
     {
      "layers": [
@@ -205,7 +250,28 @@
        "bytes": 156620
       }
      ],
-     "overlayMode": "add"
+     "overlayMode": "add",
+     "half": {
+      "src": "island/s4-half.webp",
+      "src2x": "island/s4-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "island/s4-phone.webp",
+       "src2x": "island/s4-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "video": {
+       "src": "island/s4-motes-half.webm",
+       "fallback": "island/s4-motes-half.mp4",
+       "poster": "island/s4-motes-half-poster.webp",
+       "blend": "screen"
+      },
+      "bytes": 1776559
+     }
     }
    ],
    "effects": {
@@ -300,7 +366,22 @@
        "idle": false
       }
      ],
-     "overlay": []
+     "overlay": [],
+     "half": {
+      "src": "forest/s1-half.webp",
+      "src2x": "forest/s1-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "forest/s1-phone.webp",
+       "src2x": "forest/s1-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 326558
+     }
     },
     {
      "layers": [
@@ -345,7 +426,22 @@
        "opacity": 0.95,
        "bytes": 79298
       }
-     ]
+     ],
+     "half": {
+      "src": "forest/s2-half.webp",
+      "src2x": "forest/s2-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "forest/s2-phone.webp",
+       "src2x": "forest/s2-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 566224
+     }
     },
     {
      "layers": [
@@ -411,7 +507,22 @@
        "bytes": 89920
       }
      ],
-     "overlayMode": "add"
+     "overlayMode": "add",
+     "half": {
+      "src": "forest/s3-half.webp",
+      "src2x": "forest/s3-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "forest/s3-phone.webp",
+       "src2x": "forest/s3-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 412408
+     }
     },
     {
      "layers": [
@@ -488,7 +599,28 @@
        "bytes": 95464
       }
      ],
-     "overlayMode": "add"
+     "overlayMode": "add",
+     "half": {
+      "src": "forest/s4-half.webp",
+      "src2x": "forest/s4-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "forest/s4-phone.webp",
+       "src2x": "forest/s4-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "video": {
+       "src": "forest/s4-fireflies-half.webm",
+       "fallback": "forest/s4-fireflies-half.mp4",
+       "poster": "forest/s4-fireflies-half-poster.webp",
+       "blend": "screen"
+      },
+      "bytes": 889136
+     }
     }
    ],
    "effects": {
@@ -583,7 +715,22 @@
        "idle": false
       }
      ],
-     "overlay": []
+     "overlay": [],
+     "half": {
+      "src": "mountain/s1-half.webp",
+      "src2x": "mountain/s1-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "mountain/s1-phone.webp",
+       "src2x": "mountain/s1-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 264030
+     }
     },
     {
      "layers": [
@@ -628,7 +775,22 @@
        "opacity": 0.95,
        "bytes": 47256
       }
-     ]
+     ],
+     "half": {
+      "src": "mountain/s2-half.webp",
+      "src2x": "mountain/s2-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "mountain/s2-phone.webp",
+       "src2x": "mountain/s2-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 369886
+     }
     },
     {
      "layers": [
@@ -674,7 +836,22 @@
        "bytes": 66172
       }
      ],
-     "overlayMode": "add"
+     "overlayMode": "add",
+     "half": {
+      "src": "mountain/s3-half.webp",
+      "src2x": "mountain/s3-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "mountain/s3-phone.webp",
+       "src2x": "mountain/s3-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 289624
+     }
     },
     {
      "layers": [
@@ -731,7 +908,28 @@
        "bytes": 92512
       }
      ],
-     "overlayMode": "add"
+     "overlayMode": "add",
+     "half": {
+      "src": "mountain/s4-half.webp",
+      "src2x": "mountain/s4-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "mountain/s4-phone.webp",
+       "src2x": "mountain/s4-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "video": {
+       "src": "mountain/s4-embers-half.webm",
+       "fallback": "mountain/s4-embers-half.mp4",
+       "poster": "mountain/s4-embers-half-poster.webp",
+       "blend": "screen"
+      },
+      "bytes": 999181
+     }
     }
    ],
    "effects": {
@@ -826,7 +1024,22 @@
        "idle": false
       }
      ],
-     "overlay": []
+     "overlay": [],
+     "half": {
+      "src": "plains/s1-half.webp",
+      "src2x": "plains/s1-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "plains/s1-phone.webp",
+       "src2x": "plains/s1-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 589794
+     }
     },
     {
      "layers": [
@@ -871,7 +1084,22 @@
        "opacity": 0.95,
        "bytes": 258006
       }
-     ]
+     ],
+     "half": {
+      "src": "plains/s2-half.webp",
+      "src2x": "plains/s2-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "plains/s2-phone.webp",
+       "src2x": "plains/s2-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 780464
+     }
     },
     {
      "layers": [
@@ -917,7 +1145,22 @@
        "bytes": 248478
       }
      ],
-     "overlayMode": "add"
+     "overlayMode": "add",
+     "half": {
+      "src": "plains/s3-half.webp",
+      "src2x": "plains/s3-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "plains/s3-phone.webp",
+       "src2x": "plains/s3-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 351604
+     }
     },
     {
      "layers": [
@@ -974,7 +1217,28 @@
        "bytes": 240288
       }
      ],
-     "overlayMode": "add"
+     "overlayMode": "add",
+     "half": {
+      "src": "plains/s4-half.webp",
+      "src2x": "plains/s4-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "plains/s4-phone.webp",
+       "src2x": "plains/s4-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "video": {
+       "src": "plains/s4-motes-half.webm",
+       "fallback": "plains/s4-motes-half.mp4",
+       "poster": "plains/s4-motes-half-poster.webp",
+       "blend": "screen"
+      },
+      "bytes": 1148423
+     }
     }
    ],
    "effects": {
@@ -1069,7 +1333,22 @@
        "idle": false
       }
      ],
-     "overlay": []
+     "overlay": [],
+     "half": {
+      "src": "swamp/s1-half.webp",
+      "src2x": "swamp/s1-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "swamp/s1-phone.webp",
+       "src2x": "swamp/s1-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 260818
+     }
     },
     {
      "layers": [
@@ -1114,7 +1393,22 @@
        "opacity": 0.95,
        "bytes": 122978
       }
-     ]
+     ],
+     "half": {
+      "src": "swamp/s2-half.webp",
+      "src2x": "swamp/s2-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "swamp/s2-phone.webp",
+       "src2x": "swamp/s2-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 332350
+     }
     },
     {
      "layers": [
@@ -1160,7 +1454,22 @@
        "bytes": 131522
       }
      ],
-     "overlayMode": "add"
+     "overlayMode": "add",
+     "half": {
+      "src": "swamp/s3-half.webp",
+      "src2x": "swamp/s3-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "swamp/s3-phone.webp",
+       "src2x": "swamp/s3-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "bytes": 366456
+     }
     },
     {
      "layers": [
@@ -1217,7 +1526,28 @@
        "bytes": 134606
       }
      ],
-     "overlayMode": "add"
+     "overlayMode": "add",
+     "half": {
+      "src": "swamp/s4-half.webp",
+      "src2x": "swamp/s4-half@2x.webp",
+      "aspect": 3.2,
+      "phone": {
+       "src": "swamp/s4-phone.webp",
+       "src2x": "swamp/s4-phone@2x.webp",
+       "aspect": 0.8
+      },
+      "subjectBand": [
+       0.35,
+       0.6
+      ],
+      "video": {
+       "src": "swamp/s4-wisps-half.webm",
+       "fallback": "swamp/s4-wisps-half.mp4",
+       "poster": "swamp/s4-wisps-half-poster.webp",
+       "blend": "screen"
+      },
+      "bytes": 829602
+     }
     }
    ],
    "effects": {
