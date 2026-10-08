@@ -78,3 +78,9 @@ which today's client ignores; the spec owner may adopt or rename them:
   (`src`, `src2x`, `phone` with its own `subjectBand` [0.45, 0.56], `subjectBand`, `bytes`) and a
   top-level `half` layout block. The 16:5 loop cuts from v3 (`s4-*-half.*`) stay in the folder but
   are not referenced: spec 1.5 plays each stage's strip loop over the desktop half.
+
+## v5 (2026-10-07): the front layer alone
+
+The v2 corner and edge accents (`accents/<biome>/stageN/ov-*.webp`) are no longer referenced: each
+stage 2-4 overlay list is the `front` area piece only (stage 1 has none). The files stay in the
+folder in case one is wanted back. Everything else is as in v4.
