@@ -37,3 +37,10 @@ ControlNet under Apache-2.0).
 The images, layers, loops and previews in this repository are released under
 [Creative Commons Attribution 4.0 International](LICENSE) (CC BY 4.0). Attribute as
 "ForgeCoach scenery by jalirkan".
+
+## Loading the pack from a CDN: use the `pack-only` branch
+
+jsDelivr refuses every file of a git ref larger than 50 MB, and this branch (the masters, layers, loops and
+previews) is about 300 MB, so a `pack-vN` tag here cannot be served in full. The orphan branch `pack-only` holds
+`pack/`'s referenced files alone (~31 MB), byte-identical to the same tag here. Load
+`https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pack-v5.1/pack/` (pack-v5.1 = pack-v5's pack).
