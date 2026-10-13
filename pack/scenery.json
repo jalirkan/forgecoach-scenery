@@ -1442,7 +1442,7 @@
        "src2x": "forest/front-s3@2x.webp",
        "fit": "cover",
        "minWidthPx": 300,
-       "bytes": 241856
+       "bytes": 242018
       }
      ],
      "half": {
@@ -1460,7 +1460,7 @@
        0.35,
        0.6
       ],
-      "bytes": 341460
+      "bytes": 437274
      }
     },
     {
@@ -1524,7 +1524,7 @@
        "src2x": "forest/front-s5@2x.webp",
        "fit": "cover",
        "minWidthPx": 300,
-       "bytes": 276166
+       "bytes": 275982
       }
      ],
      "half": {
@@ -1542,7 +1542,7 @@
        0.35,
        0.6
       ],
-      "bytes": 291628
+      "bytes": 339594
      }
     },
     {
