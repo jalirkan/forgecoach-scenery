@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "spec": "1.7",
- "name": "ForgeCoach scenery, pack v7 (six-picture ladder + transition frames)",
+ "name": "ForgeCoach scenery, pack v7.1 (six-picture ladder + transition frames, repainted, 200 ms holds)",
  "author": "jalirkan",
  "license": "CC BY 4.0",
  "strip": {
@@ -349,90 +349,78 @@
     }
    },
    "transitions": {
-    "holdMs": 120,
+    "holdMs": 200,
     "fadeMs": 180,
     "steps": [
      {
       "from": 1,
       "frames": [
        {
-        "src": "island/s1to2-f1-half.webp",
-        "phone": "island/s1to2-f1-phone.webp"
+        "src": "island/s1to2-f1-half-v2.webp",
+        "phone": "island/s1to2-f1-phone-v2.webp"
        },
        {
-        "src": "island/s1to2-f2-half.webp",
-        "phone": "island/s1to2-f2-phone.webp"
-       },
-       {
-        "src": "island/s1to2-f3-half.webp",
-        "phone": "island/s1to2-f3-phone.webp"
+        "src": "island/s1to2-f2-half-v2.webp",
+        "phone": "island/s1to2-f2-phone-v2.webp"
        }
       ],
-      "bytes": 226210
+      "bytes": 147774
      },
      {
       "from": 2,
       "frames": [
        {
-        "src": "island/s2to3-f1-half.webp",
-        "phone": "island/s2to3-f1-phone.webp"
+        "src": "island/s2to3-f1-half-v2.webp",
+        "phone": "island/s2to3-f1-phone-v2.webp"
        },
        {
-        "src": "island/s2to3-f2-half.webp",
-        "phone": "island/s2to3-f2-phone.webp"
-       },
-       {
-        "src": "island/s2to3-f3-half.webp",
-        "phone": "island/s2to3-f3-phone.webp"
+        "src": "island/s2to3-f2-half-v2.webp",
+        "phone": "island/s2to3-f2-phone-v2.webp"
        }
       ],
-      "bytes": 237646
+      "bytes": 155782
      },
      {
       "from": 3,
       "frames": [
        {
-        "src": "island/s3to4-f1-half.webp",
-        "phone": "island/s3to4-f1-phone.webp"
+        "src": "island/s3to4-f1-half-v2.webp",
+        "phone": "island/s3to4-f1-phone-v2.webp"
        },
        {
-        "src": "island/s3to4-f2-half.webp",
-        "phone": "island/s3to4-f2-phone.webp"
-       },
-       {
-        "src": "island/s3to4-f3-half.webp",
-        "phone": "island/s3to4-f3-phone.webp"
+        "src": "island/s3to4-f2-half-v2.webp",
+        "phone": "island/s3to4-f2-phone-v2.webp"
        }
       ],
-      "bytes": 249224
+      "bytes": 167602
      },
      {
       "from": 4,
       "frames": [
        {
-        "src": "island/s4to5-f1-half.webp",
-        "phone": "island/s4to5-f1-phone.webp"
+        "src": "island/s4to5-f1-half-v2.webp",
+        "phone": "island/s4to5-f1-phone-v2.webp"
        },
        {
-        "src": "island/s4to5-f2-half.webp",
-        "phone": "island/s4to5-f2-phone.webp"
+        "src": "island/s4to5-f2-half-v2.webp",
+        "phone": "island/s4to5-f2-phone-v2.webp"
        }
       ],
-      "bytes": 182446
+      "bytes": 184530
      },
      {
       "from": 5,
       "frames": [
        {
-        "src": "island/s5to6-f1-half.webp",
-        "phone": "island/s5to6-f1-phone.webp"
+        "src": "island/s5to6-f1-half-v2.webp",
+        "phone": "island/s5to6-f1-phone-v2.webp"
        },
        {
-        "src": "island/s5to6-f2-half.webp",
-        "phone": "island/s5to6-f2-phone.webp"
+        "src": "island/s5to6-f2-half-v2.webp",
+        "phone": "island/s5to6-f2-phone-v2.webp"
        }
       ],
-      "bytes": 261412
+      "bytes": 263298
      }
     ]
    }
@@ -765,82 +753,78 @@
     }
    },
    "transitions": {
-    "holdMs": 120,
+    "holdMs": 200,
     "fadeMs": 180,
     "steps": [
      {
       "from": 1,
       "frames": [
        {
-        "src": "mountain/s1to2-f1-half.webp",
-        "phone": "mountain/s1to2-f1-phone.webp"
+        "src": "mountain/s1to2-f1-half-v2.webp",
+        "phone": "mountain/s1to2-f1-phone-v2.webp"
        },
        {
-        "src": "mountain/s1to2-f2-half.webp",
-        "phone": "mountain/s1to2-f2-phone.webp"
+        "src": "mountain/s1to2-f2-half-v2.webp",
+        "phone": "mountain/s1to2-f2-phone-v2.webp"
        }
       ],
-      "bytes": 154008
+      "bytes": 155172
      },
      {
       "from": 2,
       "frames": [
        {
-        "src": "mountain/s2to3-f1-half.webp",
-        "phone": "mountain/s2to3-f1-phone.webp"
+        "src": "mountain/s2to3-f1-half-v2.webp",
+        "phone": "mountain/s2to3-f1-phone-v2.webp"
        },
        {
-        "src": "mountain/s2to3-f2-half.webp",
-        "phone": "mountain/s2to3-f2-phone.webp"
-       },
-       {
-        "src": "mountain/s2to3-f3-half.webp",
-        "phone": "mountain/s2to3-f3-phone.webp"
+        "src": "mountain/s2to3-f2-half-v2.webp",
+        "phone": "mountain/s2to3-f2-phone-v2.webp"
        }
       ],
-      "bytes": 233034
+      "bytes": 160160
      },
      {
       "from": 3,
       "frames": [
        {
-        "src": "mountain/s3to4-f1-half.webp",
-        "phone": "mountain/s3to4-f1-phone.webp"
+        "src": "mountain/s3to4-f1-half-v2.webp",
+        "phone": "mountain/s3to4-f1-phone-v2.webp"
        },
        {
-        "src": "mountain/s3to4-f2-half.webp",
-        "phone": "mountain/s3to4-f2-phone.webp"
+        "src": "mountain/s3to4-f2-half-v2.webp",
+        "phone": "mountain/s3to4-f2-phone-v2.webp"
        }
       ],
-      "bytes": 119218
+      "bytes": 128072
      },
      {
       "from": 4,
       "frames": [
        {
-        "src": "mountain/s4to5-f1-half.webp",
-        "phone": "mountain/s4to5-f1-phone.webp"
+        "src": "mountain/s4to5-f1-half-v2.webp",
+        "phone": "mountain/s4to5-f1-phone-v2.webp"
        },
        {
-        "src": "mountain/s4to5-f2-half.webp",
-        "phone": "mountain/s4to5-f2-phone.webp"
+        "src": "mountain/s4to5-f2-half-v2.webp",
+        "phone": "mountain/s4to5-f2-phone-v2.webp"
        }
       ],
-      "bytes": 117602
+      "bytes": 127684
      },
      {
       "from": 5,
       "frames": [
        {
-        "src": "mountain/s5to6-f1-half.webp",
-        "phone": "mountain/s5to6-f1-phone.webp"
+        "src": "mountain/s5to6-f1-half-v2.webp",
+        "phone": "mountain/s5to6-f1-phone-v2.webp"
        },
        {
-        "src": "mountain/s5to6-f2-half.webp",
-        "phone": "mountain/s5to6-f2-phone.webp"
+        "src": "mountain/s5to6-f2-half-v2.webp",
+        "phone": "mountain/s5to6-f2-phone-v2.webp"
        }
       ],
-      "bytes": 130742
+      "bytes": 136580
      }
     ]
    }
@@ -1173,78 +1157,78 @@
     }
    },
    "transitions": {
-    "holdMs": 120,
+    "holdMs": 200,
     "fadeMs": 180,
     "steps": [
      {
       "from": 1,
       "frames": [
        {
-        "src": "swamp/s1to2-f1-half.webp",
-        "phone": "swamp/s1to2-f1-phone.webp"
+        "src": "swamp/s1to2-f1-half-v2.webp",
+        "phone": "swamp/s1to2-f1-phone-v2.webp"
        },
        {
-        "src": "swamp/s1to2-f2-half.webp",
-        "phone": "swamp/s1to2-f2-phone.webp"
+        "src": "swamp/s1to2-f2-half-v2.webp",
+        "phone": "swamp/s1to2-f2-phone-v2.webp"
        }
       ],
-      "bytes": 146884
+      "bytes": 144738
      },
      {
       "from": 2,
       "frames": [
        {
-        "src": "swamp/s2to3-f1-half.webp",
-        "phone": "swamp/s2to3-f1-phone.webp"
+        "src": "swamp/s2to3-f1-half-v2.webp",
+        "phone": "swamp/s2to3-f1-phone-v2.webp"
        },
        {
-        "src": "swamp/s2to3-f2-half.webp",
-        "phone": "swamp/s2to3-f2-phone.webp"
+        "src": "swamp/s2to3-f2-half-v2.webp",
+        "phone": "swamp/s2to3-f2-phone-v2.webp"
        }
       ],
-      "bytes": 134632
+      "bytes": 130922
      },
      {
       "from": 3,
       "frames": [
        {
-        "src": "swamp/s3to4-f1-half.webp",
-        "phone": "swamp/s3to4-f1-phone.webp"
+        "src": "swamp/s3to4-f1-half-v2.webp",
+        "phone": "swamp/s3to4-f1-phone-v2.webp"
        },
        {
-        "src": "swamp/s3to4-f2-half.webp",
-        "phone": "swamp/s3to4-f2-phone.webp"
+        "src": "swamp/s3to4-f2-half-v2.webp",
+        "phone": "swamp/s3to4-f2-phone-v2.webp"
        }
       ],
-      "bytes": 140860
+      "bytes": 147046
      },
      {
       "from": 4,
       "frames": [
        {
-        "src": "swamp/s4to5-f1-half.webp",
-        "phone": "swamp/s4to5-f1-phone.webp"
+        "src": "swamp/s4to5-f1-half-v2.webp",
+        "phone": "swamp/s4to5-f1-phone-v2.webp"
        },
        {
-        "src": "swamp/s4to5-f2-half.webp",
-        "phone": "swamp/s4to5-f2-phone.webp"
+        "src": "swamp/s4to5-f2-half-v2.webp",
+        "phone": "swamp/s4to5-f2-phone-v2.webp"
        }
       ],
-      "bytes": 142194
+      "bytes": 149750
      },
      {
       "from": 5,
       "frames": [
        {
-        "src": "swamp/s5to6-f1-half.webp",
-        "phone": "swamp/s5to6-f1-phone.webp"
+        "src": "swamp/s5to6-f1-half-v2.webp",
+        "phone": "swamp/s5to6-f1-phone-v2.webp"
        },
        {
-        "src": "swamp/s5to6-f2-half.webp",
-        "phone": "swamp/s5to6-f2-phone.webp"
+        "src": "swamp/s5to6-f2-half-v2.webp",
+        "phone": "swamp/s5to6-f2-phone-v2.webp"
        }
       ],
-      "bytes": 141826
+      "bytes": 149150
      }
     ]
    }
@@ -1577,90 +1561,78 @@
     }
    },
    "transitions": {
-    "holdMs": 120,
+    "holdMs": 200,
     "fadeMs": 180,
     "steps": [
      {
       "from": 1,
       "frames": [
        {
-        "src": "plains/s1to2-f1-half.webp",
-        "phone": "plains/s1to2-f1-phone.webp"
+        "src": "plains/s1to2-f1-half-v2.webp",
+        "phone": "plains/s1to2-f1-phone-v2.webp"
        },
        {
-        "src": "plains/s1to2-f2-half.webp",
-        "phone": "plains/s1to2-f2-phone.webp"
-       },
-       {
-        "src": "plains/s1to2-f3-half.webp",
-        "phone": "plains/s1to2-f3-phone.webp"
+        "src": "plains/s1to2-f2-half-v2.webp",
+        "phone": "plains/s1to2-f2-phone-v2.webp"
        }
       ],
-      "bytes": 349632
+      "bytes": 219552
      },
      {
       "from": 2,
       "frames": [
        {
-        "src": "plains/s2to3-f1-half.webp",
-        "phone": "plains/s2to3-f1-phone.webp"
+        "src": "plains/s2to3-f1-half-v2.webp",
+        "phone": "plains/s2to3-f1-phone-v2.webp"
        },
        {
-        "src": "plains/s2to3-f2-half.webp",
-        "phone": "plains/s2to3-f2-phone.webp"
+        "src": "plains/s2to3-f2-half-v2.webp",
+        "phone": "plains/s2to3-f2-phone-v2.webp"
        }
       ],
-      "bytes": 211046
+      "bytes": 210582
      },
      {
       "from": 3,
       "frames": [
        {
-        "src": "plains/s3to4-f1-half.webp",
-        "phone": "plains/s3to4-f1-phone.webp"
+        "src": "plains/s3to4-f1-half-v2.webp",
+        "phone": "plains/s3to4-f1-phone-v2.webp"
        },
        {
-        "src": "plains/s3to4-f2-half.webp",
-        "phone": "plains/s3to4-f2-phone.webp"
+        "src": "plains/s3to4-f2-half-v2.webp",
+        "phone": "plains/s3to4-f2-phone-v2.webp"
        }
       ],
-      "bytes": 123384
+      "bytes": 133668
      },
      {
       "from": 4,
       "frames": [
        {
-        "src": "plains/s4to5-f1-half.webp",
-        "phone": "plains/s4to5-f1-phone.webp"
+        "src": "plains/s4to5-f1-half-v2.webp",
+        "phone": "plains/s4to5-f1-phone-v2.webp"
        },
        {
-        "src": "plains/s4to5-f2-half.webp",
-        "phone": "plains/s4to5-f2-phone.webp"
-       },
-       {
-        "src": "plains/s4to5-f3-half.webp",
-        "phone": "plains/s4to5-f3-phone.webp"
+        "src": "plains/s4to5-f2-half-v2.webp",
+        "phone": "plains/s4to5-f2-phone-v2.webp"
        }
       ],
-      "bytes": 168402
+      "bytes": 116752
      },
      {
       "from": 5,
       "frames": [
        {
-        "src": "plains/s5to6-f1-half.webp",
-        "phone": "plains/s5to6-f1-phone.webp"
+        "src": "plains/s5to6-f1-half-v2.webp",
+        "phone": "plains/s5to6-f1-phone-v2.webp"
        },
        {
-        "src": "plains/s5to6-f2-half.webp",
-        "phone": "plains/s5to6-f2-phone.webp"
-       },
-       {
-        "src": "plains/s5to6-f3-half.webp",
-        "phone": "plains/s5to6-f3-phone.webp"
+        "src": "plains/s5to6-f2-half-v2.webp",
+        "phone": "plains/s5to6-f2-phone-v2.webp"
        }
       ],
-      "bytes": 187496
+      "bytes": 129816
      }
     ]
    }
@@ -1993,78 +1965,78 @@
     }
    },
    "transitions": {
-    "holdMs": 120,
+    "holdMs": 200,
     "fadeMs": 180,
     "steps": [
      {
       "from": 1,
       "frames": [
        {
-        "src": "forest/s1to2-f1-half.webp",
-        "phone": "forest/s1to2-f1-phone.webp"
+        "src": "forest/s1to2-f1-half-v2.webp",
+        "phone": "forest/s1to2-f1-phone-v2.webp"
        },
        {
-        "src": "forest/s1to2-f2-half.webp",
-        "phone": "forest/s1to2-f2-phone.webp"
+        "src": "forest/s1to2-f2-half-v2.webp",
+        "phone": "forest/s1to2-f2-phone-v2.webp"
        }
       ],
-      "bytes": 212448
+      "bytes": 206328
      },
      {
       "from": 2,
       "frames": [
        {
-        "src": "forest/s2to3-f1-half.webp",
-        "phone": "forest/s2to3-f1-phone.webp"
+        "src": "forest/s2to3-f1-half-v2.webp",
+        "phone": "forest/s2to3-f1-phone-v2.webp"
        },
        {
-        "src": "forest/s2to3-f2-half.webp",
-        "phone": "forest/s2to3-f2-phone.webp"
+        "src": "forest/s2to3-f2-half-v2.webp",
+        "phone": "forest/s2to3-f2-phone-v2.webp"
        }
       ],
-      "bytes": 225260
+      "bytes": 225620
      },
      {
       "from": 3,
       "frames": [
        {
-        "src": "forest/s3to4-f1-half.webp",
-        "phone": "forest/s3to4-f1-phone.webp"
+        "src": "forest/s3to4-f1-half-v2.webp",
+        "phone": "forest/s3to4-f1-phone-v2.webp"
        },
        {
-        "src": "forest/s3to4-f2-half.webp",
-        "phone": "forest/s3to4-f2-phone.webp"
+        "src": "forest/s3to4-f2-half-v2.webp",
+        "phone": "forest/s3to4-f2-phone-v2.webp"
        }
       ],
-      "bytes": 181412
+      "bytes": 183708
      },
      {
       "from": 4,
       "frames": [
        {
-        "src": "forest/s4to5-f1-half.webp",
-        "phone": "forest/s4to5-f1-phone.webp"
+        "src": "forest/s4to5-f1-half-v2.webp",
+        "phone": "forest/s4to5-f1-phone-v2.webp"
        },
        {
-        "src": "forest/s4to5-f2-half.webp",
-        "phone": "forest/s4to5-f2-phone.webp"
+        "src": "forest/s4to5-f2-half-v2.webp",
+        "phone": "forest/s4to5-f2-phone-v2.webp"
        }
       ],
-      "bytes": 168576
+      "bytes": 171862
      },
      {
       "from": 5,
       "frames": [
        {
-        "src": "forest/s5to6-f1-half.webp",
-        "phone": "forest/s5to6-f1-phone.webp"
+        "src": "forest/s5to6-f1-half-v2.webp",
+        "phone": "forest/s5to6-f1-phone-v2.webp"
        },
        {
-        "src": "forest/s5to6-f2-half.webp",
-        "phone": "forest/s5to6-f2-phone.webp"
+        "src": "forest/s5to6-f2-half-v2.webp",
+        "phone": "forest/s5to6-f2-phone-v2.webp"
        }
       ],
-      "bytes": 171840
+      "bytes": 192478
      }
     ]
    }

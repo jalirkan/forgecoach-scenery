@@ -40,3 +40,19 @@ stage pictures, one seed per biome for every frame and both shapes, the two stag
 the frame's place on the ladder, then each frame's colour statistics matched to its blend so none flashes. Made on the
 owner's GTX 1080 on 2026-10-14 by `~/scenery-packs/pack-v7-transitions/tools/tween_chain.sh` (see its `SUMMARY.md` and
 the contact sheets there). No web images, card art or private files were used as inputs. Licence as before.
+
+## pack v7.1 (2026-10-14): the transition frames repainted, held 200 ms
+
+The owner watched pack v7 at real timing: technically clean, nothing pops, but at 120 ms holds and with frames that
+stay close to the blend, each step read as a quick dissolve rather than the stepped growth of limited animation. So:
+two frames for every step (t = 1/3 and 2/3; the 3-frame steps dropped), `holdMs` 200 (`fadeMs` 180 as before), and
+every in-between repainted at img2img strength 0.45 (was 0.30), the same per-biome seeds, prompt interpolation,
+colour matching to the blend, sizes and quality. 0.45 was picked over 0.55 on island s1→s2 and forest s3→s4: at 0.45
+each frame is its own picture (no double exposure) and arriving things are drawn part-grown; at 0.55 the first frame
+erased what was arriving (island's reeds) and the swamp grew mountain spires that are in neither stage.
+Two steps got their own treatment: swamp s2→s3 (t = 0.4 / 0.7, with the blend biased toward stage 3 where its dark
+roots arrive -- 0.75 / 0.95 -- and on the phone a locally centred mask at strength 0.40) so the roots arrive in two
+steps instead of one cut; forest s5→s6 (t = 0.5 / 0.8), whose stage 6 is a different composition (the canopy from
+above at night): its frames now sink the trees into the canopy in two steps, a replacement rather than growth, which
+only a re-drawn stage 6 would change. Files: `BIOME/sNtoM-fK-{half,phone}-v2.webp` (new names, so no cache mixes v7
+and v7.1); pack v7's frames are not in this tag (they stay at `pack-v7`). Stage pictures unchanged.
