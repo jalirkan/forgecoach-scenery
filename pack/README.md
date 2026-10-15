@@ -56,3 +56,15 @@ steps instead of one cut; forest s5→s6 (t = 0.5 / 0.8), whose stage 6 is a dif
 above at night): its frames now sink the trees into the canopy in two steps, a replacement rather than growth, which
 only a re-drawn stage 6 would change. Files: `BIOME/sNtoM-fK-{half,phone}-v2.webp` (new names, so no cache mixes v7
 and v7.1); pack v7's frames are not in this tag (they stay at `pack-v7`). Stage pictures unchanged.
+
+## pack v7.2 (2026-10-15): three frames on the seven big steps, every cut even
+
+Measured cut by cut (mean |grey difference| at 512x160 between consecutive pictures, stage → frames → next stage), v7.1's
+cuts were even except swamp s2→s3 (30.8 / 9.2 / 5.6: the roots arrived as one pop), and the seven steps that change the most
+(island s1→s2, mountain s2→s3, swamp s2→s3, swamp s3→s4, plains s4→s5, plains s5→s6, forest s2→s3: 30–42 over the whole
+step) cut 12–15 at a time where the rest cut 7–10. Those seven now have three frames (t = ¼, ½, ¾), repainted as v7.1's
+(strength 0.45, the same seeds, colour matching, sizes, quality, 200 ms holds, 180 ms fade); the other eighteen steps keep
+v7.1's two frames byte for byte. Swamp s2→s3's root bias is now a mask centred on the frame's own darkening (in v7.1 the
+desktop mask covered 79% of the picture, so it pushed the whole frame toward stage 3) and spread over the three frames (desktop
+t 0.2 / 0.45 / 0.72 with the roots at 0.35 / 0.7 / 0.93; phone t ¼ / ½ / ¾, roots 0.45 / 0.75 / 0.95): its cuts are now
+11.7 / 11.4 / 11.4 / 10.6. Files: `BIOME/sNtoM-fK-{half,phone}-v3.webp`; 57 frames, 4.7 MB. v7 and v7.1 stay at their tags.
