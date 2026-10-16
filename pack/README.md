@@ -68,3 +68,18 @@ v7.1's two frames byte for byte. Swamp s2→s3's root bias is now a mask centred
 desktop mask covered 79% of the picture, so it pushed the whole frame toward stage 3) and spread over the three frames (desktop
 t 0.2 / 0.45 / 0.72 with the roots at 0.35 / 0.7 / 0.93; phone t ¼ / ½ / ¾, roots 0.45 / 0.75 / 0.95): its cuts are now
 11.7 / 11.4 / 11.4 / 10.6. Files: `BIOME/sNtoM-fK-{half,phone}-v3.webp`; 57 frames, 4.7 MB. v7 and v7.1 stay at their tags.
+
+## pack v7.3 (2026-10-15): forest stage 6 redrawn over stage 5's view, so the last step grows
+
+Forest s6 (v5.1's s4, kept since) was a different composition from s5 -- the canopy seen from above at night -- so the s5→s6
+frames could only replace one picture with the other (largest cut 12.4, max/mean 1.35). The new s6 is s5's own picture at night:
+img2img over s5's master (and phone picture) after a coded night guide (s5's sky regraded to indigo with stars, its sunlit mist
+dimmed to moonlit teal, lantern clusters on s5's own crowns, fireflies, the old s6's lit top garland), one new prompt, strength
+0.45, then the ladder's tiled detail pass with the pick's own lights screened back, and the usual cuts; `front-s6` is the same
+layout relit to the new picture, the sky layer keeps s5's band, and the fireflies video is unchanged. Forest s5→s6 now has three
+frames (t = ¼, ½, ¾) made as v7.2's from s5 and the new s6: cuts 7.5 / 5.4 / 5.7 / 7.7 desktop (max/mean 1.17), 6.9 / 4.5 / 4.8 /
+7.0 phone. Only `forest/s6-{sky,half,phone}*`, `forest/front-s6*` and the frames changed; every other stage file is pack v6.1's
+byte for byte, and the other 55 steps' frames are v7.2's byte for byte under `-v4` names (`BIOME/sNtoM-fK-{half,phone}-v4.webp`).
+58 frames, 4.7 MB; pack/ is 45,676,265 bytes. The old s6 stays at tag `pack-v7.2`. Made on the owner's GTX 1080 on 2026-10-15
+(`~/scenery-packs/pack-v7-transitions/tools/s6redraw.py`, `SUMMARY-v4.md`). No web images, card art or private files were used as
+inputs. Licence as before.
