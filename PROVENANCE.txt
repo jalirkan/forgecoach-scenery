@@ -1,0 +1,19 @@
+Pair bands, draft pairs-v0 — provenance
+Made 2026-10-16 on Justin's PC (concept work: ~/scenery-packs/pair-scenery-concepts, SUMMARY.md there).
+
+INPUTS
+- The only image inputs are the live pack's own stage-3 half pictures (pack/<biome>/s3-half.webp, branch
+  pack-v7-work) and guides painted in code (tools/pairs.py in the concept folder). No card image, no web image,
+  nothing of Wizards' art as an input or a reference. Each place is written from its dual land's name in our own words.
+
+MODELS AND PIPELINE
+- DreamShaper XL 1.0 fp16 with madebyollin/sdxl-vae-fp16-fix, DPM++ 2M Karras, 34 steps, cfg 7. No download.
+- Composite A | M | B of the two neighbours' stage-3 pictures (M a warped, cross-faded mirror of both), then
+  "differential" img2img over 3072 x 640 (strength 0.18 at the sides ramping to 0.66 in the middle), cropped to the
+  middle 2048 x 640. Two seeds per pair (6100 + 10 x pair index, +1), the better kept; Badlands, Taiga and Tropical
+  Island redone (SUMMARY.md, "Redone, and why").
+
+THIS TAG
+- pairs/<a>-<b>/s2-half.webp: the pick as is (2048 x 640), WebP quality 86, method 6.
+- pairs/<a>-<b>/s2-phone.webp: the 512 x 640 slice about the pick's centre, Lanczos to 1024 x 1280, WebP q86.
+- Made by ~/scenery-packs/pairs-v0-work/make.py.
