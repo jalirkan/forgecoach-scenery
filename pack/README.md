@@ -115,6 +115,6 @@ composited as ForgeCoach's half board does (equal shares, the 10% overlap, its g
 a 1280×1280 phone half; the object's shape painted in across the seam on the ground, at 60–80%; img2img at strength 0.68–0.76
 (DreamShaper XL 1.0, the sdxl-vae-fp16-fix VAE, DPM++ 2M Karras, 34 steps, cfg 7) over a 1536×768 / 1024×1024 crop centred on the
 seam, two seeds, the better picked by eye; then kept only inside the shape's dilated, blurred mask and faded toward the piece's
-sides and top (the soft alpha falloff), WebP quality 86 with lossless alpha. Five pieces were redrawn after review (see the
+sides and top (the soft alpha falloff), WebP quality 86 with lossless alpha. Seven pieces of four pairs were redrawn after review (see the
 summary). Made on the owner's GTX 1080 on 2026-10-16. No web images, card art or private files were used as inputs. Licence as
 before.
