@@ -3,13 +3,17 @@
 # player's first game after a new tag does not hit cold first-fetches (measured
 # 2026-10-15 on pack-v7.2: up to 67 s per file against ForgeCoach's 15 s preload
 # timeout, which made the board fall back to the built-in scenery for two biomes).
-# Usage: tools/warm-cdn.sh <tag> [parallel]      e.g. tools/warm-cdn.sh pack-v7.2 6
+# Usage: tools/warm-cdn.sh <tag> [parallel] [manifest]
+#   manifest: the manifest's path inside the tag (default pack/scenery.json); every file it names is
+#   fetched relative to the manifest's folder. The pair bands (scenery spec 1.9) keep theirs at the root:
+#   e.g. tools/warm-cdn.sh pack-v7.2 6        tools/warm-cdn.sh pairs-v0 6 pairs.json
 set -euo pipefail
-tag=${1:?tag}; par=${2:-6}
-base="https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@${tag}/pack/"
+tag=${1:?tag}; par=${2:-6}; manifest=${3:-pack/scenery.json}
+dir=$(dirname "$manifest"); [ "$dir" = . ] && dir="" || dir="$dir/"
+base="https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@${tag}/${dir}"
 tmp=$(mktemp -d); trap 'rm -rf "$tmp"' EXIT
-curl -fsS --retry 3 "${base}scenery.json" -o "$tmp/scenery.json"
-python3 - "$tmp/scenery.json" > "$tmp/urls" <<'PY'
+curl -fsS --retry 3 "${base}$(basename "$manifest")" -o "$tmp/manifest.json"
+python3 - "$tmp/manifest.json" > "$tmp/urls" <<'PY'
 import json,sys
 s=json.load(open(sys.argv[1])); out=set()
 def walk(o):
