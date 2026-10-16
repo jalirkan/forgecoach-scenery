@@ -83,3 +83,38 @@ byte for byte, and the other 55 steps' frames are v7.2's byte for byte under `-v
 58 frames, 4.7 MB; pack/ is 45,676,265 bytes. The old s6 stays at tag `pack-v7.2`. Made on the owner's GTX 1080 on 2026-10-15
 (`~/scenery-packs/pack-v7-transitions/tools/s6redraw.py`, `SUMMARY-v4.md`). No web images, card art or private files were used as
 inputs. Licence as before.
+
+## pack v8 (2026-10-16): bridges across the seam (spec 1.8)
+
+When one side of the board has two colours, the half board shows the two biomes' pictures side by side, meeting in a soft
+seam. Pack v8 adds, for each of the ten biome pairs, a **bridge**: a transparent ground object painted across that seam, true to
+both colours, so the two pictures read as one ground. `scenery.json` (spec 1.8) lists them under a top-level `bridges`, keyed
+by the pair in alphabetical order (the art has the key's first biome on the left; ForgeCoach mirrors it for the reverse order):
+
+| Pair | The bridge |
+| --- | --- |
+| `forest+island` (GU) | a turquoise river leaving the lagoon and winding into the forest floor |
+| `forest+mountain` (RG) | a scree of red sandstone boulders, moss and ferns spilling from the mountains onto the forest floor |
+| `forest+plains` (GW) | a sunlit dirt path edged with grass and white wildflowers, from the meadow into the wood |
+| `forest+swamp` (BG) | a great mossy root crawling out of the forest floor into the fen water |
+| `island+mountain` (UR) | a river of molten lava running down from the mountains into the lagoon |
+| `island+plains` (WU) | a clear turquoise stream from the lagoon through the wheat, reeds on its banks |
+| `island+swamp` (UB) | a tangle of dark mangrove roots creeping out of the fen into the glowing lagoon |
+| `mountain+plains` (RW) | a pale road climbing out of the meadow up into the mountains |
+| `mountain+swamp` (BR) | a cracked obsidian lava flow, ember veins glowing, running into the fen |
+| `plains+swamp` (WB) | a pale stone causeway from the meadow out across the dark swamp water |
+
+Each entry has a desktop piece (`bridges/<a>-<b>.webp`, 1024×440, centred on the seam at `anchor` `{ y: 0.725, width: 0.4 }`
+of the half) and a phone piece (`bridges/<a>-<b>-phone.webp`, 768×704, `{ y: 0.725, width: 0.6 }`), and `dualsWiden` 0.02 /
+`maxSeamRatio` 0.18: each two-colour land of the pair widens their seam by 2% of the half's width, up to 18% (the cross-biome
+study's §4), the bridge scaled with it. One piece per pair serves every stage. 20 files, 556,936 bytes; pack/ is 46,242,211
+bytes. Every other file is pack v7.3's, byte for byte; a ForgeCoach older than 1.8 ignores `bridges` and draws today's seam.
+
+How they were made (`~/scenery-packs/cross-biome-bridges/`, its `SUMMARY.md` and contact sheet): each pair's stage-3 pictures
+composited as ForgeCoach's half board does (equal shares, the 10% overlap, its gradient and mist) at a 2560×800 desktop half and
+a 1280×1280 phone half; the object's shape painted in across the seam on the ground, at 60–80%; img2img at strength 0.68–0.76
+(DreamShaper XL 1.0, the sdxl-vae-fp16-fix VAE, DPM++ 2M Karras, 34 steps, cfg 7) over a 1536×768 / 1024×1024 crop centred on the
+seam, two seeds, the better picked by eye; then kept only inside the shape's dilated, blurred mask and faded toward the piece's
+sides and top (the soft alpha falloff), WebP quality 86 with lossless alpha. Five pieces were redrawn after review (see the
+summary). Made on the owner's GTX 1080 on 2026-10-16. No web images, card art or private files were used as inputs. Licence as
+before.

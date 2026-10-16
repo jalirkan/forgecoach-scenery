@@ -1,7 +1,7 @@
 {
  "schema": 1,
- "spec": "1.7",
- "name": "ForgeCoach scenery, pack v7.3 (forest stage 6 redrawn over stage 5's view; transition frames, 200 ms holds)",
+ "spec": "1.8",
+ "name": "ForgeCoach scenery, pack v8 (bridges across the seam for every biome pair; transition frames, 200 ms holds)",
  "author": "jalirkan",
  "license": "CC BY 4.0",
  "strip": {
@@ -2082,5 +2082,177 @@
  "growth": {
   "crossfade": true,
   "seconds": 1.2
+ },
+ "bridges": {
+  "forest+island": {
+   "src": "bridges/forest-island.webp",
+   "phone": {
+    "src": "bridges/forest-island-phone.webp",
+    "anchor": {
+     "y": 0.725,
+     "width": 0.6
+    }
+   },
+   "anchor": {
+    "y": 0.725,
+    "width": 0.4
+   },
+   "dualsWiden": 0.02,
+   "maxSeamRatio": 0.18,
+   "bytes": 52300
+  },
+  "forest+mountain": {
+   "src": "bridges/forest-mountain.webp",
+   "phone": {
+    "src": "bridges/forest-mountain-phone.webp",
+    "anchor": {
+     "y": 0.725,
+     "width": 0.6
+    }
+   },
+   "anchor": {
+    "y": 0.725,
+    "width": 0.4
+   },
+   "dualsWiden": 0.02,
+   "maxSeamRatio": 0.18,
+   "bytes": 60560
+  },
+  "forest+plains": {
+   "src": "bridges/forest-plains.webp",
+   "phone": {
+    "src": "bridges/forest-plains-phone.webp",
+    "anchor": {
+     "y": 0.725,
+     "width": 0.6
+    }
+   },
+   "anchor": {
+    "y": 0.725,
+    "width": 0.4
+   },
+   "dualsWiden": 0.02,
+   "maxSeamRatio": 0.18,
+   "bytes": 53528
+  },
+  "forest+swamp": {
+   "src": "bridges/forest-swamp.webp",
+   "phone": {
+    "src": "bridges/forest-swamp-phone.webp",
+    "anchor": {
+     "y": 0.725,
+     "width": 0.6
+    }
+   },
+   "anchor": {
+    "y": 0.725,
+    "width": 0.4
+   },
+   "dualsWiden": 0.02,
+   "maxSeamRatio": 0.18,
+   "bytes": 50328
+  },
+  "island+mountain": {
+   "src": "bridges/island-mountain.webp",
+   "phone": {
+    "src": "bridges/island-mountain-phone.webp",
+    "anchor": {
+     "y": 0.725,
+     "width": 0.6
+    }
+   },
+   "anchor": {
+    "y": 0.725,
+    "width": 0.4
+   },
+   "dualsWiden": 0.02,
+   "maxSeamRatio": 0.18,
+   "bytes": 57394
+  },
+  "island+plains": {
+   "src": "bridges/island-plains.webp",
+   "phone": {
+    "src": "bridges/island-plains-phone.webp",
+    "anchor": {
+     "y": 0.725,
+     "width": 0.6
+    }
+   },
+   "anchor": {
+    "y": 0.725,
+    "width": 0.4
+   },
+   "dualsWiden": 0.02,
+   "maxSeamRatio": 0.18,
+   "bytes": 49482
+  },
+  "island+swamp": {
+   "src": "bridges/island-swamp.webp",
+   "phone": {
+    "src": "bridges/island-swamp-phone.webp",
+    "anchor": {
+     "y": 0.725,
+     "width": 0.6
+    }
+   },
+   "anchor": {
+    "y": 0.725,
+    "width": 0.4
+   },
+   "dualsWiden": 0.02,
+   "maxSeamRatio": 0.18,
+   "bytes": 77796
+  },
+  "mountain+plains": {
+   "src": "bridges/mountain-plains.webp",
+   "phone": {
+    "src": "bridges/mountain-plains-phone.webp",
+    "anchor": {
+     "y": 0.725,
+     "width": 0.6
+    }
+   },
+   "anchor": {
+    "y": 0.725,
+    "width": 0.4
+   },
+   "dualsWiden": 0.02,
+   "maxSeamRatio": 0.18,
+   "bytes": 48176
+  },
+  "mountain+swamp": {
+   "src": "bridges/mountain-swamp.webp",
+   "phone": {
+    "src": "bridges/mountain-swamp-phone.webp",
+    "anchor": {
+     "y": 0.725,
+     "width": 0.6
+    }
+   },
+   "anchor": {
+    "y": 0.725,
+    "width": 0.4
+   },
+   "dualsWiden": 0.02,
+   "maxSeamRatio": 0.18,
+   "bytes": 53086
+  },
+  "plains+swamp": {
+   "src": "bridges/plains-swamp.webp",
+   "phone": {
+    "src": "bridges/plains-swamp-phone.webp",
+    "anchor": {
+     "y": 0.725,
+     "width": 0.6
+    }
+   },
+   "anchor": {
+    "y": 0.725,
+    "width": 0.4
+   },
+   "dualsWiden": 0.02,
+   "maxSeamRatio": 0.18,
+   "bytes": 54286
+  }
  }
 }
