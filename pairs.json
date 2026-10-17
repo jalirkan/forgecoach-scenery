@@ -1,14 +1,15 @@
 {
  "schema": 1,
  "spec": "1.9",
- "name": "ForgeCoach pair scenery, pairs-v1",
+ "name": "ForgeCoach pair scenery, pairs-v2",
  "author": "jalirkan",
  "license": "CC BY 4.0",
- "note": "The shape pairs-v1 ships in (spec 1.9): three stages per pair, desktop and phone at 1x and 2x, two to four frames per step (README.md). Keys a+b alphabetical; the art has a on its left. The phone pictures declare subjectBand: their desktop band is the middle 64% of the picture's width, centred at 0.475 of the phone's height, as the pack's phones are.",
+ "note": "pairs-v2 (spec 1.9): pairs-v1 with two places replaced by their shock-land looks: plains+swamp is Godless Shrine (was Scrubland) and forest+island is Breeding Pool (was Tropical Island); dual keeps the dual's name. Three stages per pair, desktop and phone at 1x and 2x, two to four frames per step. Keys a+b alphabetical; the art has a on its left.",
  "pairs": {
   "forest+island": {
    "dual": "Tropical Island",
    "shock": "Breeding Pool",
+   "place": "jungle mounds standing in a turquoise primordial lagoon",
    "band": {
     "min": 0.1,
     "perDual": 0.04,
@@ -45,7 +46,7 @@
        0.35,
        0.6
       ],
-      "bytes": 861820
+      "bytes": 1005606
      }
     },
     {
@@ -64,7 +65,7 @@
        0.35,
        0.6
       ],
-      "bytes": 420222
+      "bytes": 529150
      }
     },
     {
@@ -83,7 +84,7 @@
        0.35,
        0.6
       ],
-      "bytes": 850982
+      "bytes": 927084
      }
     }
    ],
@@ -111,7 +112,7 @@
         "phone": "pairs/forest-island/s1to2-f4-phone.webp"
        }
       ],
-      "bytes": 513058
+      "bytes": 576772
      },
      {
       "from": 2,
@@ -133,7 +134,7 @@
         "phone": "pairs/forest-island/s2to3-f4-phone.webp"
        }
       ],
-      "bytes": 516582
+      "bytes": 542668
      }
     ]
    }
@@ -141,6 +142,7 @@
   "forest+mountain": {
    "dual": "Taiga",
    "shock": "Stomping Ground",
+   "place": "tall dark conifers climbing red volcanic slopes",
    "band": {
     "min": 0.1,
     "perDual": 0.04,
@@ -269,6 +271,7 @@
   "forest+plains": {
    "dual": "Savannah",
    "shock": "Temple Garden",
+   "place": "golden grass with scattered broad trees and a bright horizon",
    "band": {
     "min": 0.1,
     "perDual": 0.04,
@@ -401,6 +404,7 @@
   "forest+swamp": {
    "dual": "Bayou",
    "shock": "Overgrown Tomb",
+   "place": "flooded cypress swamp, green water, hanging moss",
    "band": {
     "min": 0.1,
     "perDual": 0.04,
@@ -533,6 +537,7 @@
   "island+mountain": {
    "dual": "Volcanic Island",
    "shock": "Steam Vents",
+   "place": "a black volcanic island in a turquoise sea, lava meeting water in steam",
    "band": {
     "min": 0.1,
     "perDual": 0.04,
@@ -665,6 +670,7 @@
   "island+plains": {
    "dual": "Tundra",
    "shock": "Hallowed Fountain",
+   "place": "a frozen white plain meeting a cold blue sea, ice shelf and pale sky",
    "band": {
     "min": 0.1,
     "perDual": 0.04,
@@ -797,6 +803,7 @@
   "island+swamp": {
    "dual": "Underground Sea",
    "shock": "Watery Grave",
+   "place": "a black cavern sea under a vaulted rock ceiling, bioluminescent water",
    "band": {
     "min": 0.1,
     "perDual": 0.04,
@@ -917,6 +924,7 @@
   "mountain+plains": {
    "dual": "Plateau",
    "shock": "Sacred Foundry",
+   "place": "a high red-rock mesa under a wide bright sky, pale grass on top",
    "band": {
     "min": 0.1,
     "perDual": 0.04,
@@ -1049,6 +1057,7 @@
   "mountain+swamp": {
    "dual": "Badlands",
    "shock": "Blood Crypt",
+   "place": "cracked black earth and red rock, a dry scorched gorge with embers",
    "band": {
     "min": 0.1,
     "perDual": 0.04,
@@ -1181,6 +1190,7 @@
   "plains+swamp": {
    "dual": "Scrubland",
    "shock": "Godless Shrine",
+   "place": "one broken pale shrine among the bleached stones on the dark peat moor",
    "band": {
     "min": 0.1,
     "perDual": 0.04,
@@ -1217,7 +1227,7 @@
        0.35,
        0.6
       ],
-      "bytes": 1004350
+      "bytes": 878168
      }
     },
     {
@@ -1236,7 +1246,7 @@
        0.35,
        0.6
       ],
-      "bytes": 595218
+      "bytes": 510952
      }
     },
     {
@@ -1255,7 +1265,7 @@
        0.35,
        0.6
       ],
-      "bytes": 1013760
+      "bytes": 898970
      }
     }
    ],
@@ -1283,7 +1293,7 @@
         "phone": "pairs/plains-swamp/s1to2-f4-phone.webp"
        }
       ],
-      "bytes": 641954
+      "bytes": 553330
      },
      {
       "from": 2,
@@ -1305,7 +1315,7 @@
         "phone": "pairs/plains-swamp/s2to3-f4-phone.webp"
        }
       ],
-      "bytes": 638736
+      "bytes": 528434
      }
     ]
    }

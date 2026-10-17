@@ -1,4 +1,4 @@
-Pair bands, pairs-v1 -- provenance
+Pair bands, pairs-v2 -- provenance (pairs-v1 with plains+swamp as Godless Shrine and forest+island as Breeding Pool)
 Made 2026-10-16/17 on Justin's PC (~/scenery-packs/pair-scenery, SUMMARY.md there; concepts ~/scenery-packs/pair-scenery-concepts).
 
 INPUTS
