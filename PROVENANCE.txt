@@ -1,0 +1,18 @@
+Pair bands, pairs-v1 -- provenance
+Made 2026-10-16/17 on Justin's PC (~/scenery-packs/pair-scenery, SUMMARY.md there; concepts ~/scenery-packs/pair-scenery-concepts).
+
+INPUTS
+- The only image inputs are the live pack's own pictures: pack/<biome>/s{1,3,5}-half.webp and s{1,3,5}-phone.webp
+  (forgecoach-scenery branch pack-v7-work at babcb92), copied to work/nb/ -- and guides painted in code
+  (~/scenery-packs/pair-scenery/tools/prod.py, and the concepts' tools/pairs.py it imports). No card image, no web image,
+  nothing of Wizards' art as an input or a reference. Each place is written from its dual land's name in our own words.
+
+MODELS AND PIPELINE
+- DreamShaper XL 1.0 fp16 (Lykon/dreamshaper-xl-1-0) with madebyollin/sdxl-vae-fp16-fix, DPM++ 2M Karras, 34 steps,
+  cfg 7; the detail pass with xinsir/controlnet-tile-sdxl-1.0 (the pack's own sg_bake.py). Nothing downloaded.
+- Every GPU step under flock ~/scenery-packs/logs/gpu.lock as a capped transient unit (pack-v7-transitions/tools/
+  tween_run.sh; the detail pass under ~/scenery-packs/tools/ladder_run.sh).
+- README.md says what each step does.
+
+THIS TAG
+- pairs.json; pairs/<a>-<b>/s{1,2,3}-{half,phone}{,@2x}.webp (WebP q86, method 6); pairs/<a>-<b>/s{1to2,2to3}-f<k>-{half,phone}.webp.
