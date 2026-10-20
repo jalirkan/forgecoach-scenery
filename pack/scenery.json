@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "spec": "1.8",
- "name": "ForgeCoach scenery, pack v8 (bridges across the seam for every biome pair; transition frames, 200 ms holds)",
+ "name": "ForgeCoach scenery, pack v9 (bridges repainted as one picture across the seam; accent artefacts painted out)",
  "author": "jalirkan",
  "license": "CC BY 4.0",
  "strip": {
@@ -171,7 +171,7 @@
        "src2x": "island/front-s4@2x.webp",
        "fit": "cover",
        "minWidthPx": 300,
-       "bytes": 207548
+       "bytes": 203628
       }
      ],
      "half": {
@@ -212,7 +212,7 @@
        "src2x": "island/front-s5@2x.webp",
        "fit": "cover",
        "minWidthPx": 300,
-       "bytes": 206006
+       "bytes": 202226
       }
      ],
      "half": {
@@ -264,7 +264,7 @@
        "src2x": "island/front-s6@2x.webp",
        "fit": "cover",
        "minWidthPx": 300,
-       "bytes": 220184
+       "bytes": 216538
       }
      ],
      "half": {
@@ -1317,7 +1317,7 @@
        "src2x": "plains/front-s2@2x.webp",
        "fit": "cover",
        "minWidthPx": 300,
-       "bytes": 143772
+       "bytes": 37124
       }
      ],
      "half": {
@@ -1358,7 +1358,7 @@
        "src2x": "plains/front-s3@2x.webp",
        "fit": "cover",
        "minWidthPx": 300,
-       "bytes": 238316
+       "bytes": 114980
       }
      ],
      "half": {
@@ -1399,7 +1399,7 @@
        "src2x": "plains/front-s4@2x.webp",
        "fit": "cover",
        "minWidthPx": 300,
-       "bytes": 353446
+       "bytes": 141328
       }
      ],
      "half": {
@@ -1440,7 +1440,7 @@
        "src2x": "plains/front-s5@2x.webp",
        "fit": "cover",
        "minWidthPx": 300,
-       "bytes": 369036
+       "bytes": 163950
       }
      ],
      "half": {
@@ -1492,7 +1492,7 @@
        "src2x": "plains/front-s6@2x.webp",
        "fit": "cover",
        "minWidthPx": 300,
-       "bytes": 406178
+       "bytes": 174140
       }
      ],
      "half": {
@@ -2099,7 +2099,7 @@
    },
    "dualsWiden": 0.02,
    "maxSeamRatio": 0.18,
-   "bytes": 52300
+   "bytes": 45098
   },
   "forest+mountain": {
    "src": "bridges/forest-mountain.webp",
@@ -2116,7 +2116,7 @@
    },
    "dualsWiden": 0.02,
    "maxSeamRatio": 0.18,
-   "bytes": 60560
+   "bytes": 39544
   },
   "forest+plains": {
    "src": "bridges/forest-plains.webp",
@@ -2133,7 +2133,7 @@
    },
    "dualsWiden": 0.02,
    "maxSeamRatio": 0.18,
-   "bytes": 53528
+   "bytes": 39994
   },
   "forest+swamp": {
    "src": "bridges/forest-swamp.webp",
@@ -2150,7 +2150,7 @@
    },
    "dualsWiden": 0.02,
    "maxSeamRatio": 0.18,
-   "bytes": 50328
+   "bytes": 38868
   },
   "island+mountain": {
    "src": "bridges/island-mountain.webp",
@@ -2167,7 +2167,7 @@
    },
    "dualsWiden": 0.02,
    "maxSeamRatio": 0.18,
-   "bytes": 57394
+   "bytes": 39060
   },
   "island+plains": {
    "src": "bridges/island-plains.webp",
@@ -2184,7 +2184,7 @@
    },
    "dualsWiden": 0.02,
    "maxSeamRatio": 0.18,
-   "bytes": 49482
+   "bytes": 41620
   },
   "island+swamp": {
    "src": "bridges/island-swamp.webp",
@@ -2201,7 +2201,7 @@
    },
    "dualsWiden": 0.02,
    "maxSeamRatio": 0.18,
-   "bytes": 77796
+   "bytes": 37870
   },
   "mountain+plains": {
    "src": "bridges/mountain-plains.webp",
@@ -2218,7 +2218,7 @@
    },
    "dualsWiden": 0.02,
    "maxSeamRatio": 0.18,
-   "bytes": 48176
+   "bytes": 41030
   },
   "mountain+swamp": {
    "src": "bridges/mountain-swamp.webp",
@@ -2235,7 +2235,7 @@
    },
    "dualsWiden": 0.02,
    "maxSeamRatio": 0.18,
-   "bytes": 53086
+   "bytes": 35034
   },
   "plains+swamp": {
    "src": "bridges/plains-swamp.webp",
@@ -2252,7 +2252,7 @@
    },
    "dualsWiden": 0.02,
    "maxSeamRatio": 0.18,
-   "bytes": 54286
+   "bytes": 39318
   }
  }
 }

@@ -118,3 +118,25 @@ seam, two seeds, the better picked by eye; then kept only inside the shape's dil
 sides and top (the soft alpha falloff), WebP quality 86 with lossless alpha. Seven pieces of four pairs were redrawn after review (see the
 summary). Made on the owner's GTX 1080 on 2026-10-16. No web images, card art or private files were used as inputs. Licence as
 before.
+
+## pack v9 (2026-10-19): the bridges repainted across the seam; two accent artefacts painted out
+
+Justin played pack v8 with pairs-v2 on 2026-10-17 and called the seams janky (`~/scenery-packs/seams-v1/diag/DIAGNOSIS.md`).
+Most of it was ForgeCoach's layout (scenery spec 1.10: a seam with a pair band now draws the band and no bridge, so a bridge
+shows only where there is no band). Two things were in the pack:
+
+- **The bridges** read as cut-outs: an object (a river, a lava flow) kept inside its own outline. Each is now **one picture
+  across the seam**: the pair's stage-3 pictures composited as ForgeCoach draws a plain seam, repainted with a strength map that
+  is high over the seam's ground and falls away to both sides and up to the horizon (img2img 0.62, 0.70 for `mountain+plains`;
+  DreamShaper XL 1.0, sdxl-vae-fp16-fix, DPM++ 2M Karras, 34 steps, cfg 7), one prompt per pair naming where the two grounds
+  meet (a black lava-rock shore with surf where the mountains reach the lagoon, a sandy beach where the wheat meets the sea, the
+  forest floor sinking into the fen), and cut with that same soft shape as its alpha, so no piece has an outline or an edge. Same
+  files, sizes and anchors as v8 (desktop 1024×440 at `{ y: 0.725, width: 0.4 }`, phone 768×704 at `{ y: 0.725, width: 0.6 }`);
+  20 files, 397,436 bytes.
+- **Two full-area accents** carried marks that, on a split half, landed on the other biome: `island/front-s4..s6` (and @2x) a
+  lone shell in the sky, now gone; `plains/front-s2..s6` (and @2x) one or two golden diagonal streaks hanging from the top
+  fringe, now gone (the fringe, its medallions, the feathers and the pebbles stay). Their `bytes` follow.
+
+Every other file is pack v8's, byte for byte. pack/ is about 45.2 MB (v8: 46.2). Made on the owner's GTX 1080 on 2026-10-19
+(`~/scenery-packs/seams-v1/`, its `SUMMARY.md`, `sheets/overview.jpg`). No web images, card art or private files were used as
+inputs. Licence as before. pack v8 stays at its tag.
