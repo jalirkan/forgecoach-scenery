@@ -1,10 +1,10 @@
 {
  "schema": 1,
  "spec": "1.12",
- "name": "ForgeCoach pair scenery, pairs-v3",
+ "name": "ForgeCoach pair scenery, pairs-v3.1",
  "author": "jalirkan",
  "license": "CC BY 4.0",
- "note": "pairs-v3 (spec 1.12): every pair is a motif pair: the road, river or causeway both lands share, a transparent picture drawn over the plain seam from the foreground to the horizon. Three stages (a faint track, a worn road, the full road), desktop and phone at 1x and 2x, two frames per step. Keys a+b alphabetical; the art has a on its left.",
+ "note": "pairs-v3.1 (spec 1.12): pairs-v3's meeting road with Tundra (dark stones through the snow) and Underground Sea (a causeway of black rocks with a glowing waterline) repainted, Godless Shrine's shrine made to read, and every phone motif repainted as a road. Three stages, desktop and phone at 1x and 2x, two frames a step. Keys a+b alphabetical; the art has a on its left.",
  "pairs": {
   "forest+island": {
    "dual": "Tropical Island",
@@ -42,7 +42,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 166602
+      "bytes": 168366
      }
     },
     {
@@ -57,7 +57,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 198460
+      "bytes": 198484
      }
     },
     {
@@ -72,7 +72,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 200392
+      "bytes": 200166
      }
     }
    ],
@@ -92,7 +92,7 @@
         "phone": "pairs/forest-island/s1to2-f2-motif-phone.webp"
        }
       ],
-      "bytes": 101732
+      "bytes": 102392
      },
      {
       "from": 2,
@@ -106,7 +106,7 @@
         "phone": "pairs/forest-island/s2to3-f2-motif-phone.webp"
        }
       ],
-      "bytes": 111948
+      "bytes": 112386
      }
     ]
    }
@@ -147,7 +147,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 163898
+      "bytes": 166818
      }
     },
     {
@@ -162,7 +162,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 186044
+      "bytes": 186702
      }
     },
     {
@@ -177,7 +177,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 186222
+      "bytes": 188032
      }
     }
    ],
@@ -197,7 +197,7 @@
         "phone": "pairs/forest-mountain/s1to2-f2-motif-phone.webp"
        }
       ],
-      "bytes": 97148
+      "bytes": 98476
      },
      {
       "from": 2,
@@ -211,7 +211,7 @@
         "phone": "pairs/forest-mountain/s2to3-f2-motif-phone.webp"
        }
       ],
-      "bytes": 106632
+      "bytes": 107396
      }
     ]
    }
@@ -252,7 +252,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 178690
+      "bytes": 180130
      }
     },
     {
@@ -267,7 +267,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 187438
+      "bytes": 188358
      }
     },
     {
@@ -282,7 +282,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 179960
+      "bytes": 186820
      }
     }
    ],
@@ -302,7 +302,7 @@
         "phone": "pairs/forest-plains/s1to2-f2-motif-phone.webp"
        }
       ],
-      "bytes": 98338
+      "bytes": 99234
      },
      {
       "from": 2,
@@ -316,7 +316,7 @@
         "phone": "pairs/forest-plains/s2to3-f2-motif-phone.webp"
        }
       ],
-      "bytes": 103658
+      "bytes": 106068
      }
     ]
    }
@@ -357,7 +357,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 162070
+      "bytes": 168336
      }
     },
     {
@@ -372,7 +372,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 208966
+      "bytes": 204274
      }
     },
     {
@@ -387,7 +387,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 204178
+      "bytes": 197222
      }
     }
    ],
@@ -407,7 +407,7 @@
         "phone": "pairs/forest-swamp/s1to2-f2-motif-phone.webp"
        }
       ],
-      "bytes": 102574
+      "bytes": 101670
      },
      {
       "from": 2,
@@ -421,7 +421,7 @@
         "phone": "pairs/forest-swamp/s2to3-f2-motif-phone.webp"
        }
       ],
-      "bytes": 111490
+      "bytes": 108866
      }
     ]
    }
@@ -462,7 +462,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 171322
+      "bytes": 173536
      }
     },
     {
@@ -477,7 +477,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 195608
+      "bytes": 199216
      }
     },
     {
@@ -492,7 +492,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 212154
+      "bytes": 219452
      }
     }
    ],
@@ -512,7 +512,7 @@
         "phone": "pairs/island-mountain/s1to2-f2-motif-phone.webp"
        }
       ],
-      "bytes": 102258
+      "bytes": 103608
      },
      {
       "from": 2,
@@ -526,7 +526,7 @@
         "phone": "pairs/island-mountain/s2to3-f2-motif-phone.webp"
        }
       ],
-      "bytes": 115896
+      "bytes": 117986
      }
     ]
    }
@@ -534,7 +534,7 @@
   "island+plains": {
    "dual": "Tundra",
    "shock": "Hallowed Fountain",
-   "place": "a wide frozen road of blue ice with snow drifts and ice cairns, between a cold blue sea with an ice shelf on the left and a frozen white plain on the right",
+   "place": "a wide road of dark flagstones between snow banks, lined with small stone cairns, running from a cold blue sea with an ice shelf on the left across a frozen white plain on the right",
    "band": {
     "min": 0.2,
     "perDual": 0.03,
@@ -567,7 +567,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 181440
+      "bytes": 197204
      }
     },
     {
@@ -582,7 +582,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 214654
+      "bytes": 208952
      }
     },
     {
@@ -597,7 +597,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 218418
+      "bytes": 227992
      }
     }
    ],
@@ -617,7 +617,7 @@
         "phone": "pairs/island-plains/s1to2-f2-motif-phone.webp"
        }
       ],
-      "bytes": 105668
+      "bytes": 108752
      },
      {
       "from": 2,
@@ -631,7 +631,7 @@
         "phone": "pairs/island-plains/s2to3-f2-motif-phone.webp"
        }
       ],
-      "bytes": 117884
+      "bytes": 122674
      }
     ]
    }
@@ -639,7 +639,7 @@
   "island+swamp": {
    "dual": "Underground Sea",
    "shock": "Watery Grave",
-   "place": "a black underground river glowing with bioluminescent teal light, running through a black cavern between still dark water and wet black rock with glowing fungi",
+   "place": "a long causeway of black rocks and old wooden pilings across dark water, its waterline glowing bioluminescent teal, crossing open water between a luminous lagoon on the left and a dark misty fen on the right",
    "band": {
     "min": 0.2,
     "perDual": 0.03,
@@ -672,7 +672,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 161532
+      "bytes": 172156
      }
     },
     {
@@ -687,7 +687,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 186188
+      "bytes": 212410
      }
     },
     {
@@ -702,7 +702,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 194022
+      "bytes": 208194
      }
     }
    ],
@@ -722,7 +722,7 @@
         "phone": "pairs/island-swamp/s1to2-f2-motif-phone.webp"
        }
       ],
-      "bytes": 97226
+      "bytes": 106614
      },
      {
       "from": 2,
@@ -736,7 +736,7 @@
         "phone": "pairs/island-swamp/s2to3-f2-motif-phone.webp"
        }
       ],
-      "bytes": 109234
+      "bytes": 118024
      }
     ]
    }
@@ -777,7 +777,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 186072
+      "bytes": 187092
      }
     },
     {
@@ -792,7 +792,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 182124
+      "bytes": 182924
      }
     },
     {
@@ -807,7 +807,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 186364
+      "bytes": 184858
      }
     }
    ],
@@ -827,7 +827,7 @@
         "phone": "pairs/mountain-plains/s1to2-f2-motif-phone.webp"
        }
       ],
-      "bytes": 100322
+      "bytes": 101148
      },
      {
       "from": 2,
@@ -841,7 +841,7 @@
         "phone": "pairs/mountain-plains/s2to3-f2-motif-phone.webp"
        }
       ],
-      "bytes": 104062
+      "bytes": 103500
      }
     ]
    }
@@ -882,7 +882,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 164082
+      "bytes": 166590
      }
     },
     {
@@ -897,7 +897,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 193662
+      "bytes": 203780
      }
     },
     {
@@ -912,7 +912,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 205590
+      "bytes": 210204
      }
     }
    ],
@@ -932,7 +932,7 @@
         "phone": "pairs/mountain-swamp/s1to2-f2-motif-phone.webp"
        }
       ],
-      "bytes": 100016
+      "bytes": 102648
      },
      {
       "from": 2,
@@ -946,7 +946,7 @@
         "phone": "pairs/mountain-swamp/s2to3-f2-motif-phone.webp"
        }
       ],
-      "bytes": 110966
+      "bytes": 113298
      }
     ]
    }
@@ -987,7 +987,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 185760
+      "bytes": 187166
      }
     },
     {
@@ -1002,7 +1002,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 204890
+      "bytes": 212164
      }
     },
     {
@@ -1017,7 +1017,7 @@
        "width": 266,
        "height": 1024
       },
-      "bytes": 207750
+      "bytes": 358872
      }
     }
    ],
@@ -1037,7 +1037,7 @@
         "phone": "pairs/plains-swamp/s1to2-f2-motif-phone.webp"
        }
       ],
-      "bytes": 105480
+      "bytes": 107206
      },
      {
       "from": 2,
@@ -1051,7 +1051,7 @@
         "phone": "pairs/plains-swamp/s2to3-f2-motif-phone.webp"
        }
       ],
-      "bytes": 115728
+      "bytes": 174124
      }
     ]
    }
