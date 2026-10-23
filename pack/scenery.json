@@ -1,7 +1,7 @@
 {
  "schema": 1,
- "spec": "1.8",
- "name": "ForgeCoach scenery, pack v9 (bridges repainted as one picture across the seam; accent artefacts painted out)",
+ "spec": "1.13",
+ "name": "ForgeCoach scenery, pack v9.1 (pack v9 with each half picture's measured horizon and painted hour; no picture changed)",
  "author": "jalirkan",
  "license": "CC BY 4.0",
  "strip": {
@@ -60,13 +60,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.47
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 265046
+      "horizon": 0.43,
+      "bytes": 265046,
+      "hour": 6.5,
+      "key": "dawn"
      }
     },
     {
@@ -101,13 +105,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.47
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 415586
+      "horizon": 0.42,
+      "bytes": 415586,
+      "hour": 12,
+      "key": "noon"
      }
     },
     {
@@ -142,13 +150,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.48
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 309478
+      "horizon": 0.43,
+      "bytes": 309478,
+      "hour": 16.5,
+      "key": "afternoon"
      }
     },
     {
@@ -183,13 +195,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.48
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 404338
+      "horizon": 0.43,
+      "bytes": 404338,
+      "hour": 19,
+      "key": "dusk"
      }
     },
     {
@@ -224,13 +240,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.47
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 417176
+      "horizon": 0.42,
+      "bytes": 417176,
+      "hour": 20.5,
+      "key": "dusk"
      }
     },
     {
@@ -276,13 +296,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.47
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 626992
+      "horizon": 0.4,
+      "bytes": 626992,
+      "hour": 23,
+      "key": "night"
      }
     }
    ],
@@ -468,13 +492,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.52
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 264030
+      "horizon": 0.5,
+      "bytes": 264030,
+      "hour": 6,
+      "key": "dawn"
      }
     },
     {
@@ -509,13 +537,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.53
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 369886
+      "horizon": 0.55,
+      "bytes": 369886,
+      "hour": 12,
+      "key": "noon"
      }
     },
     {
@@ -550,13 +582,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.52
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 281912
+      "horizon": 0.5,
+      "bytes": 281912,
+      "hour": 16,
+      "key": "afternoon"
      }
     },
     {
@@ -591,13 +627,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.5
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 289624
+      "horizon": 0.48,
+      "bytes": 289624,
+      "hour": 19,
+      "key": "dusk"
      }
     },
     {
@@ -632,13 +672,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.5
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 286096
+      "horizon": 0.47,
+      "bytes": 286096,
+      "hour": 20.5,
+      "key": "dusk"
      }
     },
     {
@@ -684,13 +728,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.48
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 328808
+      "horizon": 0.45,
+      "bytes": 328808,
+      "hour": 23,
+      "key": "night"
      }
     }
    ],
@@ -876,13 +924,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.48
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 260818
+      "horizon": 0.42,
+      "bytes": 260818,
+      "hour": 6,
+      "key": "dawn"
      }
     },
     {
@@ -917,13 +969,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.48
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 332350
+      "horizon": 0.43,
+      "bytes": 332350,
+      "hour": 12,
+      "key": "noon"
      }
     },
     {
@@ -958,13 +1014,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.5
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 256132
+      "horizon": 0.47,
+      "bytes": 256132,
+      "hour": 16.5,
+      "key": "afternoon"
      }
     },
     {
@@ -999,13 +1059,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.5
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 366456
+      "horizon": 0.45,
+      "bytes": 366456,
+      "hour": 19.5,
+      "key": "dusk"
      }
     },
     {
@@ -1040,13 +1104,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.52
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 266620
+      "horizon": 0.5,
+      "bytes": 266620,
+      "hour": 22,
+      "key": "night"
      }
     },
     {
@@ -1092,13 +1160,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.53
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 358838
+      "horizon": 0.5,
+      "bytes": 358838,
+      "hour": 23.5,
+      "key": "night"
      }
     }
    ],
@@ -1288,13 +1360,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.48
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 589794
+      "horizon": 0.42,
+      "bytes": 589794,
+      "hour": 6,
+      "key": "dawn"
      }
     },
     {
@@ -1329,13 +1405,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.49
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 780464
+      "horizon": 0.42,
+      "bytes": 780464,
+      "hour": 12,
+      "key": "noon"
      }
     },
     {
@@ -1370,13 +1450,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.5
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 355248
+      "horizon": 0.45,
+      "bytes": 355248,
+      "hour": 16.5,
+      "key": "afternoon"
      }
     },
     {
@@ -1411,13 +1495,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.5
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 351604
+      "horizon": 0.45,
+      "bytes": 351604,
+      "hour": 19,
+      "key": "dusk"
      }
     },
     {
@@ -1452,13 +1540,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.5
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 269562
+      "horizon": 0.44,
+      "bytes": 269562,
+      "hour": 20.5,
+      "key": "dusk"
      }
     },
     {
@@ -1504,13 +1596,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.49
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 385156
+      "horizon": 0.45,
+      "bytes": 385156,
+      "hour": 23,
+      "key": "night"
      }
     }
    ],
@@ -1700,13 +1796,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.5
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 326558
+      "horizon": 0.46,
+      "bytes": 326558,
+      "hour": 6,
+      "key": "dawn"
      }
     },
     {
@@ -1741,13 +1841,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.48
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 528242
+      "horizon": 0.43,
+      "bytes": 528242,
+      "hour": 12,
+      "key": "noon"
      }
     },
     {
@@ -1782,13 +1886,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.5
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 437274
+      "horizon": 0.45,
+      "bytes": 437274,
+      "hour": 17,
+      "key": "afternoon"
      }
     },
     {
@@ -1823,13 +1931,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.55
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 416788
+      "horizon": 0.47,
+      "bytes": 416788,
+      "hour": 19,
+      "key": "dusk"
      }
     },
     {
@@ -1864,13 +1976,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.5
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 339594
+      "horizon": 0.47,
+      "bytes": 339594,
+      "hour": 20.5,
+      "key": "dusk"
      }
     },
     {
@@ -1916,13 +2032,17 @@
        "subjectBand": [
         0.45,
         0.56
-       ]
+       ],
+       "horizon": 0.53
       },
       "subjectBand": [
        0.35,
        0.6
       ],
-      "bytes": 351554
+      "horizon": 0.47,
+      "bytes": 351554,
+      "hour": 23,
+      "key": "night"
      }
     }
    ],
