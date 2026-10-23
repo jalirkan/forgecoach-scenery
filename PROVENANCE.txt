@@ -1,22 +1,30 @@
-Pair motifs, pairs-v3.1 -- provenance (the meeting road, spec 1.12; pairs-v3 with Tundra, Underground Sea, Godless Shrine's
-shrine and every phone motif repainted)
-Made 2026-10-19/21 on Justin's PC (v3.1: road/tools/road31.py, work31/) (~/scenery-packs/seams-v1/road, SUMMARY.md there; the concept in ~/scenery-packs/seams-v1/FOLLOW-UP.md §3 A).
+Pair panoramas, pairs-v4 -- provenance (whole-half pair pictures, spec 1.15; pairs-v2's halves and frames referenced at
+their own tag)
+Painted 2026-10-22 on Justin's PC (GTX 1080) by panoramas-v1's tools (~/scenery-packs/panoramas-v1: tools/pano.py,
+pano_gen.py, stage.py, trim.py; SUMMARY.md there, sections "Batch 1", "Batch 2" and "Trim"); tagged 2026-10-23.
 
 INPUTS
-- The only image inputs are the live pack's own pictures: pack-v9's pack/<biome>/s{1,3,5}-half@2x.webp and
-  s{1,3,5}-phone@2x.webp (forgecoach-scenery tag pack-v9), composited as a plain seam -- and road guides painted in code
-  (~/scenery-packs/seams-v1/road/tools/road.py). No card image, no web image, nothing of Wizards' art as an input or a
-  reference. Each motif is written from its pair's two biomes in our own words.
+- The only image inputs are ForgeCoach's own pack pictures: pack-v9's stage-5 half pictures and pairs-v2's stage-3 pair
+  pictures (forgecoach-scenery tags pack-v9 and pairs-v2), cut into texture plates and laid out with painted silhouettes
+  in code (pano.py) as each picture's guide. No web image, no card image, no private file, nothing of Wizards' art as an
+  input or a reference. Each place is written from its pair's two biomes in our own words.
 
 MODELS AND PIPELINE
-- DreamShaper XL 1.0 fp16 (Lykon/dreamshaper-xl-1-0) with madebyollin/sdxl-vae-fp16-fix, DPM++ 2M Karras, 34 steps
-  (frames 30), cfg 7 (frames 6.5), per-pixel strength (pair-scenery/tools/pair_gen.py). Nothing downloaded.
-- Every GPU step under flock ~/scenery-packs/logs/gpu.lock, run directly (seams-v1/road/tools/gpu.sh: the GPU-free, 6 GB
-  available and no-waiting-lab-job gate, a 3 GB watchdog).
-- README.md says what each step does; the picks and their reasons are road/work/picks.json and picks-why.json.
+- DreamShaper XL 1.0 fp16 (Lykon/dreamshaper-xl-1-0) with madebyollin/sdxl-vae-fp16-fix, no LoRA, DPM++ 2M Karras.
+  Nothing downloaded for this pack.
+- pano_gen.py: MultiDiffusion img2img over the code-painted guide, 4608 x 896, seven 1152 x 896 windows with per-window
+  prompts, one latent; strength ~0.70-0.80. Stage 3 first (batch 1: four pairs; batch 2: six more and Godless Shrine's
+  marble shrine), then stages 1-2 repainted over each stage-3 pick at 0.52 / 0.48, then the 1.28:1 phone pictures.
+- Finish: centre crop to 4588 x 896, two model signatures painted out; horizons, hours and keys measured off each picture
+  (~/scenery-packs/light.json).
+- Trim (CPU, trim.py, candidate D-P1): re-encoded from the cleaned pictures, desktop 3277 x 640 WebP q80, phone
+  1638 x 1280 WebP q80, no 2x files.
+- Every GPU step under flock ~/scenery-packs/logs/gpu.lock with the 6 GB gate; ~9.2 GPU-hours for batches 1-2.
+- The picks and their reasons are panoramas-v1/picks.json and picks-why.json.
 
 THIS TAG
-- pairs.json; pairs/<a>-<b>/s{1,2,3}-motif{,@2x}.webp and s{1,2,3}-motif-phone{,@2x}.webp (RGBA WebP q84, alpha q90);
-  pairs/<a>-<b>/s{1to2,2to3}-f{1,2}-motif{,-phone}.webp. 200 files and the manifest, 8,187,622 bytes; 76 files byte-identical to pairs-v3 (work31/identity.json).
+- pairs.json; pairs/<a>-<b>/s{1,2,3}-panorama.webp and s{1,2,3}-panorama-phone.webp. 60 files and the manifest,
+  14,602,096 bytes. The 1.9 halves and 1.7 frames pairs.json names are pairs-v2's, at
+  https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pairs-v2/ (their provenance is that tag's).
 
 LICENCE: CC BY 4.0 (LICENSE).
