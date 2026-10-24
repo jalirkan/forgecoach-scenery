@@ -25,8 +25,9 @@ def walk(o):
         for x in o: walk(x)
 walk(s); print('\n'.join(sorted(out)))
 PY
-n=$(wc -l < "$tmp/urls"); echo "warming $n files of $tag with $par in parallel"
-fetch() { local u=$1 code; for a in 1 2 3; do code=$(curl -s -o /dev/null -w '%{http_code} %{time_total}' --max-time 120 "$base$u"); [[ $code == 200* ]] && { echo "$code $u"; return; }; done; echo "FAIL $code $u"; }
+n=$(wc -l < "$tmp/urls"); ext=$(grep -c '^http' "$tmp/urls" || true); echo "warming $n files of $tag with $par in parallel ($ext of them absolute URLs, at their own ref)"
+# A name that is already a URL (pairs-v4's halves and frames live at pairs-v2's own tag) is fetched as it is.
+fetch() { local u=$1 url code; [[ $u == http*://* ]] && url=$u || url=$base$u; for a in 1 2 3; do code=$(curl -s -o /dev/null -w '%{http_code} %{time_total}' --max-time 120 "$url"); [[ $code == 200* ]] && { echo "$code $u"; return; }; done; echo "FAIL $code $u"; }
 export -f fetch; export base
 xargs -P "$par" -I{} bash -c 'fetch "$@"' _ {} < "$tmp/urls" > "$tmp/log"
 fails=$(grep -c '^FAIL' "$tmp/log" || true); slow=$(awk '$1=="200" && $2>10' "$tmp/log" | wc -l)
