@@ -1,30 +1,25 @@
-Pair panoramas, pairs-v4 -- provenance (whole-half pair pictures, spec 1.15; pairs-v2's halves and frames referenced at
-their own tag)
-Painted 2026-10-22 on Justin's PC (GTX 1080) by panoramas-v1's tools (~/scenery-packs/panoramas-v1: tools/pano.py,
-pano_gen.py, stage.py, trim.py; SUMMARY.md there, sections "Batch 1", "Batch 2" and "Trim"); tagged 2026-10-23.
+Scenery pieces, pieces-v1 -- provenance (spec 1.14 `pieces`: elements, fronts, veils, the empty table; named by
+pack-v9.2's scenery.json with absolute URLs at this tag)
+Painted 2026-10-23 on Justin's PC (GTX 1080) by panoramas-v1's tools (~/scenery-packs/panoramas-v1: tools/b3f.py,
+b3fin.py, pano_gen.py; SUMMARY.md there, sections "Batch 3 sketches" and "Batch 3 finished").
 
 INPUTS
-- The only image inputs are ForgeCoach's own pack pictures: pack-v9's stage-5 half pictures and pairs-v2's stage-3 pair
-  pictures (forgecoach-scenery tags pack-v9 and pairs-v2), cut into texture plates and laid out with painted silhouettes
-  in code (pano.py) as each picture's guide. No web image, no card image, no private file, nothing of Wizards' art as an
-  input or a reference. Each place is written from its pair's two biomes in our own words.
+- The only image inputs are ForgeCoach's own pack pictures -- pack-v9's pair panoramas from panoramas-v1 (the bases the
+  fronts and veils are painted over, and the composites on the sheet) and the batch-3 sketches (the empty table's guide)
+  -- and guides painted in code (b3f.py: a neutral grey ground, the elements' and the weathers' silhouettes). No web
+  image, no card image, no private file, nothing of Wizards' art as an input or a reference. Each piece is written in
+  our own words from SYSTEM.md's slot table.
 
 MODELS AND PIPELINE
 - DreamShaper XL 1.0 fp16 (Lykon/dreamshaper-xl-1-0) with madebyollin/sdxl-vae-fp16-fix, no LoRA, DPM++ 2M Karras.
-  Nothing downloaded for this pack.
-- pano_gen.py: MultiDiffusion img2img over the code-painted guide, 4608 x 896, seven 1152 x 896 windows with per-window
-  prompts, one latent; strength ~0.70-0.80. Stage 3 first (batch 1: four pairs; batch 2: six more and Godless Shrine's
-  marble shrine), then stages 1-2 repainted over each stage-3 pick at 0.52 / 0.48, then the 1.28:1 phone pictures.
-- Finish: centre crop to 4588 x 896, two model signatures painted out; horizons, hours and keys measured off each picture
-  (~/scenery-packs/light.json).
-- Trim (CPU, trim.py, candidate D-P1): re-encoded from the cleaned pictures, desktop 3277 x 640 WebP q80, phone
-  1638 x 1280 WebP q80, no 2x files.
-- Every GPU step under flock ~/scenery-packs/logs/gpu.lock with the 6 GB gate; ~9.2 GPU-hours for batches 1-2.
-- The picks and their reasons are panoramas-v1/picks.json and picks-why.json.
+  Nothing downloaded for this tag.
+- pano_gen.py: MultiDiffusion img2img over the code-painted guide, one latent, ~1 MP windows; 30-34 scheduled steps at
+  0.55-0.85. Elements keyed off a neutral ground (b3fin.py key); fronts and veils pulled against their own colour.
+- Every GPU step under flock ~/scenery-packs/logs/gpu.lock with the 6 GB free-memory gate and free -g logged; 81
+  pictures, ~2.5 h of generation (~3.0 h of job time with model loads and prompt encodes).
 
 THIS TAG
-- pairs.json; pairs/<a>-<b>/s{1,2,3}-panorama.webp and s{1,2,3}-panorama-phone.webp. 60 files and the manifest,
-  14,602,096 bytes. The 1.9 halves and 1.7 frames pairs.json names are pairs-v2's, at
-  https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pairs-v2/ (their provenance is that tag's).
+- pieces/ only: 48 WebP files, 2,660,314 bytes. No manifest: pack-v9.2's scenery.json (on the main pack's
+  branch) names each file at https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/<file>.
 
 LICENCE: CC BY 4.0 (LICENSE).
