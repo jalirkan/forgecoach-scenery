@@ -140,3 +140,30 @@ shows only where there is no band). Two things were in the pack:
 Every other file is pack v8's, byte for byte. pack/ is about 45.2 MB (v8: 46.2). Made on the owner's GTX 1080 on 2026-10-19
 (`~/scenery-packs/seams-v1/`, its `SUMMARY.md`, `sheets/overview.jpg`). No web images, card art or private files were used as
 inputs. Licence as before. pack v8 stays at its tag.
+
+## pack v9.2 (2026-10-23): the `pieces` block (spec 1.14) pointing at the pieces-v1 tag
+
+`scenery.json` is pack v9.1's (spec 1.13: each half picture's measured horizon and each stage's painted hour and key, no picture
+changed) plus a top-level `pieces` block (spec 1.14), and every other file in pack/ is pack v9.1's, byte for byte. The pieces live
+at a tag of their own, **`pieces-v1`** (48 WebP, 2,660,314 bytes), and every `src` in the block is an absolute URL
+`https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/<file>`, so this tag stays at about 45.2 MB under
+jsDelivr's 50 MB per ref. The block, each entry a desktop picture and a `phone` one, each with its `bytes`:
+
+| Key | What |
+| --- | --- |
+| `elements` (W U B R G) | a third colour's element in the heaviest pair's picture, transparent, its foot on the ground (`place` `{ sit: ground, x: 0.5, w }`): W a shaft of light on a lit stone path; U a winding blue river and a low sea-fog band; B a black bog channel with thin dead trees; R a red volcanic crag veined with lava under a smoke column; G two great mossy trees |
+| `fronts` (U W B G) | a colour's weather crossing the half right to left, four transparent frames at 2048×640 and 1024×1280, `holdMs` 200, `fadeMs` 400: U sea fog, W a wall of light, B crawling ground fog, G drifting pollen. R's ash fall is held |
+| `veils` (won, lost) | transparent grades over the winner's half (warm dawn light) and the loser's (cold ash-dark), 2048×640 and 1024×1280 |
+| `empty` | the empty table, a 1.5 half (opaque), 2048×640 and 1024×1280: grey standing stones in mist on bleached grass at first light, horizon 0.55 (phone 0.52), hour 6, key dawn |
+
+A ForgeCoach older than 1.14 ignores `pieces`; main (a10d304) draws the empty table, the veils and the fronts, not yet the elements.
+
+How they were made: DreamShaper XL 1.0 (fp16, the sdxl-vae-fp16-fix VAE, DPM++ 2M Karras, no LoRA), MultiDiffusion img2img over
+guides painted in code at the pieces' own shapes, 30–34 scheduled steps at strength 0.55–0.85. The elements were painted over a
+neutral ground (a plain grey plain under a pale sky, no place) and keyed off it, so the alpha is the element alone, then cropped
+to it with the foot on the bottom; the fronts were painted crossing each colour's own half picture and pulled against the
+weather's colour, four frames a colour; each veil is its end grade painted over three stage-3 halves, pulled against its colour
+and averaged over the three, so no place rides in it; the empty table is the approved sketch finished over itself. No `src2x`.
+Made on the owner's GTX 1080 on 2026-10-23 (`~/scenery-packs/panoramas-v1/`, its `SUMMARY.md` "Batch 3 finished",
+`sheets/batch3-finished.jpg`). No web images, card art or private files were used as inputs. Licence as before. pack v9.1 stays
+at its tag.

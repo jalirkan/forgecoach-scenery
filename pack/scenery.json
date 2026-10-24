@@ -1,7 +1,7 @@
 {
  "schema": 1,
- "spec": "1.13",
- "name": "ForgeCoach scenery, pack v9.1 (pack v9 with each half picture's measured horizon and painted hour; no picture changed)",
+ "spec": "1.14",
+ "name": "ForgeCoach scenery, pack v9.2 (pack v9.1 + the batch-3 pieces at @pieces-v1, spec 1.14)",
  "author": "jalirkan",
  "license": "CC BY 4.0",
  "strip": {
@@ -2373,6 +2373,233 @@
    "dualsWiden": 0.02,
    "maxSeamRatio": 0.18,
    "bytes": 39318
+  }
+ },
+ "pieces": {
+  "elements": {
+   "W": {
+    "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/element-W.webp",
+    "width": 954,
+    "height": 896,
+    "place": {
+     "sit": "ground",
+     "x": 0.5,
+     "w": 0.512
+    },
+    "phone": {
+     "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/element-W-phone.webp",
+     "width": 511,
+     "height": 1920
+    },
+    "bytes": 297422
+   },
+   "U": {
+    "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/element-U.webp",
+    "width": 1061,
+    "height": 573,
+    "place": {
+     "sit": "ground",
+     "x": 0.5,
+     "w": 0.569
+    },
+    "phone": {
+     "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/element-U-phone.webp",
+     "width": 569,
+     "height": 1214
+    },
+    "bytes": 153410
+   },
+   "B": {
+    "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/element-B.webp",
+    "width": 1034,
+    "height": 621,
+    "place": {
+     "sit": "ground",
+     "x": 0.5,
+     "w": 0.555
+    },
+    "phone": {
+     "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/element-B-phone.webp",
+     "width": 554,
+     "height": 957
+    },
+    "bytes": 83628
+   },
+   "R": {
+    "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/element-R.webp",
+    "width": 500,
+    "height": 896,
+    "place": {
+     "sit": "ground",
+     "x": 0.5,
+     "w": 0.268
+    },
+    "phone": {
+     "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/element-R-phone.webp",
+     "width": 268,
+     "height": 1920
+    },
+    "bytes": 108310
+   },
+   "G": {
+    "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/element-G.webp",
+    "width": 1201,
+    "height": 751,
+    "place": {
+     "sit": "ground",
+     "x": 0.5,
+     "w": 0.644
+    },
+    "phone": {
+     "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/element-G-phone.webp",
+     "width": 644,
+     "height": 827
+    },
+    "bytes": 113624
+   }
+  },
+  "fronts": {
+   "U": {
+    "frames": [
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-U-1.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-U-1-phone.webp"
+     },
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-U-2.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-U-2-phone.webp"
+     },
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-U-3.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-U-3-phone.webp"
+     },
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-U-4.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-U-4-phone.webp"
+     }
+    ],
+    "holdMs": 200,
+    "fadeMs": 400,
+    "bytes": 465614
+   },
+   "W": {
+    "frames": [
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-W-1.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-W-1-phone.webp"
+     },
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-W-2.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-W-2-phone.webp"
+     },
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-W-3.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-W-3-phone.webp"
+     },
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-W-4.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-W-4-phone.webp"
+     }
+    ],
+    "holdMs": 200,
+    "fadeMs": 400,
+    "bytes": 419174
+   },
+   "B": {
+    "frames": [
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-B-1.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-B-1-phone.webp"
+     },
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-B-2.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-B-2-phone.webp"
+     },
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-B-3.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-B-3-phone.webp"
+     },
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-B-4.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-B-4-phone.webp"
+     }
+    ],
+    "holdMs": 200,
+    "fadeMs": 400,
+    "bytes": 243206
+   },
+   "G": {
+    "frames": [
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-G-1.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-G-1-phone.webp"
+     },
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-G-2.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-G-2-phone.webp"
+     },
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-G-3.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-G-3-phone.webp"
+     },
+     {
+      "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-G-4.webp",
+      "phone": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/front-G-4-phone.webp"
+     }
+    ],
+    "holdMs": 200,
+    "fadeMs": 400,
+    "bytes": 562124
+   }
+  },
+  "veils": {
+   "won": {
+    "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/veil-won.webp",
+    "width": 2048,
+    "height": 640,
+    "phone": {
+     "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/veil-won-phone.webp",
+     "width": 1024,
+     "height": 1280
+    },
+    "place": {
+     "sit": "fill"
+    },
+    "bytes": 44708
+   },
+   "lost": {
+    "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/veil-lost.webp",
+    "width": 2048,
+    "height": 640,
+    "phone": {
+     "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/veil-lost-phone.webp",
+     "width": 1024,
+     "height": 1280
+    },
+    "place": {
+     "sit": "fill"
+    },
+    "bytes": 57274
+   }
+  },
+  "empty": {
+   "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/empty-half.webp",
+   "phone": {
+    "src": "https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/empty-phone.webp",
+    "subjectBand": [
+     0.42,
+     0.62
+    ],
+    "horizon": 0.52
+   },
+   "subjectBand": [
+    0.38,
+    0.68
+   ],
+   "horizon": 0.55,
+   "hour": 6,
+   "key": "dawn",
+   "bytes": 111820
   }
  }
 }
