@@ -1,25 +1,39 @@
-Scenery pieces, pieces-v1 -- provenance (spec 1.14 `pieces`: elements, fronts, veils, the empty table; named by
-pack-v9.2's scenery.json with absolute URLs at this tag)
-Painted 2026-10-23 on Justin's PC (GTX 1080) by panoramas-v1's tools (~/scenery-packs/panoramas-v1: tools/b3f.py,
-b3fin.py, pano_gen.py; SUMMARY.md there, sections "Batch 3 sketches" and "Batch 3 finished").
+Pair panoramas, pairs-v5 -- provenance (spec 1.16.1 sided painted-in elements over pairs-v4's whole-half panoramas;
+the element phone pictures at pairs-v5-phone, the base phones at pairs-v4, the halves and frames at pairs-v2)
+Painted 2026-10-24 on Justin's PC (GTX 1080) by panoramas-v1's tools/pin.py (~/scenery-packs/panoramas-v1; SUMMARY.md
+there, sections "Painted-in elements (10-24)", "Painted-in stage 2 result", "Painted-in stage 3 result" and "Painted-in
+phones result"); tagged 2026-10-24.
 
 INPUTS
-- The only image inputs are ForgeCoach's own pack pictures -- pack-v9's pair panoramas from panoramas-v1 (the bases the
-  fronts and veils are painted over, and the composites on the sheet) and the batch-3 sketches (the empty table's guide)
-  -- and guides painted in code (b3f.py: a neutral grey ground, the elements' and the weathers' silhouettes). No web
-  image, no card image, no private file, nothing of Wizards' art as an input or a reference. Each piece is written in
-  our own words from SYSTEM.md's slot table.
+- The only image inputs are ForgeCoach's own pack pictures: the finished stage panoramas of pairs-v4 (the cleaned
+  4588 x 896 paintings its files were cut from), with each feature roughed in by code as the guide. No web image, no
+  card image, no private file, nothing of Wizards' art as an input or a reference. Each feature is written in our own
+  words.
 
 MODELS AND PIPELINE
 - DreamShaper XL 1.0 fp16 (Lykon/dreamshaper-xl-1-0) with madebyollin/sdxl-vae-fp16-fix, no LoRA, DPM++ 2M Karras.
-  Nothing downloaded for this tag.
-- pano_gen.py: MultiDiffusion img2img over the code-painted guide, one latent, ~1 MP windows; 30-34 scheduled steps at
-  0.55-0.85. Elements keyed off a neutral ground (b3fin.py key); fronts and veils pulled against their own colour.
-- Every GPU step under flock ~/scenery-packs/logs/gpu.lock with the 6 GB free-memory gate and free -g logged; 81
-  pictures, ~2.5 h of generation (~3.0 h of job time with model loads and prompt encodes).
+  Nothing downloaded for this pack.
+- pin.py: MultiDiffusion inpainting over a code-painted guide on the finished stage panorama, a 1728 x 896 crop under
+  two 1152 x 896 windows; strength 0.85 over 32 scheduled steps; strength map 1 over the feature, 0.4 over a ring, 0
+  beyond. The feature on one side's ground (left u 0.19-0.47, right u 0.53-0.81), at the scene's hour and light key.
+- Finish: feathered composite onto the base, grain matched to the base's high-pass level, 3277 x 640 Lanczos, WebP q80.
+  Outside the crop the picture is pixel-identical to the base (max |diff| 0.0 before encoding).
+- A 'moss' motif (moss and ferns over the ground; vines on dead trees on the fen) for three green slots on dark ground
+  where trees kept painting as lime: island+mountain s2 GR and s3 GR, mountain+swamp s3 GR.
+- Every GPU step under flock ~/scenery-packs/logs/gpu.lock with the 6 GB gate; ~320 pictures (desktop and phones) and
+  ~16.5 h of generation for the run. The picks and their verdicts are panoramas-v1/work/pin/picks.json and
+  verdicts.json.
+
+FLAGGED WEAK (desktop picks kept as the best of their tries): island+mountain s2 GR (moss, bright), mountain+swamp s3 GR
+(moss, subtle), plains+swamp s2 GR and s3 GR (gnarled trees), island+swamp s3 GR (crown lost in the vault),
+island+plains s3 GR (topiary crowns), forest+island s3 RR (smoke only), forest+swamp s3 UR (a pool, not a river).
+That is 8. The stage-3 result counted 9 before the moss round; the moss round's island+mountain s3 GR pick is not
+flagged.
 
 THIS TAG
-- pieces/ only: 48 WebP files, 2,660,314 bytes. No manifest: pack-v9.2's scenery.json (on the main pack's
-  branch) names each file at https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pieces-v1/pieces/<file>.
+- pairs.json; pairs/<a>-<b>/s{1,2,3}-panorama.webp (pairs-v4's, unchanged) and s{2,3}+<C><L|R>-panorama.webp (120
+  painted-in). 150 pictures and the manifest, 28,158,470 bytes. The element phones (pairs-v5-phone), base phones
+  (pairs-v4) and halves and frames (pairs-v2) pairs.json names are at their own tags, by absolute URL under
+  https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@<tag>/ (their provenance is those tags').
 
 LICENCE: CC BY 4.0 (LICENSE).
