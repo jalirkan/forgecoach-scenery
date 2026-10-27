@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "spec": "1.17",
-  "name": "ForgeCoach pair scenery, pairs-v6 draft (seam grid)",
+  "name": "ForgeCoach pair scenery, pairs-v6 (seam grid, sketch)",
   "author": "jalirkan",
   "license": "CC BY 4.0",
-  "note": "pairs-v6-draft (spec 1.17, a DRAFT for Justin's review behind ?pairfull=1 and ?pairs=): pairs-v5 with a seam grid on the pairs the painter has made -- each half its colour's mono picture at that colour's own stage (SYSTEM.md C, Option A), keyed <i>x<j> by the stage of the geography's left colour (Island -> Swamp -> Plains -> Forest -> Mountain) and the right's; painted for |i - j| <= 1, desktop only. The other pairs keep their stages. Keys a+b alphabetical.",
+  "note": "pairs-v6 (spec 1.17, the ?pairfull=1 default, for Justin's review on the live board): pairs-v5 with a seam grid on all ten pairs -- each half its colour's mono picture at that colour's own stage (SYSTEM.md C, Option A), keyed <i>x<j> by the stage of the geography's left colour (Island -> Swamp -> Plains -> Forest -> Mountain) and the right's; painted for |i - j| <= 1 at sketch quality, desktop only; a phone draws the stages. Keys a+b alphabetical.",
   "pairs": {
     "forest+island": {
       "dual": "Tropical Island",
@@ -384,6 +384,152 @@
             "bytes": 542668
           }
         ]
+      },
+      "grid": {
+        "1x1": {
+          "src": "seams/island-forest/s1x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 60476,
+          "horizon": 0.443,
+          "hour": 6.5,
+          "key": "dawn"
+        },
+        "1x2": {
+          "src": "seams/island-forest/s1x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 80372,
+          "horizon": 0.43,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x1": {
+          "src": "seams/island-forest/s2x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 72710,
+          "horizon": 0.437,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x2": {
+          "src": "seams/island-forest/s2x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 89476,
+          "horizon": 0.425,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x3": {
+          "src": "seams/island-forest/s2x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 78312,
+          "horizon": 0.433,
+          "hour": 17,
+          "key": "afternoon"
+        },
+        "3x2": {
+          "src": "seams/island-forest/s3x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 81994,
+          "horizon": 0.43,
+          "hour": 16.5,
+          "key": "afternoon"
+        },
+        "3x3": {
+          "src": "seams/island-forest/s3x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 74206,
+          "horizon": 0.44,
+          "hour": 17,
+          "key": "afternoon"
+        },
+        "3x4": {
+          "src": "seams/island-forest/s3x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 71216,
+          "horizon": 0.448,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x3": {
+          "src": "seams/island-forest/s4x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 84334,
+          "horizon": 0.44,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x4": {
+          "src": "seams/island-forest/s4x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 82506,
+          "horizon": 0.448,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x5": {
+          "src": "seams/island-forest/s4x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 73216,
+          "horizon": 0.448,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x4": {
+          "src": "seams/island-forest/s5x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 80326,
+          "horizon": 0.442,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x5": {
+          "src": "seams/island-forest/s5x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 71138,
+          "horizon": 0.442,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x6": {
+          "src": "seams/island-forest/s5x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 74806,
+          "horizon": 0.442,
+          "hour": 23,
+          "key": "night"
+        },
+        "6x5": {
+          "src": "seams/island-forest/s6x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 90728,
+          "horizon": 0.431,
+          "hour": 23,
+          "key": "night"
+        },
+        "6x6": {
+          "src": "seams/island-forest/s6x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 98336,
+          "horizon": 0.431,
+          "hour": 23,
+          "key": "night"
+        }
       }
     },
     "forest+mountain": {
@@ -760,6 +906,152 @@
             "bytes": 552632
           }
         ]
+      },
+      "grid": {
+        "1x1": {
+          "src": "seams/forest-mountain/s1x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 55646,
+          "horizon": 0.479,
+          "hour": 6,
+          "key": "dawn"
+        },
+        "1x2": {
+          "src": "seams/forest-mountain/s1x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 66382,
+          "horizon": 0.505,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x1": {
+          "src": "seams/forest-mountain/s2x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 81656,
+          "horizon": 0.463,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x2": {
+          "src": "seams/forest-mountain/s2x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 81282,
+          "horizon": 0.489,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x3": {
+          "src": "seams/forest-mountain/s2x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 75210,
+          "horizon": 0.463,
+          "hour": 16,
+          "key": "afternoon"
+        },
+        "3x2": {
+          "src": "seams/forest-mountain/s3x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 75144,
+          "horizon": 0.5,
+          "hour": 17,
+          "key": "afternoon"
+        },
+        "3x3": {
+          "src": "seams/forest-mountain/s3x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 65076,
+          "horizon": 0.473,
+          "hour": 17,
+          "key": "afternoon"
+        },
+        "3x4": {
+          "src": "seams/forest-mountain/s3x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 63722,
+          "horizon": 0.464,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x3": {
+          "src": "seams/forest-mountain/s4x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 62858,
+          "horizon": 0.485,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x4": {
+          "src": "seams/forest-mountain/s4x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 64980,
+          "horizon": 0.475,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x5": {
+          "src": "seams/forest-mountain/s4x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 63638,
+          "horizon": 0.47,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x4": {
+          "src": "seams/forest-mountain/s5x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 56274,
+          "horizon": 0.475,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x5": {
+          "src": "seams/forest-mountain/s5x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 56074,
+          "horizon": 0.47,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x6": {
+          "src": "seams/forest-mountain/s5x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 55204,
+          "horizon": 0.46,
+          "hour": 23,
+          "key": "night"
+        },
+        "6x5": {
+          "src": "seams/forest-mountain/s6x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 60366,
+          "horizon": 0.47,
+          "hour": 23,
+          "key": "night"
+        },
+        "6x6": {
+          "src": "seams/forest-mountain/s6x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 63856,
+          "horizon": 0.46,
+          "hour": 23,
+          "key": "night"
+        }
       }
     },
     "forest+plains": {
@@ -1137,6 +1429,152 @@
             "bytes": 543506
           }
         ]
+      },
+      "grid": {
+        "1x1": {
+          "src": "seams/plains-forest/s1x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 85006,
+          "horizon": 0.437,
+          "hour": 6,
+          "key": "dawn"
+        },
+        "1x2": {
+          "src": "seams/plains-forest/s1x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 102064,
+          "horizon": 0.425,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x1": {
+          "src": "seams/plains-forest/s2x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 89500,
+          "horizon": 0.437,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x2": {
+          "src": "seams/plains-forest/s2x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 111262,
+          "horizon": 0.425,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x3": {
+          "src": "seams/plains-forest/s2x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 100932,
+          "horizon": 0.433,
+          "hour": 17,
+          "key": "afternoon"
+        },
+        "3x2": {
+          "src": "seams/plains-forest/s3x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 79154,
+          "horizon": 0.44,
+          "hour": 16.5,
+          "key": "afternoon"
+        },
+        "3x3": {
+          "src": "seams/plains-forest/s3x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 66926,
+          "horizon": 0.45,
+          "hour": 17,
+          "key": "afternoon"
+        },
+        "3x4": {
+          "src": "seams/plains-forest/s3x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 66584,
+          "horizon": 0.46,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x3": {
+          "src": "seams/plains-forest/s4x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 66148,
+          "horizon": 0.45,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x4": {
+          "src": "seams/plains-forest/s4x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 71308,
+          "horizon": 0.46,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x5": {
+          "src": "seams/plains-forest/s4x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 59564,
+          "horizon": 0.46,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x4": {
+          "src": "seams/plains-forest/s5x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 60064,
+          "horizon": 0.454,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x5": {
+          "src": "seams/plains-forest/s5x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 56876,
+          "horizon": 0.454,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x6": {
+          "src": "seams/plains-forest/s5x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 56846,
+          "horizon": 0.454,
+          "hour": 23,
+          "key": "night"
+        },
+        "6x5": {
+          "src": "seams/plains-forest/s6x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 65118,
+          "horizon": 0.46,
+          "hour": 23,
+          "key": "night"
+        },
+        "6x6": {
+          "src": "seams/plains-forest/s6x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 69472,
+          "horizon": 0.46,
+          "hour": 23,
+          "key": "night"
+        }
       }
     },
     "forest+swamp": {
@@ -2040,6 +2478,152 @@
             "bytes": 494400
           }
         ]
+      },
+      "grid": {
+        "1x1": {
+          "src": "seams/island-mountain/s1x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 56032,
+          "horizon": 0.463,
+          "hour": 6.5,
+          "key": "dawn"
+        },
+        "1x2": {
+          "src": "seams/island-mountain/s1x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 62886,
+          "horizon": 0.489,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x1": {
+          "src": "seams/island-mountain/s2x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 64150,
+          "horizon": 0.457,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x2": {
+          "src": "seams/island-mountain/s2x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 70932,
+          "horizon": 0.484,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x3": {
+          "src": "seams/island-mountain/s2x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 64570,
+          "horizon": 0.457,
+          "hour": 16,
+          "key": "afternoon"
+        },
+        "3x2": {
+          "src": "seams/island-mountain/s3x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 65042,
+          "horizon": 0.489,
+          "hour": 16.5,
+          "key": "afternoon"
+        },
+        "3x3": {
+          "src": "seams/island-mountain/s3x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 56690,
+          "horizon": 0.463,
+          "hour": 16.5,
+          "key": "afternoon"
+        },
+        "3x4": {
+          "src": "seams/island-mountain/s3x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 62194,
+          "horizon": 0.452,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x3": {
+          "src": "seams/island-mountain/s4x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 65918,
+          "horizon": 0.463,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x4": {
+          "src": "seams/island-mountain/s4x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 65780,
+          "horizon": 0.452,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x5": {
+          "src": "seams/island-mountain/s4x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 64968,
+          "horizon": 0.448,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x4": {
+          "src": "seams/island-mountain/s5x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 63108,
+          "horizon": 0.447,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x5": {
+          "src": "seams/island-mountain/s5x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 67036,
+          "horizon": 0.442,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x6": {
+          "src": "seams/island-mountain/s5x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 69898,
+          "horizon": 0.433,
+          "hour": 23,
+          "key": "night"
+        },
+        "6x5": {
+          "src": "seams/island-mountain/s6x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 88064,
+          "horizon": 0.431,
+          "hour": 23,
+          "key": "night"
+        },
+        "6x6": {
+          "src": "seams/island-mountain/s6x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 90614,
+          "horizon": 0.42,
+          "hour": 23,
+          "key": "night"
+        }
       }
     },
     "island+plains": {
@@ -2417,6 +3001,152 @@
             "bytes": 413656
           }
         ]
+      },
+      "grid": {
+        "1x1": {
+          "src": "seams/island-plains/s1x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 85166,
+          "horizon": 0.425,
+          "hour": 6.5,
+          "key": "dawn"
+        },
+        "1x2": {
+          "src": "seams/island-plains/s1x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 95458,
+          "horizon": 0.425,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x1": {
+          "src": "seams/island-plains/s2x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 95432,
+          "horizon": 0.42,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x2": {
+          "src": "seams/island-plains/s2x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 100964,
+          "horizon": 0.42,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x3": {
+          "src": "seams/island-plains/s2x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 69768,
+          "horizon": 0.433,
+          "hour": 16.5,
+          "key": "afternoon"
+        },
+        "3x2": {
+          "src": "seams/island-plains/s3x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 96564,
+          "horizon": 0.425,
+          "hour": 16.5,
+          "key": "afternoon"
+        },
+        "3x3": {
+          "src": "seams/island-plains/s3x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 63716,
+          "horizon": 0.44,
+          "hour": 16.5,
+          "key": "afternoon"
+        },
+        "3x4": {
+          "src": "seams/island-plains/s3x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 63112,
+          "horizon": 0.44,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x3": {
+          "src": "seams/island-plains/s4x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 71388,
+          "horizon": 0.44,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x4": {
+          "src": "seams/island-plains/s4x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 68008,
+          "horizon": 0.44,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x5": {
+          "src": "seams/island-plains/s4x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 62320,
+          "horizon": 0.435,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x4": {
+          "src": "seams/island-plains/s5x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 69600,
+          "horizon": 0.433,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x5": {
+          "src": "seams/island-plains/s5x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 66672,
+          "horizon": 0.43,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x6": {
+          "src": "seams/island-plains/s5x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 76758,
+          "horizon": 0.433,
+          "hour": 23,
+          "key": "night"
+        },
+        "6x5": {
+          "src": "seams/island-plains/s6x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 86854,
+          "horizon": 0.416,
+          "hour": 23,
+          "key": "night"
+        },
+        "6x6": {
+          "src": "seams/island-plains/s6x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 94020,
+          "horizon": 0.42,
+          "hour": 23,
+          "key": "night"
+        }
       }
     },
     "island+swamp": {
@@ -3834,6 +4564,152 @@
             "bytes": 692134
           }
         ]
+      },
+      "grid": {
+        "1x1": {
+          "src": "seams/swamp-mountain/s1x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 51866,
+          "horizon": 0.457,
+          "hour": 6,
+          "key": "dawn"
+        },
+        "1x2": {
+          "src": "seams/swamp-mountain/s1x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 63480,
+          "horizon": 0.484,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x1": {
+          "src": "seams/swamp-mountain/s2x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 53312,
+          "horizon": 0.463,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x2": {
+          "src": "seams/swamp-mountain/s2x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 63272,
+          "horizon": 0.489,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x3": {
+          "src": "seams/swamp-mountain/s2x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 54078,
+          "horizon": 0.463,
+          "hour": 16,
+          "key": "afternoon"
+        },
+        "3x2": {
+          "src": "seams/swamp-mountain/s3x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 59138,
+          "horizon": 0.51,
+          "hour": 16.5,
+          "key": "afternoon"
+        },
+        "3x3": {
+          "src": "seams/swamp-mountain/s3x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 51386,
+          "horizon": 0.485,
+          "hour": 16.5,
+          "key": "afternoon"
+        },
+        "3x4": {
+          "src": "seams/swamp-mountain/s3x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 47866,
+          "horizon": 0.475,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x3": {
+          "src": "seams/swamp-mountain/s4x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 52260,
+          "horizon": 0.473,
+          "hour": 19.5,
+          "key": "dusk"
+        },
+        "4x4": {
+          "src": "seams/swamp-mountain/s4x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 50534,
+          "horizon": 0.464,
+          "hour": 19.5,
+          "key": "dusk"
+        },
+        "4x5": {
+          "src": "seams/swamp-mountain/s4x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 52138,
+          "horizon": 0.46,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x4": {
+          "src": "seams/swamp-mountain/s5x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 46256,
+          "horizon": 0.49,
+          "hour": 22,
+          "key": "night"
+        },
+        "5x5": {
+          "src": "seams/swamp-mountain/s5x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 48328,
+          "horizon": 0.485,
+          "hour": 22,
+          "key": "night"
+        },
+        "5x6": {
+          "src": "seams/swamp-mountain/s5x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 51548,
+          "horizon": 0.473,
+          "hour": 23,
+          "key": "night"
+        },
+        "6x5": {
+          "src": "seams/swamp-mountain/s6x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 52784,
+          "horizon": 0.485,
+          "hour": 23.5,
+          "key": "night"
+        },
+        "6x6": {
+          "src": "seams/swamp-mountain/s6x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 56426,
+          "horizon": 0.473,
+          "hour": 23.5,
+          "key": "night"
+        }
       }
     },
     "plains+swamp": {
@@ -4211,6 +5087,152 @@
             "bytes": 528434
           }
         ]
+      },
+      "grid": {
+        "1x1": {
+          "src": "seams/swamp-plains/s1x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 84630,
+          "horizon": 0.42,
+          "hour": 6,
+          "key": "dawn"
+        },
+        "1x2": {
+          "src": "seams/swamp-plains/s1x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 94822,
+          "horizon": 0.42,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x1": {
+          "src": "seams/swamp-plains/s2x1-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 87296,
+          "horizon": 0.425,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x2": {
+          "src": "seams/swamp-plains/s2x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 98056,
+          "horizon": 0.425,
+          "hour": 12,
+          "key": "noon"
+        },
+        "2x3": {
+          "src": "seams/swamp-plains/s2x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 65116,
+          "horizon": 0.44,
+          "hour": 16.5,
+          "key": "afternoon"
+        },
+        "3x2": {
+          "src": "seams/swamp-plains/s3x2-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 86474,
+          "horizon": 0.442,
+          "hour": 16.5,
+          "key": "afternoon"
+        },
+        "3x3": {
+          "src": "seams/swamp-plains/s3x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 66758,
+          "horizon": 0.46,
+          "hour": 16.5,
+          "key": "afternoon"
+        },
+        "3x4": {
+          "src": "seams/swamp-plains/s3x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 61326,
+          "horizon": 0.46,
+          "hour": 19,
+          "key": "dusk"
+        },
+        "4x3": {
+          "src": "seams/swamp-plains/s4x3-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 66184,
+          "horizon": 0.45,
+          "hour": 19.5,
+          "key": "dusk"
+        },
+        "4x4": {
+          "src": "seams/swamp-plains/s4x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 65558,
+          "horizon": 0.45,
+          "hour": 19.5,
+          "key": "dusk"
+        },
+        "4x5": {
+          "src": "seams/swamp-plains/s4x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 66130,
+          "horizon": 0.445,
+          "hour": 20.5,
+          "key": "dusk"
+        },
+        "5x4": {
+          "src": "seams/swamp-plains/s5x4-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 59568,
+          "horizon": 0.473,
+          "hour": 22,
+          "key": "night"
+        },
+        "5x5": {
+          "src": "seams/swamp-plains/s5x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 55798,
+          "horizon": 0.468,
+          "hour": 22,
+          "key": "night"
+        },
+        "5x6": {
+          "src": "seams/swamp-plains/s5x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 58734,
+          "horizon": 0.473,
+          "hour": 23,
+          "key": "night"
+        },
+        "6x5": {
+          "src": "seams/swamp-plains/s6x5-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 59986,
+          "horizon": 0.468,
+          "hour": 23.5,
+          "key": "night"
+        },
+        "6x6": {
+          "src": "seams/swamp-plains/s6x6-panorama.webp",
+          "width": 3277,
+          "height": 640,
+          "bytes": 64558,
+          "horizon": 0.473,
+          "hour": 23.5,
+          "key": "night"
+        }
       }
     }
   }

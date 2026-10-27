@@ -1,7 +1,8 @@
-Pair panoramas, pairs-v6-draft -- provenance (DRAFT: pairs-v5's desktop pictures and manifest plus a seam grid for three
-pairs; scenery spec 1.17, draft)
-Painted 2026-10-25 on Justin's PC (GTX 1080) by panoramas-v1's tools/seamA.py (~/scenery-packs/panoramas-v1,
-SUMMARY.md there, section "Seams A (10-25): stage grid, sketch"); tagged 2026-10-25.
+Pair panoramas, pairs-v6 -- provenance (pairs-v5's desktop pictures and manifest plus a seam grid for all ten pairs;
+scenery spec 1.17; sketch quality, for review on the live board)
+Painted 2026-10-25 (island|swamp, plains|mountain, swamp|forest) and 2026-10-27 00:02-04:18 (the seven others) on
+Justin's PC (GTX 1080) by panoramas-v1's tools/seamA.py (~/scenery-packs/panoramas-v1, SUMMARY.md there, sections
+"Seams A (10-25): stage grid, sketch" and "Seams A, round two (10-26): the seven remaining pairs"); tagged 2026-10-27.
 
 INPUTS
 - The only image inputs are ForgeCoach's own pack pictures: the mono ladder (pack-v8/v9) at each colour's stage for
@@ -14,6 +15,12 @@ MODELS AND PIPELINE
   step carried inside the seam), the seam core u 0.43-0.57 repainted at full strength with a 0.4 ring to 0.38/0.62,
   MultiDiffusion over two 1024 windows, 14 steps (sketch quality), the sky cross-faded and the ground's light ramped
   across the core; one seed per pair so every cell's seam is the same place. Outside the ring every cell is pixel-
-  identical to the two monos. 74 pictures for 48 cells, ~101 s each, every one under flock ~/scenery-packs/logs/gpu.lock
-  with the 6 GB gate.
-- pairs-v5's 150 desktop pictures are byte-identical to the pairs-v5 tag (see its PROVENANCE.txt).
+  identical to the two monos. Round two (the seven pairs) added a wider strength ramp on the swamp side, an option to
+  dissolve the seam's kept sun or moon where the plains' own sun (s4) or moon (s6) sits outside the ring, a tighter
+  moon hold and a guard against an invented sun after 19:00. 74 pictures for the first 48 cells and 128 for the other
+  112 (16 second candidates), ~101 s each, every one under flock ~/scenery-packs/logs/gpu.lock with the 6 GB gate.
+- pairs-v5's 150 desktop pictures are byte-identical to the pairs-v5 tag (see its PROVENANCE.txt). The 48 cells of
+  pairs-v6-draft are byte-identical here.
+
+LICENSE
+- The pictures and the manifest: CC0 1.0 (LICENSE), as every ForgeCoach scenery pack.
