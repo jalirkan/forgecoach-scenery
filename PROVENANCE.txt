@@ -1,23 +1,25 @@
-Pair panoramas, pairs-v7-pin -- provenance (the third colour painted into every cell of the seam grid; sketch quality)
-Painted 2026-10-31 12:01 to 2026-11-02 02:54 on Justin's PC (GTX 1080) by panoramas-v1's tools/pinG.py (pin.py's method
-by import; ~/scenery-packs/panoramas-v1, SUMMARY.md there, sections "Painted-in G (third colours on the seam grid) log"
-and "... result"); tagged 2026-11-02.
+Pair panoramas, pairs-v7.1 -- provenance (pairs-v6's desktop pictures and seam grid, unchanged, plus a spec 1.18
+manifest naming a phone picture and the painted-in third colours for every grid cell; sketch quality)
+Manifest written 2026-11-02 by panoramas-v1's tools/make_pairs_v6_draft.py --phone-fragment --pin-fragment
+(~/scenery-packs/panoramas-v1, SUMMARY.md there) from the two painters' fragments; tagged 2026-11-02.
+
+PICTURES IN THIS TAG
+- The 150 pairs-v5 desktop pictures and the 160 seam cells are byte-identical to the pairs-v6 tag (see its
+  PROVENANCE.txt: DreamShaper XL 1.0 fp16 with the sdxl-vae-fp16-fix VAE, no LoRA, DPM++ 2M Karras, MultiDiffusion
+  over the seam core only; every cell pixel-identical to the two mono halves outside the ring).
+
+PICTURES THIS MANIFEST NAMES ELSEWHERE
+- pairs-v7-phone: the 160 phone cells (see that tag's PROVENANCE.txt).
+- pairs-v7-pin: the 660 painted-in cells (see that tag's PROVENANCE.txt).
+- pairs-v5-phone, pairs-v4, pairs-v2: as in pairs-v6.
 
 INPUTS
-- The only image inputs are ForgeCoach's own pack pictures: the pairs-v6 seam cell as the base of each picture. No web
-  image, no card image, no private file, nothing of Wizards' art as an input or a reference.
-
-MODELS AND PIPELINE
-- DreamShaper XL 1.0 fp16 (Lykon/dreamshaper-xl-1-0) with madebyollin/sdxl-vae-fp16-fix, no LoRA, DPM++ 2M Karras.
-  Nothing downloaded for this pack.
-- Each picture: the third colour's motif grown into the heavier half's ground of the cell, img2img over a guide painted
-  in code at that half's own stage, hour and placed horizon, 20 steps (island|plains' R at 32), with a seam guard
-  (the composite's alpha is 0 beyond u 0.42 on the left half and below u 0.58 on the right) and a hold on the half's
-  own sun or moon. One motif, seed, guide layout and placement per (pair, colour, side), chosen off every sun or moon
-  the group's cells show, so the feature is the same place through every stage.
-- 730 pictures for the 660 slots (660 picks + 70 not picked), 118.8 s of generation a picture, 24.1 GPU-hours, every
-  one under flock ~/scenery-packs/logs/gpu.lock with the 6 GB gate. Outside the ring max |diff| 0 and inside the seam
-  core 0 on all 730 (work/pinG/finish.json).
+- Only ForgeCoach's own pack pictures. No web image, no card image, no private file, nothing of Wizards' art as an
+  input or a reference.
 
 LICENSE
-- The pictures: CC0 1.0 (LICENSE), as every ForgeCoach scenery pack.
+- The pictures and the manifest: CC0 1.0 (LICENSE), as every ForgeCoach scenery pack.
+
+PAIRS-V7.1
+- The same tree as pairs-v7 with the manifest's `name` and `note` corrected (they named "pairs-v6 draft"); the writer
+  now names them after the tag (tools/make_pairs_v6_draft.py --name / --note, 2026-11-02).
