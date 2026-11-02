@@ -1,27 +1,23 @@
-Pair panoramas, pairs-v7-phone -- provenance (the seam grid's 160 phone cells; sketch quality)
-Painted 2026-10-31 12:01 to 2026-11-01 00:34 (the set) and 2026-11-02 05:45-06:11 (the twelve forest-at-stage-2 cells
-repainted) on Justin's PC (GTX 1080) by panoramas-v1's tools/seamP.py and tools/seamPf.py (~/scenery-packs/panoramas-v1,
-SUMMARY.md there, sections "Seams P (phone cells) result" and "Seams P forest-s2 round result"); tagged 2026-11-02.
+Pair panoramas, pairs-v7-pin -- provenance (the third colour painted into every cell of the seam grid; sketch quality)
+Painted 2026-10-31 12:01 to 2026-11-02 02:54 on Justin's PC (GTX 1080) by panoramas-v1's tools/pinG.py (pin.py's method
+by import; ~/scenery-packs/panoramas-v1, SUMMARY.md there, sections "Painted-in G (third colours on the seam grid) log"
+and "... result"); tagged 2026-11-02.
 
 INPUTS
-- The only image inputs are ForgeCoach's own pack pictures: the pairs-v6 seam cell (its band) and the mono ladder's
-  phone pictures (pack-v9 s<k>-phone) for each colour and stage. No web image, no card image, no private file, nothing
-  of Wizards' art as an input or a reference.
+- The only image inputs are ForgeCoach's own pack pictures: the pairs-v6 seam cell as the base of each picture. No web
+  image, no card image, no private file, nothing of Wizards' art as an input or a reference.
 
 MODELS AND PIPELINE
 - DreamShaper XL 1.0 fp16 (Lykon/dreamshaper-xl-1-0) with madebyollin/sdxl-vae-fp16-fix, no LoRA, DPM++ 2M Karras.
   Nothing downloaded for this pack.
-- One phone extension per colour and stage (30): the mono half as its band, the sky above and the ground below painted
-  over that stage's own mono phone picture (one 896x1120 window, 15 steps). Each cell places the two extensions as the
-  desktop placed the mono halves (zoom, offset, edge), pastes the desktop pick as the band, and paints only the seam
-  core above and below the band (one 768x1200 window, 14 steps; one seed per pair for all 16 cells). The two skies
-  cross-fade over u 0.30-0.70, each ground relit toward the other half's hour. The band's interior is identical to the
-  desktop pick in every cell; nothing outside u 0.30-0.70 differs from the placed extensions.
-- The forest at stage 2 (12 cells) needed a method of its own: the forest half's top is open sky cut through by tree
-  crowns, so its extension continues the half's own sky upward and grows every cut crown on as a leafy dome, painted
-  together with the band's top edge (tools/seamPf.py, 2 extensions + 18 cell pictures).
-- 534 pictures for the set (130 extension paintings, 404 cell paintings over the rounds; the shipped set is the last
-  30 + 160) and 20 for the forest round, every one under flock ~/scenery-packs/logs/gpu.lock with the 6 GB gate.
+- Each picture: the third colour's motif grown into the heavier half's ground of the cell, img2img over a guide painted
+  in code at that half's own stage, hour and placed horizon, 20 steps (island|plains' R at 32), with a seam guard
+  (the composite's alpha is 0 beyond u 0.42 on the left half and below u 0.58 on the right) and a hold on the half's
+  own sun or moon. One motif, seed, guide layout and placement per (pair, colour, side), chosen off every sun or moon
+  the group's cells show, so the feature is the same place through every stage.
+- 730 pictures for the 660 slots (660 picks + 70 not picked), 118.8 s of generation a picture, 24.1 GPU-hours, every
+  one under flock ~/scenery-packs/logs/gpu.lock with the 6 GB gate. Outside the ring max |diff| 0 and inside the seam
+  core 0 on all 730 (work/pinG/finish.json).
 
 LICENSE
 - The pictures: CC0 1.0 (LICENSE), as every ForgeCoach scenery pack.
