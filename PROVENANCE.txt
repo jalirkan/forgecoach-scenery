@@ -1,26 +1,21 @@
-Pair panoramas, pairs-v6 -- provenance (pairs-v5's desktop pictures and manifest plus a seam grid for all ten pairs;
-scenery spec 1.17; sketch quality, for review on the live board)
-Painted 2026-10-25 (island|swamp, plains|mountain, swamp|forest) and 2026-10-27 00:02-04:18 (the seven others) on
-Justin's PC (GTX 1080) by panoramas-v1's tools/seamA.py (~/scenery-packs/panoramas-v1, SUMMARY.md there, sections
-"Seams A (10-25): stage grid, sketch" and "Seams A, round two (10-26): the seven remaining pairs"); tagged 2026-10-27.
+Pair panoramas, pairs-v7 -- provenance (pairs-v6's desktop pictures and seam grid, unchanged, plus a spec 1.18
+manifest naming a phone picture and the painted-in third colours for every grid cell; sketch quality)
+Manifest written 2026-11-02 by panoramas-v1's tools/make_pairs_v6_draft.py --phone-fragment --pin-fragment
+(~/scenery-packs/panoramas-v1, SUMMARY.md there) from the two painters' fragments; tagged 2026-11-02.
+
+PICTURES IN THIS TAG
+- The 150 pairs-v5 desktop pictures and the 160 seam cells are byte-identical to the pairs-v6 tag (see its
+  PROVENANCE.txt: DreamShaper XL 1.0 fp16 with the sdxl-vae-fp16-fix VAE, no LoRA, DPM++ 2M Karras, MultiDiffusion
+  over the seam core only; every cell pixel-identical to the two mono halves outside the ring).
+
+PICTURES THIS MANIFEST NAMES ELSEWHERE
+- pairs-v7-phone: the 160 phone cells (see that tag's PROVENANCE.txt).
+- pairs-v7-pin: the 660 painted-in cells (see that tag's PROVENANCE.txt).
+- pairs-v5-phone, pairs-v4, pairs-v2: as in pairs-v6.
 
 INPUTS
-- The only image inputs are ForgeCoach's own pack pictures: the mono ladder (pack-v8/v9) at each colour's stage for
-  the two halves. No web image, no card image, no private file, nothing of Wizards' art as an input or a reference.
-
-MODELS AND PIPELINE
-- DreamShaper XL 1.0 fp16 (Lykon/dreamshaper-xl-1-0) with madebyollin/sdxl-vae-fp16-fix, no LoRA, DPM++ 2M Karras.
-  Nothing downloaded for this pack.
-- Each cell: the two mono halves anchored to their outer edges (zoom at most 1.06 to align horizons, the rest of the
-  step carried inside the seam), the seam core u 0.43-0.57 repainted at full strength with a 0.4 ring to 0.38/0.62,
-  MultiDiffusion over two 1024 windows, 14 steps (sketch quality), the sky cross-faded and the ground's light ramped
-  across the core; one seed per pair so every cell's seam is the same place. Outside the ring every cell is pixel-
-  identical to the two monos. Round two (the seven pairs) added a wider strength ramp on the swamp side, an option to
-  dissolve the seam's kept sun or moon where the plains' own sun (s4) or moon (s6) sits outside the ring, a tighter
-  moon hold and a guard against an invented sun after 19:00. 74 pictures for the first 48 cells and 128 for the other
-  112 (16 second candidates), ~101 s each, every one under flock ~/scenery-packs/logs/gpu.lock with the 6 GB gate.
-- pairs-v5's 150 desktop pictures are byte-identical to the pairs-v5 tag (see its PROVENANCE.txt). The 48 cells of
-  pairs-v6-draft are byte-identical here.
+- Only ForgeCoach's own pack pictures. No web image, no card image, no private file, nothing of Wizards' art as an
+  input or a reference.
 
 LICENSE
 - The pictures and the manifest: CC0 1.0 (LICENSE), as every ForgeCoach scenery pack.
