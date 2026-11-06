@@ -167,3 +167,63 @@ and averaged over the three, so no place rides in it; the empty table is the app
 Made on the owner's GTX 1080 on 2026-10-23 (`~/scenery-packs/panoramas-v1/`, its `SUMMARY.md` "Batch 3 finished",
 `sheets/batch3-finished.jpg`). No web images, card art or private files were used as inputs. Licence as before. pack v9.1 stays
 at its tag.
+
+## pack v10 (2026-11-06): every half and phone picture painted in oil (oil-v2); the old-style pictures around them dropped
+
+**What changed.** The 120 half pictures -- 30 stages, each a desktop half (2048×640, `@2x` 4096×1280) and a phone picture
+(1024×1280, `@2x` 1536×1920) -- are oil-v2's (`~/scenery-packs/oil-v2/pack/`), byte for byte, at pack v9.2's names. Each stage's
+`half` block is oil-v2's: `subjectBand`, `horizon`, the phone's `subjectBand` and `horizon`, `hour` and `key` measured on the new
+pictures, `bytes` measured from the files in this tag. Half pictures per biome: island 2.34 MB, mountain 1.35, plains 1.67,
+forest 3.57, swamp 1.99 (budget 8 MB). The place is new as well as the hand, and four of the five lands were redesigned by the
+owner on 2026-11-05: island a sea-metropolis of terraces and upswept halls over its bay, mountain a fortress at war on its lava
+cliff, plains a domed steppe city among felt tents, swamp a stilt village of thatch and plank walks; the forest's tree houses in
+two giant trees are oil-v1's, its 24 pictures byte for byte. Each land holds its landmark in the left third and its sun or moon
+about four fifths across, grown stage by stage from dawn (s1) to night (s6).
+
+**How it was made.** FLUX.2 klein 4B composes and Z-Image-Turbo repaints, oil-v1's recipe: the four stage-4 heroes drafted, then
+moved into the left third by geometry and painted once more (klein edit, Z-Image 0.30); every other stage a klein edit with the
+hero as its reference, then a Z-Image pass at 0.30, with klein fix edits and a few CPU paint-outs where a pass planted
+something; the phone pictures keep the desktop's u 0.05–0.55 as their band and paint the sky above and the ground below.
+1,210 pictures and 20.1 GPU hours of generation on the owner's GTX 1080, 2026-11-05/06 (with the draft round, 1,314 and 21.9);
+every recipe, pick and known fault is in `~/scenery-packs/oil-v2/NOTES.md`. The seam cells painted in the same round, and the
+sky pass that gave each of them one sky, are the pair pack's (`pairs-v8`). No web images, card art or private files were used as
+inputs. Licence as before. (An earlier build of this tag from oil-v1's lands was made on 2026-11-05 and never tagged.)
+
+**Dropped from `scenery.json`**, because each drew a pack v9.2 picture -- a different place in a different hand -- over or beside
+the oil one (their files are not in this tag; they stay at `pack-v9.2`):
+
+| Entry | When ForgeCoach draws it | Without it |
+| --- | --- | --- |
+| every stage's strip `sky` layer (`sN-sky.webp`, 60 files) | only with Settings → Fill each side off (the 1.4 strip), or when a half picture fails to load | the reader makes the stage's half picture the strip layer (spec 1.5: a stage with a half and no image layer), so the strip shows the oil picture cover-cropped; between thresholds it cross-fades the two oil stages |
+| every stage's full-area accent (`front-sN.webp`, 50 files) | on every board (Settings → Board accents, on by default), over the half at z −2: vines, shells and sand, lava and rocks pasted on the oil picture | no accent: a pack biome with its own art and no `overlay` draws none (overlay.ts `biomeOverlay`), never the built-in placeholders |
+| every biome's `transitions` (1.7, `sNtoM-fK-*-v4.webp`, 58 frames × 2 shapes, 116 files) | at every stage step of a mono panel (thresholds 1–6: every land up to six), two or three frames at 200 ms and a 180 ms fade -- 580–780 ms of the old place between two oil stages | spec 1.6/1.10: the new stage's picture cross-fades in over `growth.seconds`, 1.2 s, at the threshold (at once with reduced motion) |
+| the island's `motes` and the mountain's `embers` loops at stage 6 (6 files) | over the desktop stage-6 picture, screen-blended | the still picture. The island's loop carries an aurora and the old floating islands' lit outlines, the mountain's the ember plumes of the old volcano peaks: both read as ghosts of the old place in the oil night sky |
+| the top-level `bridges` (1.8, 20 files) | only on a seam with no pair band or motif: with `?pairs=off`, or while a pairs pack fails to load (pairs-v3.1 and pairs-v8 have all ten pairs, and a motif seam counts, spec 1.10) | the plain 1.10 seam (its gradient and mist); a dual no longer widens it |
+
+**Kept:** the forest's `fireflies`, the plains' `motes` and the swamp's `wisps` (sparks and a faint mist over the stage-6 night
+picture, no shape of the old place in them); every biome's `effects` (one-shot glows and sparks in the strip-sized box, a second
+or two, screen-blended); the `pieces` block at `@pieces-v1` (the five element cut-outs, which spec 1.19 a needs so that every
+colour with lands is on screen, the four colour fronts, both veils and the empty table); `strip`, `stageThresholds`, `half`,
+`growth` and each biome's `label`, `slot`, `bloom` and `idle`. `validateManifest` gives no error and no warning (pack v9.2's one
+warning, swamp's 4.0 MB of full-area accents, went with the accents).
+
+**Waits for the next round:** the transition frames in oil (58 frames at two shapes, 116 pictures) if the stepped growth is
+wanted back; the five element cut-outs in oil (5 desktop + 5 phone, 10 pictures), which now stand on oil grounds wherever a
+third, fourth or fifth colour is drawn;
+and, optional, the island and mountain stage-6 loops, the empty table (2 pictures) and the fronts (4 colours × 4 frames × 2
+shapes).
+
+**This tag:** `pack/` is 161 files, 15,721,799 bytes (pack v9.2: 413 files, 45.2 MB): the 120 oil pictures, the three kept
+loops (9 files), the effects (30 files), `scenery.json` (30,431 bytes) and this README.
+
+**ForgeCoach, the day the tags exist** (with `pairs-v8`): `src/ambience/prefs.ts` `FORGECOACH_PACK_URL` →
+`https://cdn.jsdelivr.net/gh/jalirkan/forgecoach-scenery@pack-v10/pack/` and `FORGECOACH_PAIRS_FULL_URL` →
+`…@pairs-v8/` (and their comments); `src/ambience/testdata/pack-v10.scenery.json` and `pairs-v8.tag.pairs.json`, byte copies of
+the two tagged manifests (30,431 bytes, sha256
+`59a688c1a725f8685fe8e5d0f36fe8bf8a62b37518d19196cc43a1ab36e3d666`; 195,774 bytes, sha256
+`bcbca31336311765c3dc9cc1e6c965a2ebaefbe2ec7f5d3a817e9d45ec53ac72`); a `pack-v10.test.ts` and a `pairs-v8.test.ts` pinning the URLs and
+each file's sha256, as `pack-v9-2.test.ts` and `pairs-v7.1.test.ts` do (those two then say their tag stays up, and stop asserting
+the default URL); `storyboard.test.ts`, `scenery-1.19.test.ts`, `preview-ties-captions.test.ts` and
+`ui/ambience/sceneryDom.test.tsx` read the new testdata, and their seven tests' expectations of pairs-v7.1's painted-in cells
+become the third colour's cut-out; `e2e/ambience.e2e.mjs`'s default (`@pairs-v7.1`, red painted into island+plains' cells, and the
+phone check's demand for a painted cell); `CLAUDE.md`'s lines naming the pack and the pairs.
