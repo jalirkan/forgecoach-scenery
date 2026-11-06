@@ -1,25 +1,29 @@
-Pair panoramas, pairs-v7.1 -- provenance (pairs-v6's desktop pictures and seam grid, unchanged, plus a spec 1.18
-manifest naming a phone picture and the painted-in third colours for every grid cell; sketch quality)
-Manifest written 2026-11-02 by panoramas-v1's tools/make_pairs_v6_draft.py --phone-fragment --pin-fragment
-(~/scenery-packs/panoramas-v1, SUMMARY.md there) from the two painters' fragments; tagged 2026-11-02.
-
-PICTURES IN THIS TAG
-- The 150 pairs-v5 desktop pictures and the 160 seam cells are byte-identical to the pairs-v6 tag (see its
-  PROVENANCE.txt: DreamShaper XL 1.0 fp16 with the sdxl-vae-fp16-fix VAE, no LoRA, DPM++ 2M Karras, MultiDiffusion
-  over the seam core only; every cell pixel-identical to the two mono halves outside the ring).
-
-PICTURES THIS MANIFEST NAMES ELSEWHERE
-- pairs-v7-phone: the 160 phone cells (see that tag's PROVENANCE.txt).
-- pairs-v7-pin: the 660 painted-in cells (see that tag's PROVENANCE.txt).
-- pairs-v5-phone, pairs-v4, pairs-v2: as in pairs-v6.
+Pair seam grid, pairs-v8 -- provenance (oil-v2's 160 seam cells, desktop and phone, with one sky a cell; scenery spec 1.18)
+Painted 2026-11-05 18:41 to 2026-11-06 10:37, sky pass 2026-11-06 10:37-10:45, on Justin's PC (GTX 1080) in the oil-v2
+round (~/scenery-packs/oil-v2, NOTES.md there: "Step 2c. The seam cells" and "Step 2d. The seam sky pass"); manifest
+written 2026-11-06 from oil-v2's pack/pairs-oil.json; not tagged yet.
 
 INPUTS
-- Only ForgeCoach's own pack pictures. No web image, no card image, no private file, nothing of Wizards' art as an
-  input or a reference.
+- The only image inputs are ForgeCoach's own pack pictures: pack v10's oil monos (the half and phone picture of each
+  colour at each stage). No web image, no card image, no private file, nothing of Wizards' art as an input or a reference.
+
+MODELS AND PIPELINE
+- FLUX.2 klein 4B and Z-Image-Turbo, as oil-v2's monos (oil-v1's recipe). Each desktop cell: the two monos placed (the
+  right one mirrored), each half's horizon warped per column across the core so they meet, the grounds cross-faded
+  over the core and the skies over the ring; klein img2img over u 0.30-0.70 (8 steps x 0.75, one seed per pair, the
+  pair's motif small and low in the centre), then Z-Image 0.45 over it, pasted back below the sky line; two candidates
+  a cell, picked per pair by eye. Each phone cell: the two mono phone pictures placed the same way, the desktop cell's
+  motif and ground carried into the core, Z-Image 0.50, pasted back the same way.
+- The seam sky pass (CPU only, no generative pass): sky masks from Depth-Anything-V2-Small, one Lab low-frequency gradient
+  between the two monos' skies over the open sky between the two landmarks, one sun or moon a cell (the later hour's),
+  every other disc in the ring's sky painted out. Outside the ring every pixel at or below its half's horizon and every
+  landmark is the two monos' exactly (max |diff| 0 on all 320 cells, checked independently of the pass's own masks).
+- Every candidate's recipe is beside it in ~/scenery-packs/oil-v2/candidates/; every GPU job ran under flock
+  ~/scenery-packs/logs/gpu.lock with the 6 GB gate.
+
+PICTURES THIS MANIFEST NAMES ELSEWHERE
+- pairs-v2: each pair's three 1.9 stage halves (desktop and phone, 1x and 2x), kept so the reader plans the pair.
 
 LICENSE
-- The pictures and the manifest: CC0 1.0 (LICENSE), as every ForgeCoach scenery pack.
-
-PAIRS-V7.1
-- The same tree as pairs-v7 with the manifest's `name` and `note` corrected (they named "pairs-v6 draft"); the writer
-  now names them after the tag (tools/make_pairs_v6_draft.py --name / --note, 2026-11-02).
+- The pictures and the manifest: CC BY 4.0 (LICENSE, and the manifest's `license`). Earlier pairs tags' PROVENANCE.txt said
+  CC0 1.0 beside the same CC BY 4.0 LICENSE file; this one follows the LICENSE.
