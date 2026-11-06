@@ -1,0 +1,22 @@
+Scenes, scenes-v1 -- provenance (scenery spec 1.20: one whole-half painting per exact set of lands, desktop and phone)
+Painted 2026-11-06 on Justin's PC (GTX 1080) in the scenes-v1 round (~/scenery-packs/scenes-v1, STATUS.txt and
+PLACES.md there). Tagged 2026-11-06: eight scenes (the owner's two boards of 2026-11-06 and six from the first draft round).
+
+INPUTS
+- The only image inputs are ForgeCoach's own pack pictures: pack v10's oil monos were given to the painter as reference
+  pictures for a few drafts (the "ar" candidates, none of which was picked), and each scene's own desktop painting is the
+  reference for its phone painting. No web image, no card image, no private file, nothing of Wizards' art as an input
+  or a reference. The words are oil-v2's prompt vocabulary (the five peoples, each land's thing at each stage, the hour
+  by the heaviest colour's stage), composed per scene as a place (PLACES.md).
+
+MODELS AND PIPELINE
+- FLUX.2 klein 4B (Black Forest Labs, Apache-2.0), text to image, 4 steps, 1792 x 560 for the desktop painting and
+  768 x 960 upright for the phone painting (the desktop painting as its reference image); several compositions and
+  seeds a scene, picked by eye (the owner's picks for the first two scenes, the lead's for the rest).
+- Real-ESRGAN x2 (RealESRGAN_x2plus), then the finished sizes: half 2048 x 640 and 4096 x 1280, phone 1024 x 1280 and
+  1536 x 1920, each the upscale with a quarter of the plain Lanczos enlargement mixed back; WebP quality 80.
+- Horizon and subject band measured over the middle of each picture (tools/pack_scene.py); hour and key from the
+  heaviest colour's stage.
+
+LICENCE
+- CC BY 4.0, as the rest of this repository (LICENSE). Attribution: "ForgeCoach scenery by jalirkan".
