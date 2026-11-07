@@ -7,6 +7,19 @@ hand), its phone hero painted upright from it, and every board the region owns (
 klein img2img at strength 0.75 with that board's own description, desktop from the desktop hero and phone from the phone
 hero; Real-ESRGAN x2 and the finished sizes as before.
 
+Tagged 2026-11-07 as scenes-v1.3: 434 scenes. Seven more regions painted overnight 2026-11-06/07 the same way as the Nile
+delta (hero developed, phone hero, every owned board as klein img2img 0.75 from the hero with the board's own
+description, Real-ESRGAN x2, the finished sizes): Patagonia (64), the Mesopotamian marsh (52), the Amazon (64),
+Polynesia (52), the marsh's forest side (40), Santorini (64) and Kamchatka (52). Two of the first eight drafts were
+replaced by their region's board of the same key.
+HOW THE SCENES ARE SHIPPED FROM v1.3 ON: jsDelivr refuses a GitHub ref over 50 MB (scenes-v1.2, one tag of 293 MB,
+answered 403 "Package size exceeded the configured limit of 50 MB" for most files and was withdrawn unpublished). So a
+region's scenes live at tags of their own, each an orphan commit of at most 40 MB of that region's files
+(scenes-r-<region>-<n>: scenes-r-patagonia-1 and -2, scenes-r-amazon-1 and -2, scenes-r-polynesia-1 and -2,
+scenes-r-santorini-1, scenes-r-mesopotamia-1, scenes-r-mesopotamia-forest-1, scenes-r-kamchatka-1, scenes-r-nile-delta-1),
+and the index tag's scenes.json names each picture by its absolute CDN URL at that tag (`ref` says which); only the six
+region-less scenes stay in the index's own folder (3.2 MB). tools/publish.py in the working folder does this.
+
 INPUTS
 - The only image inputs are ForgeCoach's own pack pictures: pack v10's oil monos were given to the painter as reference
   pictures for a few drafts (the "ar" candidates, none of which was picked), and each scene's own desktop painting is the
