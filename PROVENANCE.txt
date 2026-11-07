@@ -1,6 +1,11 @@
 Scenes, scenes-v1 -- provenance (scenery spec 1.20: one whole-half painting per exact set of lands, desktop and phone)
 Painted 2026-11-06 on Justin's PC (GTX 1080) in the scenes-v1 round (~/scenery-packs/scenes-v1, STATUS.txt and
-PLACES.md there). Tagged 2026-11-06: eight scenes (the owner's two boards of 2026-11-06 and six from the first draft round).
+PLACES.md there). Tagged 2026-11-06 as scenes-v1: eight scenes (the owner's two boards of 2026-11-06 and six from the first draft round).
+Tagged 2026-11-06 as scenes-v1.1: 48 scenes, the eight plus the Nile delta region (island+swamp+plains led by plains and
+swamp): its hero developed (full size with the place's life, the draft as reference, then Z-Image-Turbo 0.30 for the oil
+hand), its phone hero painted upright from it, and every board the region owns (40) as the hero re-rendered by FLUX.2
+klein img2img at strength 0.75 with that board's own description, desktop from the desktop hero and phone from the phone
+hero; Real-ESRGAN x2 and the finished sizes as before.
 
 INPUTS
 - The only image inputs are ForgeCoach's own pack pictures: pack v10's oil monos were given to the painter as reference
